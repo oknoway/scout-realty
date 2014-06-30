@@ -1,0 +1,3 @@
+path: wp
+disabled_commands:
+	- db drop

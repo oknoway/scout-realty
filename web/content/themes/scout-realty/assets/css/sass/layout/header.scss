@@ -1,0 +1,54 @@
+/**
+ * Header
+ */
+
+.site-header {
+  @extend %no-list;
+  
+}
+
+.menu-top-nav-container .menu {
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( center );
+  @include flex-wrap( wrap );
+  
+  @include media( $firstBreak ) {
+    @include flex-wrap( nowrap );
+  
+    height: 90px;
+    
+  }
+  
+  .menu-item {
+    @include flex( 1 1 100% );
+    
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    
+    @include media( $firstBreak ) {
+      @include flex( 1 1 auto );
+    }
+    
+    a {
+      
+      @include flex( 1 1 100% );
+      
+      @include box( horizontal, center, center );
+      @include display( flex );
+      @include align-content( center );
+      @include align-items( center );
+      @include justify-content( center );
+      
+      .item-wrapper {
+        @include flex( 0 1 auto );
+
+      }
+    }
+  }
+}

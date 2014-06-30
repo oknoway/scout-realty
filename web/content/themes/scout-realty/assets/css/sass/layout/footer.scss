@@ -1,0 +1,114 @@
+/**
+ * Footer
+ */
+
+.site-footer {
+  @extend %no-list;
+  
+  
+  .copyright { @extend %visuallyhidden; }
+}
+
+.navigation-footer {
+
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( space-between );
+  @include flex-wrap( wrap );
+  
+  > .widget-container {
+    @include flex( 1 1 100% );
+    
+    @include media( $firstBreak ) {
+      @include flex( 1 1 33% );
+    }
+    
+    &.widget_nav_menu {
+      @include flex( 1 1 100% );
+      @include order( 5 );
+    
+      @include media( $firstBreak ) {
+        @include flex( 1 1 66% );
+      }
+    
+      &:first-child {
+        @include flex( 1 1 100% );
+        @include order( 0 );
+      }
+    }
+  }
+}
+
+.menu-footer-nav-container .menu {
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( center );
+  @include flex-wrap( wrap );
+  
+  @include media( $firstBreak ) {
+    @include flex-wrap( no-wrap );
+    
+    height: 90px;
+  }
+  
+  .menu-item {
+    @include flex( 1 1 100% );
+    
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 33% );
+    }
+    
+    a {
+      
+      @include flex( 1 1 100% );
+      
+      .item-wrapper,
+      .sub {
+        display: block;
+      }
+    }
+  }
+}
+
+.widget_nav_menu:nth-child( 4 ) {
+  width: 100%;
+  
+  @include media( $firstBreak ) {
+    max-width: 66%;
+    margin-top: -2%;
+  }
+  
+  .widget-title {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    
+    @include media( $firstBreak ) {
+      width: 50%;
+    }
+  }
+}
+
+.menu-social-container {
+  display: inline-block;
+  width: 100%;
+  
+  @include media( $firstBreak ) {
+    width: 50%;
+  }
+  
+  .menu-item {
+    display: inline-block;
+  }
+}
+

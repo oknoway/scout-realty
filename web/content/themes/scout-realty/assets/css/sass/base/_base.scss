@@ -1,0 +1,36 @@
+/**
+ * Base
+ */
+
+@import "font-face";
+@import "typography";
+
+html { font-size: 100%; }
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a:link,
+.clickable {
+  color: $red;
+}
+
+.container {
+  @include container();
+}
+
+.fake-img {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  line-height: 0;
+  
+  img { @extend %visuallyhidden; }
+}

@@ -1,0 +1,13 @@
+/**
+ * Page
+ */
+
+.site-content {
+  @include container();
+}
+
+.main-page-content {
+  max-width: flex-grid( 8, 12 );
+  margin-left: auto;
+  margin-right: auto;
+}

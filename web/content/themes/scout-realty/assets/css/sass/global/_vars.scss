@@ -1,0 +1,32 @@
+/* colors */
+$black: #18181D;
+$dkGrey: #4B4B50;
+$grey: #8E8E95;
+$red: #FF4338;
+$white: #ffffff;
+
+/* breakpoints */
+$firstBreak : em( 767 );
+$secondBreak : em( 567 );
+
+/* font-face */
+$gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+
+/* prefixer settings */
+$prefix-for-webkit: false;
+$prefix-for-mozilla: false;
+$prefix-for-microsoft: false;
+$prefix-for-opera: false;
+$prefix-for-spec: true;
+
+/* slick-carousel */
+$slick-font-path: '../vendor/fonts/slick-carousel/';
+$slick-loader-path: '../vendor/img/slick-carousel/';
+$slick-arrow-color: $white; 
+$slick-dot-color: $white;
+$slick-prev-character: '\0x20';
+$slick-next-character: '\8194';
+$slick-dot-character: '\2022';
+$slick-prev-character: '<';
+$slick-next-character: '>';
+$slick-dot-character: '\2022';

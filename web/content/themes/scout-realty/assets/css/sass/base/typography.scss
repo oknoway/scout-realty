@@ -1,0 +1,31 @@
+/**
+ * Typography
+ */
+
+body {
+  @include GothamBook;
+  
+  font-size: 14px;
+  
+  @include media( $secondBreak ) {
+    font-size: 16px;
+  }
+  
+  @include media( $firstBreak ) {
+    font-size: 18px;
+  }
+}
+
+a:link,
+.clickable {
+  text-decoration: none
+}
+
+
+// Page
+
+.main-page-content { text-align: center; }
+
+// Agents
+
+.agents-archive { text-align: center; }
