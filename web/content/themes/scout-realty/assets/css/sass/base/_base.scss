@@ -5,14 +5,22 @@
 @import "font-face";
 @import "typography";
 
-html { font-size: 100%; }
+html {
+  background-color: $white;
+  color: $dkGrey;
+  
+  font-size: 100%;
+}
 
 * {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
+.js .no-js { display: none; }
+
 a:link,
+a:visited,
 .clickable {
   color: $red;
 }
@@ -20,6 +28,8 @@ a:link,
 .container {
   @include container();
 }
+
+figure { margin: 0 0 1em; }
 
 .fake-img {
   display: inline-block;
@@ -34,3 +44,5 @@ a:link,
   
   img { @extend %visuallyhidden; }
 }
+
+.post-excerpt p { margin: 0; }

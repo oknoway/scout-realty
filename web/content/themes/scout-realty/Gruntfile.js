@@ -135,6 +135,7 @@ module.exports = function( grunt ) {
         sourcemap: true,
         compass: false,
         loadPath: [
+          '<%= dirs.vendor %>',
           '<%= dirs.vendor %>/scss'
         ]
       },

@@ -9,6 +9,8 @@
 ?>
 <?php // Determine what type of Related Posts we need
   
+  global $excludedPosts;
+  
   $relatedPostsArgs = array(
     'posts_per_page' => 3,
   );
@@ -37,14 +39,14 @@
   // If there are any posts that need to be excluded, exclude them.
   if ( !empty( $excludedPosts ) ) :
     
-    $relatedPostsArgs[ 'posts__not_in' ] = $excludedPosts;
+    $relatedPostsArgs[ 'post__not_in' ] = $excludedPosts;
     
   endif;
   
   $relatedPosts = new WP_Query( $relatedPostsArgs );
   
   if ( $relatedPosts->have_posts() ) : ?>
-  <section class="page-section related-posts">
+  <section class="page-section related-posts container">
     <header class="section-header related-posts-header">
       <h3 class="section-title related-posts-title">
         <?php echo ( !empty( $relatedPostsHeadline ) ) ? $relatedPostsHeadline : 'Recent Blog Posts'; ?>

@@ -3,11 +3,28 @@
  */
 
 .site-content {
-  @include container();
+
 }
 
 .main-page-content {
-  max-width: flex-grid( 8, 12 );
-  margin-left: auto;
-  margin-right: auto;
+  
+  padding-left: flex-gutter();
+  padding-right: flex-gutter();
+
+  
+  @include media( $firstBreak ) {
+    
+    max-width: flex-grid( 8, 12 );
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Sections
+
+.section-header {}
+
+.page-section {
+  padding-left: flex-gutter() / 2;
+  padding-right: flex-gutter() / 2;
 }

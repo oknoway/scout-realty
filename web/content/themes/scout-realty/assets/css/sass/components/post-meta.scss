@@ -1,0 +1,32 @@
+.post-list {
+  
+  .post-meta {
+    
+    background: $dkGrey;
+    color: $grey;
+  }
+  
+  .post-img {
+    
+    .home-price {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .post-region,
+  .post-neighborhood {
+    color: $black;
+  }
+  
+  .post-title {
+    
+    color: $dkGrey;
+    
+    a { color: inherit; }
+  }
+  
+  .post-excerpt {
+    color: $grey;
+  }
+}

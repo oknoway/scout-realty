@@ -18,7 +18,7 @@
  
          <?php get_template_part( 'partials/content', 'neighborhood' ); ?>
 
-         <?php get_template_part( 'partials/content', 'related-posts' ); ?>
+         <?php get_template_part( 'partials/module', 'related-posts' ); ?>
  
        <?php endwhile; ?>
  

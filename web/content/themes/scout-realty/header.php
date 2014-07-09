@@ -20,6 +20,7 @@
  <!-- pre -->
  <?php wp_head(); ?>
  <!-- post -->
+ <style>.js .no-js { display: none; }</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">

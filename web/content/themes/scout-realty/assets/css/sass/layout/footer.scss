@@ -55,6 +55,8 @@
     height: 90px;
   }
   
+  .page-home & { display: none; }
+  
   .menu-item {
     @include flex( 1 1 100% );
     

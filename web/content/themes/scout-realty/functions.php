@@ -65,8 +65,12 @@ if ( ! function_exists( 'scout_setup' ) ) :
      * Custom image sizes
      */
     add_image_size( 'agent-bio', 386, 290, true );
-    add_image_size( 'agent-small', 245, 185, true );
+    add_image_size( 'one-third', 245, 185, true );
     add_image_size( 'post-list', 395, 264, true );
+    add_image_size( 'thin-banner', 1200, 300, true );
+    add_image_size( 'full-width', 1200, 500, true );
+    add_image_size( 'hero-half', 1200, 650, true );
+    add_image_size( 'hero', 2000, 1200, true );
     
     /**
      * Enable support for Post Formats
@@ -455,6 +459,25 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
         
       endif;
       
+      if( isset($_GET['neighborhood_posts']) ) :
+        
+        $meta_query = $query->get('meta_query');
+        
+        $neighborhoodPost = get_page_by_title( $_GET['neighborhood_posts'], OBJECT, 'scout_neighborhoods' );
+        
+        $meta_query[] = array(
+          'key' => 'neighborhood',
+          'value' => '"' . $neighborhoodPost->ID . '"',
+          'compare' => 'LIKE',
+        );
+        
+        $query->set('meta_query', $meta_query);
+      
+        //var_dump( $query );
+        //die();
+      
+      endif;
+      
     endif;
     
     return $query;
@@ -489,6 +512,36 @@ endif; // scout_body_class
 add_filter( 'body_class', 'scout_body_class' );
 
 
+if ( ! function_exists( 'custom_img_sizes' ) ):
+
+  /**
+   * Add Custom Image Sizes to admin
+   *
+   * @param array
+   *
+   * @uses array_merge
+   * @uses add_filter
+   *
+   * @since 0.1.0
+   */
+
+  function custom_img_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+      'hero' => __( 'Hero Image' ),
+      'hero-half' => __( 'Hero Image - Half size' ),
+      'one-third' => __( 'One Third of a Page' ),
+      'post-list' => __( 'Image in a Post Listing' ),
+      'full-width' => __( 'A full-width banner image' ),
+      'thin-banner' => __( 'A full-width banner, but shorter' ),
+      'agent-bio' => __( 'An agent photo' ),
+    ) );
+  }
+  
+  add_filter( 'image_size_names_choose', 'custom_img_sizes' );
+
+endif; // custom_img_sizes
+
+
 if ( ! function_exists( 'is_neighborhood_archive' ) ) :
   /**
    * Check if this is a neighborhood archive page.
@@ -514,4 +567,23 @@ if ( ! function_exists( 'is_neighborhood_archive' ) ) :
     endif;
   }
 endif; // is_neighborhood_archive
+
+function ellipses_excerpt( $more ) {
+  return '&hellip;';
+}
+
+add_filter('excerpt_more', 'ellipses_excerpt');
+
+
+// acf post object filter
+function scout_post_object_query( $args, $field, $post )
+{
+    // modify the order
+    //$args['orderby'] = 'title';
+ 
+    return $args;
+}
+ 
+// filter for every field
+add_filter('acf/fields/post_object/query', 'scout_post_object_query', 10, 3);
 

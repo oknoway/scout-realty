@@ -4,7 +4,6 @@
 
 .site-header {
   @extend %no-list;
-  
 }
 
 .menu-top-nav-container .menu {
@@ -19,7 +18,6 @@
     @include flex-wrap( nowrap );
   
     height: 90px;
-    
   }
   
   .menu-item {
@@ -36,7 +34,6 @@
     }
     
     a {
-      
       @include flex( 1 1 100% );
       
       @include box( horizontal, center, center );
@@ -44,6 +41,14 @@
       @include align-content( center );
       @include align-items( center );
       @include justify-content( center );
+      
+      color: $black;
+      
+      @include transition();
+      
+      &:hover {
+        color: $grey;
+      }
       
       .item-wrapper {
         @include flex( 0 1 auto );

@@ -16,15 +16,126 @@ body {
   }
 }
 
+h1,
+%h1 {
+  font-weight: 300;
+  font-size: 2em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+h3,
+%h3 {
+  font-weight: 300;
+  font-size: 1.111111111em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+h4,
+%h4 {
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
 a:link,
 .clickable {
   text-decoration: none
 }
 
+.btn,
+.cta {
+  font-size: 0.722222222em;
+  line-height: 1.05;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+// Header
+.site-header { text-transform: uppercase; } 
+
+// Home
+.featured-home .post-header { text-align: center; }
 
 // Page
 
+.page-title { @extend %h1; }
+
 .main-page-content { text-align: center; }
+
+.page-content { line-height: 1.388888889; }
+
+.page-header,
+.page-footer,
+.section-header,
+.section-footer,
+.post-header,
+.post-footer { text-align: center; }
+
+.section-title { @extend %h3; }
+
+// Post
+
+.post-list {
+  .post-meta {
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: center;
+    
+    .blog-archive-link {
+      font-size: 0.722222222em;
+    }
+    
+    .post-date {
+      font-size: 1.111111111em;
+      
+      span {
+        font-size: 1.95em;
+      }
+    }
+  }
+  
+  .post-header { text-align: left; }
+  
+  .post-excerpt {
+    font-size: 0.777777778em;
+    line-height: 1.571428571;
+  }
+}
+
+.listing-meta-wrapper {
+  
+  &:first-of-type {
+    
+    @include media( $firstBreak ) {
+      text-align: right;
+    }
+  }
+  
+  a { text-decoration: underline; }
+}
+
+.listing-meta {
+  
+  font-size: 0.9375em;
+  
+  &.price {
+    font-size: 1.25em;
+  }
+  
+  &.listing-neighborhood,
+  &.listing-region { font-style: italic; }
+}
+
+a.post-neighborhood,
+.post-neighborhood {
+  font-style: italic;
+  font-size: 0.833333333em;
+  
+  text-decoration: underline;
+}
 
 // Agents
 

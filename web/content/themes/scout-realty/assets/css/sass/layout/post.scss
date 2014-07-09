@@ -1,4 +1,180 @@
 /**
- * Page
+ * Post
  */
 
+// Post Archive
+
+// Post List
+
+.post-list {
+  
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( flex-start );
+  @include align-items( stretch );
+  @include justify-content( center );
+  @include flex-wrap( wrap );
+  
+  @include pad();
+  
+  @include media( $firstBreak ) {
+    @include flex-wrap( nowrap );
+  }
+  
+  
+  .post-meta {
+    
+    @include flex( 0 1 flex-grid( 3, 12 ) );
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 flex-grid( 1, 12 ) );
+    }
+    
+    .blog-archive-link,
+    .post-date,
+    .post-date span {
+      display: block;
+    }
+  }
+  
+  .post-img {
+    @include flex( 1 1 auto );
+    
+    margin: 0;
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 flex-grid( 5, 12 ) );
+    }
+    
+    .fake-img {
+      
+      @include media( $firstBreak ) {
+
+      }
+    }
+    
+    .home-price {
+
+    }
+  }
+  
+  .post-content-wrapper {
+    @include flex( 1 1 100% );
+    
+    @include pad();
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 flex-grid( 6, 12 ) );
+      
+      @include box( vertical, center, center );
+      @include display( flex );
+      @include flex-direction( column );
+      @include align-content( center );
+      @include align-items( flex-start );
+      @include justify-content( center );
+      
+      @include pad( 0 );
+    }
+    
+    > * {
+      @include flex( 0 1 auto );
+    }
+  }
+  
+  .post-region,
+  .post-neighborhood {
+    display: inline-block;
+    
+    margin-bottom: 0.5em;
+  }
+  
+  .post-title {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+    
+    @include media( $firstBreak ) {
+      margin-bottom: 0.5em;
+    }
+  }
+  
+  .post-excerpt {
+
+  }
+}
+
+// Post Detail
+
+.post-content-wrapper {
+  padding-left: flex-gutter();
+  padding-right: flex-gutter();
+  
+  
+  @include media( $firstBreak ) {
+    max-width: flex-grid( 10, 12 );
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: flex-grid( 1, 10 );
+    padding-right: flex-grid( 1, 10 );
+    
+    outline: 1px solid red;
+  }
+  
+  .listing-meta-wrapper {
+    
+    @include media( $firstBreak ) {
+      
+      @include span-columns( 4 of 8 );
+      
+      
+    }
+    
+    &:nth-of-type( 2n ) {
+      @include media( $firstBreak ) {
+        @include omega();
+      }
+    }
+  }
+  
+}
+
+
+// Home Listing Meta
+
+.listing-meta {
+  display: block;
+  
+  &.price,
+  &.listing-neighborhood,
+  &.listing-region {
+    margin-bottom: 0.5em;
+    
+    @include media( $firstBreak ) {
+      margin-bottom: 1em;
+    }
+  }
+  
+  &.listing-address {
+    margin-bottom: 1em;
+    
+    color: $grey;
+    
+    @include media( $firstBreak ) {
+      margin-bottom: 0;
+    }
+  }
+  
+  .address-street_address {
+    display: block;
+  }
+}
+
+// Post Images
+.post-img {
+  .fake-img {
+    min-height: 140px;
+    
+    @include media( $firstBreak ) {
+      min-height: 265px;
+    }
+  }
+}

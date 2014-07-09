@@ -7,8 +7,7 @@
 
  ( function( window, undefined ) {
 	'use strict';
-  
-  jQuery(document).ready( function($) {
+    var $ = jQuery;
   
     // Maps
     $( '.neighborhood-map' ).each( function() {
@@ -38,7 +37,11 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
       
   
     });
+    
+    $( '.delayed' ).each( function( ) {
+      console.log( $(this).data( 'delayed-background-image' ) );
+      $(this).css( 'background-image', 'url(' + $(this).data( 'delayed-background-image' ) + ')' );
+    });
   
-  });
 
  } )( this );

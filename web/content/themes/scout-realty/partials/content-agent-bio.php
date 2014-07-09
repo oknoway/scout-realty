@@ -25,7 +25,7 @@
     <div class="agent-info">
     <?php if ( !empty( $agentData[ 'photo' ] ) ) : ?>
       <figure class="agent-photo">
-        <span class="fake-img" style="background-image:url('<?php echo $agentData['photo']['sizes']['agent-small']; ?>');"><img src="<?php echo $agentData['photo']['sizes']['agent-bio']; ?>" height="<?php echo $agentData['photo']['sizes']['agent-bio-height']; ?>" width="<?php echo $agentData['photo']['sizes']['agent-bio-width']; ?>" alt="<?php echo $agentData['photo']['title']; ?>" class="visuallyhidden"></span>
+        <span class="fake-img" style="background-image:url('<?php echo $agentData['photo']['sizes']['one-third']; ?>');"><img src="<?php echo $agentData['photo']['sizes']['one-third']; ?>" height="<?php echo $agentData['photo']['sizes']['one-third-height']; ?>" width="<?php echo $agentData['photo']['sizes']['one-third-width']; ?>" alt="<?php echo $agentData['photo']['title']; ?>" class="visuallyhidden"></span>
       </figure>
     <?php endif; ?>
     
