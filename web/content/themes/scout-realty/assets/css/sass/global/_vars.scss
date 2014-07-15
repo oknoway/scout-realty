@@ -1,7 +1,10 @@
 /* colors */
 $black: #18181D;
+$footerBlack: #1b1b1f;
 $dkGrey: #4B4B50;
+$footerGrey: #252529;
 $grey: #8E8E95;
+$ltGrey: #d8d8e0;
 $red: #FF4338;
 $white: #ffffff;
 
@@ -11,6 +14,7 @@ $secondBreak : em( 567 );
 
 /* font-face */
 $gotham: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+$georgia: 'Georgia', serif;
 
 /* prefixer settings */
 $prefix-for-webkit: false;

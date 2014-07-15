@@ -12,10 +12,9 @@ module.exports = function( grunt ) {
       bower: './bower_components',
       assets: './assets',
       css: '<%= dirs.assets %>/css',
-      
       sass: '<%= dirs.css %>/sass',
-      
       js: '<%= dirs.assets %>/js',
+      img: './img',
       vendor: '<%= dirs.assets %>/vendor'
     },
     bower: {
@@ -37,14 +36,6 @@ module.exports = function( grunt ) {
       }
     },
     copy: {
-      img: {
-        files: [{
-          expand: true,
-          src: ['<%= dirs.img %>/src/arrows_chevron_down.svg'],
-          dest: '<%= dirs.img %>/',
-          flatten: true
-        }]
-      },
       vendor: {
         files: [{
          expand: true,
@@ -54,6 +45,42 @@ module.exports = function( grunt ) {
            '<%= dirs.vendor %>/js/selectivizr/*'
          ],
          dest: '<%= dirs.js %>/vendor/' 
+        }]
+      }
+    },
+    svgmin: {
+      options: {
+        plugins: [
+          { removeViewBox: true },
+          { removeUselessStrokeAndFill: true }
+        ],
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= dirs.img %>/src',
+          src: ['**/*.svg'],
+          dest: '<%= dirs.img %>/',
+          ext: '.svg'
+        }]
+      }
+    },
+    svg2png: {
+      all: {
+        files: [{
+          cwd: '<%= dirs.img %>/',
+          src: ['*.svg'],
+          dest: '<%= dirs.img %>/src/'
+        }]
+      }
+    },
+    image: {
+      src: {
+        files: [{
+          expand: true,
+          cwd: '<%= dirs.img %>/src',
+          src: ['**/*.{png,jpg,gif,jpeg}'],
+          dest: '<%= dirs.img %>/'
         }]
       }
     },
@@ -185,7 +212,10 @@ module.exports = function( grunt ) {
         files: ['<%= dirs.js %>/src/**/*.js', '<%= dirs.vendor/**/*.js'],
         tasks: ['jshint', 'concat', 'uglify']
       },
-      
+      img: {
+        files: ['<%= dirs.img %>/src/*'],
+        tasks: ['images']
+      },
       livereload: {
         options: {
           livereload: true,
@@ -199,7 +229,7 @@ module.exports = function( grunt ) {
   // Default task.
   
   // Default task.
-  grunt.registerTask( 'default', ['bower', 'rename', 'copy:vendor', 'styles', 'scripts'] );
+  grunt.registerTask( 'default', ['bower', 'rename', 'copy:vendor', 'images', 'styles', 'scripts'] );
 
   // Process Styles.
   grunt.registerTask( 'styles', ['sass', 'autoprefixer', 'cssmin'] );
@@ -208,7 +238,7 @@ module.exports = function( grunt ) {
   grunt.registerTask( 'scripts', ['jshint', 'concat', 'uglify'] );
 
   // Process Images.
-  grunt.registerTask( 'images', ['grunticon:icon', 'image', 'svgmin', 'copy:img', 'string-replace'] );
+  grunt.registerTask( 'images', ['svgmin', 'svg2png', 'image'] );
   
 
   grunt.util.linefeed = '\n';

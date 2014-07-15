@@ -9,16 +9,16 @@
 ?>
 <?php // setup section data
 $linkedPage = get_sub_field( 'page' );
-$sectionImg = get_sub_field( 'section_image' ); ?>
+$columnImg = get_sub_field( 'column_image' ); ?>
 
 <article class="post-column">
-  <figure class="column-img">
-    <span class="fake-img delayed" data-delayed-background-image="<?php echo esc_url( $sectionImg[ 'sizes' ][ 'one-third' ] ); ?>">
-    <noscript><img src="<?php echo esc_url( $sectionImg[ 'sizes' ][ 'one-third' ] ); ?>" alt="<?php echo apply_filters( 'title', $sectionImg[ 'title' ] ); ?>" height="<?php echo $sectionImg[ 'sizes' ][ 'one-third-height' ]; ?>" width="<?php echo $sectionImg[ 'sizes' ][ 'one-third-width' ]; ?>" class="no-js visuallyhidden"></noscript>
+  <figure class="column-img post-img">
+    <span class="fake-img delayed" data-delayed-background-image="<?php echo esc_url( $columnImg[ 'sizes' ][ 'one-third' ] ); ?>">
+    <noscript><img src="<?php echo esc_url( $columnImg[ 'sizes' ][ 'one-third' ] ); ?>" alt="<?php echo apply_filters( 'title', $columnImg[ 'title' ] ); ?>" height="<?php echo $columnImg[ 'sizes' ][ 'one-third-height' ]; ?>" width="<?php echo $columnImg[ 'sizes' ][ 'one-third-width' ]; ?>" class="no-js visuallyhidden"></noscript>
     </span>
   </figure>
   <header class="column-header">
-    <h3 class="column-title"><?php echo apply_filters( 'the_title', get_sub_field( 'column_headline' ) ); ?></h3>
+    <h4 class="column-title"><?php echo apply_filters( 'the_title', get_sub_field( 'column_headline' ) ); ?></h4>
   </header>
   
   <div class="column-content">

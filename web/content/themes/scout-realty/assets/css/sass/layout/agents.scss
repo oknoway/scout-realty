@@ -3,6 +3,7 @@
  */
 
 .agents-archive {
+  @include container();
   
   @include box( horizontal, center, center );
   @include display( flex );
@@ -11,12 +12,11 @@
   @include justify-content( center );
   @include flex-wrap( wrap );
   
-  
   .section-header {
     @include flex( 1 1 100% );
   }
   
-  .agent-list {
+  .post-column {
     
     @include flex( 0 1 flex-grid( 4, $grid-columns ) );
     
@@ -24,7 +24,7 @@
     
     @include media( $firstBreak ) {
       
-      height: 380px;
+      max-width: 310px;
       margin-right: flex-gutter();
       margin-bottom: flex-gutter();
       
@@ -35,9 +35,109 @@
   }
 }
 
+.team-archive {
+  .post-column {
+    @include flex( 0 1 flex-grid( 3, $grid-columns ) );
+  }
+}
+
 .agent-list {
   
   .agent-photo {
     height: 185px;
+  }
+  
+  a { color: inherit; }
+}
+
+.find-an-agent {
+  @include box( vertical, center, center );
+  @include display( flex );
+  @include flex-direction( column );
+  @include align-content( center );
+  @include align-items( center );
+  @include justify-content( center );
+  
+  > * {
+    @include flex ( 0 1 auto );
+  }
+  
+  .btn {
+    width: 100%;
+    margin-top: 2em;
+  }
+}
+
+// Agent Detail
+.agent-info {
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( center );
+  @include flex-wrap( wrap );
+  
+  @include media( $firstBreak ) {
+    @include flex-wrap( nowrap );
+  }
+  
+  .agent-photo,
+  .agent-details {
+    @include flex( 0 1 flex-grid( 10, $grid-columns ) );
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 flex-grid( 5, $grid-columns ) );
+    }
+  }
+  
+  .agent-photo {
+    height: 290px;
+    
+    @include media( $firstBreak ) {
+      margin-right: flex-gutter();
+      margin-bottom: 0;
+    }
+  }
+  
+  .agent-details {
+    @extend %no-list;
+    
+    @include box( vertical, center, center );
+    @include display( flex );
+    @include flex-direction( column );
+    @include align-content( center );
+    @include align-items( flex-start );
+    @include justify-content( center );
+    
+    @include media( $firstBreak ) {
+      
+    }
+    
+    > * {
+      @include flex ( 0 1 auto );
+      
+    }
+    
+    a { color: inherit; }
+    
+    .agent-meta {
+      margin-bottom: 1em;
+      
+      &:last-of-type { margin-bottom: 0; }
+    }
+    
+    .agent-meta-title {
+      display: block;
+    }
+  }
+}
+
+.agent-contact-links {
+  @extend %no-list;
+  @include clearfix();
+  
+  > * {
+    @include span-columns( 4 );
+    @include omega( 3 );
   }
 }

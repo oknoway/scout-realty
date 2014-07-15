@@ -1,0 +1,46 @@
+/**
+ * Blog
+ */
+
+.blog .page-section {
+  
+  
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( center );
+  @include flex-wrap( wrap );
+  
+  .section-header {
+    @include flex( 1 0 100% );
+    @include order( 0 );
+  }
+  
+  .archive-wrapper,
+  .archive-sidebar {
+    @include flex( 1 0 100% );
+  }
+  
+  .archive-wrapper {
+    
+    @include media( $firstBreak ) {
+      @include flex( 1 0 flex-grid( 8, $grid-columns ) );
+      @include shift( 1 );
+      @include order( 2 );
+    }
+  }
+  
+  .archive-sidebar {
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 flex-grid( 3, $grid-columns ) );
+      @include order( 1 );
+    }
+  }
+  
+  .section-footer {
+    @include flex( 1 0 100% );
+    @include order( 4 );
+  }
+}

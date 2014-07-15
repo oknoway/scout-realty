@@ -4,6 +4,14 @@
 
 .site-header {
   @extend %no-list;
+  
+  margin-bottom: 2em;
+  
+  box-shadow: 0 1px 4px rgba(24,24,29,.5);
+
+  @include media( $firstBreak ) {
+    margin-bottom: 4em;
+  }
 }
 
 .menu-top-nav-container .menu {

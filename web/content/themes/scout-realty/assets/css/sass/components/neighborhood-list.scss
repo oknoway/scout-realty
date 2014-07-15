@@ -1,0 +1,10 @@
+/**
+ * Neighborhood Lists
+ */
+
+.neighborhood-list {
+  
+  .neighborhood-content-wrapper {
+    @include content-box();
+  }
+}

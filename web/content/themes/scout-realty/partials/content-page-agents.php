@@ -17,8 +17,31 @@ if ( have_rows( 'agent_order' ) ) : ?>
   <?php while ( have_rows( 'agent_order' ) ) : the_row();
     
     $agent = get_sub_field( 'agent' );
+    $isFindAgentLink = get_sub_field( 'agent_or_link' );
     
-    if ( $agent ) :
+    if ( $isFindAgentLink ) :
+      get_sub_field( 'link_headline' );
+      get_sub_field( 'link_content' );
+      get_sub_field( 'link_button' );
+      get_sub_field( 'page_link' ); ?>
+      
+    
+      <article <?php post_class( 'post-column find-an-agent' ); ?>>
+      <?php if ( get_sub_field( 'link_headline' ) ) : ?>
+        <h4 class="post-title column-title"><?php the_sub_field( 'link_headline' ); ?></h4>
+      <?php endif; ?>
+      
+      <?php if ( get_sub_field( 'link_content' ) ) : ?>
+        <div class="post-excerpt column-content"><?php the_sub_field( 'link_content' ); ?></div>
+      <?php endif; ?>
+      
+      <?php if ( get_sub_field( 'link_button' ) && get_sub_field( 'page_link' ) ) : ?>
+        <a href="<?php the_sub_field( 'page_link' ); ?>" class="btn"><?php the_sub_field( 'link_button' ); ?></a>
+      <?php endif; ?>
+      
+      </article><!-- /.find-an-agent ?> -->    
+    
+    <?php elseif ( $agent ) :
       $post = $agent;
       setup_postdata( $post );
       

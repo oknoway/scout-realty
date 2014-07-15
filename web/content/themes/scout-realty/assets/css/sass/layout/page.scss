@@ -2,20 +2,18 @@
  * Page
  */
 
-.site-content {
-
-}
+.site-content {}
 
 .main-page-content {
   
   padding-left: flex-gutter();
   padding-right: flex-gutter();
 
-  
   @include media( $firstBreak ) {
     
     max-width: flex-grid( 8, 12 );
     margin-left: auto;
+    margin-bottom: 4em;
     margin-right: auto;
   }
 }
@@ -25,6 +23,202 @@
 .section-header {}
 
 .page-section {
+  margin-bottom: 4em;
   padding-left: flex-gutter() / 2;
   padding-right: flex-gutter() / 2;
+}
+
+.content-section {
+  margin-bottom: 4em;
+
+  .section-img { margin-bottom: 0; }
+
+  .section-header {
+    .section-title {
+      margin-top: 0;
+      margin-bottom: 0.66em;
+    }
+  }
+
+  .section-content {
+    p {
+      margin-top: 0;
+      margin-bottom: 1.33em;
+    }
+  }
+
+  .section-footer {
+    margin-bottom: 2em;
+  }
+
+  &.page-link {
+    
+    .section-img {
+      
+      height: 250px;
+      margin-bottom: 2.2175em;
+      
+      @include media( $firstBreak ) {
+        height: 500px;
+        margin-bottom: 4.435em;
+      }
+      
+      @at-root .no-mediaqueries & {
+        height: 500px;
+        margin-bottom: 4.435em;
+
+      }
+    }
+    
+    .section-footer {
+      @include clearfix();
+      
+      .cta {
+        display: block;
+        width: 100%;
+        
+        @include media( $firstBreak ) {
+          @include span-columns( 6 of 12 );
+          @include omega( 2 );
+        }
+        
+        & + .cta {
+          margin-top: 2em;
+          
+          @include media( $firstBreak ) { margin-top: 0; }
+          
+          @at-root .no-mediaqueries & { margin-top: 0; }
+        }
+      }
+    }
+  }
+  
+  &.secondary-content {
+    @include small-container();
+  }
+  
+  &.call-to-action,
+  &.neighborhood-finder {
+    position: relative;
+    
+    .section-img {
+      display: none;
+      
+      @include media( $firstBreak ) {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+      }
+      
+      @at-root .no-mediaqueries & {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    
+    .small-container {
+      position: relative;
+      z-index: 2;
+      
+      @include pad( 8px );
+      
+      @include media( $firstBreak ) {
+        max-width: flex-grid( 10, 12 );
+        margin-left: auto;
+        margin-right: auto;
+        
+        @include pad( 28px );
+        
+        
+      }
+      
+      > * {
+        display: block;
+        margin: auto;
+        
+        @include media( $firstBreak ) {
+          max-width: flex-grid( 6, 10 );
+        }
+      }
+    }
+    
+    
+  }
+  
+  &.call-to-action {
+    
+    @include media( $firstBreak ) {
+      @include clearfix;
+      
+      @include pad( 50px 0 );
+    }
+    
+    @at-root .no-mediaqueries & {
+      @include clearfix;
+      
+      @include pad( 50px 0 );
+    }
+    
+    .small-container {
+      
+      
+    }
+    
+    
+    .cta {
+      @extend .btn;
+      
+      display: inline-block;
+    }
+  }
+  
+  &.neighborhood-finder {
+    
+    @include media( $firstBreak ) {
+      @include clearfix;
+      
+      @include pad( 126px 0 );
+    }
+    
+    @at-root .no-mediaqueries & {
+      @include clearfix;
+      
+      @include pad( 126px 0 );
+    }
+  
+    .neighborhood-filters {
+      
+      @include span-columns( 10 );
+      @include shift ( 1 );
+      
+      @include media( $firstBreak ) {
+        
+        max-width: flex-grid( 4, 12 );
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+      }
+      
+      @at-root .no-mediaqueries & {
+        @include span-columns( 4 );
+      }
+      
+      label,
+      select,
+      .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 1em;
+      }
+    }  
+  }
 }

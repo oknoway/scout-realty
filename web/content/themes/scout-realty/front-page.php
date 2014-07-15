@@ -44,7 +44,7 @@ get_header(); ?>
 
            if( get_row_layout() == 'multi_column' ): ?>
            
-           <div class="container">
+           <div class="container post-column-wrapper">
              
             <?php while( have_rows('column') ) : the_row();
   

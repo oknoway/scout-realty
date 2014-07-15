@@ -15,46 +15,93 @@
   @include justify-content( center );
   @include flex-wrap( wrap );
   
-  @include pad();
+  margin-right: auto;
+  margin-bottom: 2em;
+  margin-left: auto;
+  
+  @include pad( 13px );
   
   @include media( $firstBreak ) {
     @include flex-wrap( nowrap );
+  
+    max-width: 990px;
+  
+    @include pad( 10px );
   }
   
   
   .post-meta {
     
-    @include flex( 0 1 flex-grid( 3, 12 ) );
+    @include flex( 0 1 75px );
+    
+    @include box( vertical, center, center );
+    @include display( flex );
+    @include flex-direction( column );
+    @include align-content( center );
+    @include align-items( flex-start );
+    @include justify-content( center );
     
     @include media( $firstBreak ) {
-      @include flex( 0 1 flex-grid( 1, 12 ) );
+      @include flex( 1 0 75px );
     }
     
     .blog-archive-link,
     .post-date,
     .post-date span {
+      
+      @include flex( 0 1 auto );
+      
       display: block;
+      width: 100%;
     }
   }
   
   .post-img {
     @include flex( 1 1 auto );
     
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    
     margin: 0;
     
     @include media( $firstBreak ) {
-      @include flex( 0 1 flex-grid( 5, 12 ) );
+      @include flex( 1 0 395px );
+      
+      //max-width: flex-grid( 5.5, 12 );
+    }
+    
+    a {
+      @include flex( 1 1 100% );
+      
+      @include box( vertical, center, center );
+      @include display( flex );
+      @include flex-direction( column );
+      @include align-content( stretch );
+      @include align-items( stretch );
+      @include justify-content( center );
+      
     }
     
     .fake-img {
       
+      @include flex( 1 1 140px );
+      
       @include media( $firstBreak ) {
+
+        @include flex( 1 1 265px );
 
       }
     }
     
     .home-price {
-
+      @include flex( 1 1 auto );
+      
+      max-height: 43px;
+      
+      @include pad();
     }
   }
   
@@ -64,7 +111,7 @@
     @include pad();
     
     @include media( $firstBreak ) {
-      @include flex( 0 1 flex-grid( 6, 12 ) );
+      @include flex( 0 1 auto );
       
       @include box( vertical, center, center );
       @include display( flex );
@@ -73,7 +120,10 @@
       @include align-items( flex-start );
       @include justify-content( center );
       
-      @include pad( 0 );
+      //max-width: flex-grid( 5.5, 12 );
+      
+      padding-top: 0;
+      padding-bottom: 0;
     }
     
     > * {
@@ -102,9 +152,78 @@
   }
 }
 
+// Post Column
+
+.post-column-wrapper {
+  
+  @include box( vertical, center, center );
+  @include display( flex );
+  @include flex-direction( column );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( space-between );
+  
+  max-width: 990px;
+  padding-left: 0;
+  padding-right: 0;
+
+  @include media( $firstBreak ) {
+    @include box( vertical, center, center );
+    @include flex-direction( row );
+  }
+  
+  @at-root .no-flexbox.no-flexboxlegacy & {
+    
+  }
+  
+}
+
+.post-column {
+  
+  @include flex( 1 1 100% );
+  
+  @include media( $firstBreak ) {
+    
+    @include flex( 1 1 flex-grid( 4, 12 ) );
+    
+    max-width: 260px;
+    
+    @include pad( 35px 25px );
+    
+  }
+  
+  @at-root .no-flexbox.no-flexboxlegacy & {
+    
+    @include span-columns( 4 );
+    
+  }
+  
+  .post-img {
+    max-width: 245px;
+    height: 164px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    border: 5px solid $white;
+    border-radius: 5px;
+    
+    @include media( $firstBreak ) {
+    }
+    
+    .fake-img { min-height: 0; }
+  }
+  
+  .column-title {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+}
+
 // Post Detail
 
 .post-content-wrapper {
+  @include clearfix();
+  
   padding-left: flex-gutter();
   padding-right: flex-gutter();
   
@@ -115,8 +234,6 @@
     margin-right: auto;
     padding-left: flex-grid( 1, 10 );
     padding-right: flex-grid( 1, 10 );
-    
-    outline: 1px solid red;
   }
   
   .listing-meta-wrapper {
@@ -156,17 +273,21 @@
   &.listing-address {
     margin-bottom: 1em;
     
-    color: $grey;
-    
     @include media( $firstBreak ) {
       margin-bottom: 0;
     }
   }
+}
+
+.address {
+  margin-bottom: 1em;
   
   .address-street_address {
     display: block;
   }
+  
 }
+
 
 // Post Images
 .post-img {
@@ -177,4 +298,57 @@
       min-height: 265px;
     }
   }
+}
+
+// Post Detail
+
+.post-detail {
+  
+  
+  .agent-contact {
+    
+    display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    clear: both;
+  }
+  
+  .post-meta {
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    @include flex-wrap( wrap );
+    
+    @include media( $firstBreak ) {
+      @include flex-wrap( nowrap );
+    }
+    
+    > * {
+      @include flex( 1 1 100% );
+      
+      @include media( $firstBreak ) {
+        @include flex( 1 1 50% );
+      }
+    }
+    
+    .agent-photo {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      margin: 0;
+      vertical-align: middle;
+      overflow: hidden;
+      
+    	border-top-left-radius: 20px;
+    	border-bottom-left-radius: 20px;
+    	border-bottom-right-radius: 20px;
+    	border-top-right-radius: 20px;
+    	border-radius: 20px;
+      
+    }
+    
+  }
+  
 }

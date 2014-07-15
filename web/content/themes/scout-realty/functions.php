@@ -345,7 +345,6 @@ if ( ! function_exists( 'scout_post_types' ) ):
       'capability_type'      => 'post',
       'hierarchical'         => false,
       'menu_position'        => null,
-      'taxonomies'           => null,
       'supports'             => array( 'title','editor','thumbnail','excerpt' )
     );
 

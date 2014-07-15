@@ -16,90 +16,50 @@ stdClass Object
 
 )
 
+
+{"zoom_level":16,"center":{"lat":45.47204939555312,"lng":-122.5869083404541},"markers":{}}
+
+
+https://www.google.com/maps/place/Arbor+Lodge/@45.5717544,-122.6932675,15z/data=!4m2!3m1!1s0x5495a7a3b74d15c1:0xf60b1b34aa1f920b
+
 */
 
 $neighborhoodArgs = array(
-  'post_type' => 'scout_neighborhood',
-  'meta_key' => 'google_maps_url'
+  'post_type' => 'scout_neighborhoods',
+  'meta_key' => 'google_maps_url',
+  'posts_per_page' => -1
 );
 
 $neighborhoodPosts = new WP_Query( $neighborhoodArgs );
 
 while ( $neighborhoodPosts->have_posts() ) : $neighborhoodPosts->the_post();
+  echo 'Neighborhood: ' . get_the_title() . "\n";
 
+    echo 'Google Maps URL: ' . get_field( 'google_maps_url' ) . "\n";
+  
+  $googleUrlParts = parse_url( get_field( 'google_maps_url' ) );
+  
+  
+  $firstMarker = strpos( $googleUrlParts['path'], '@' );
+  $secondMarker = strpos( $googleUrlParts['path'], 'z/', $firstMarker );
+  
+  $relevantParts = substr( $googleUrlParts['path'], $firstMarker + 1, $secondMarker - $firstMarker -1 );
+  
+  $relevantParts = explode( ',', $relevantParts );
+  
+  $finalString = '{"zoom_level":' . $relevantParts[2] . ',"center":{"lat":' . $relevantParts[0] . ',"lng":' . $relevantParts[1] . '},"markers":{}}';
+  
+  echo 'looks like: ' . $finalString . "\n";
+  
+	//update_post_meta( get_the_id(), 'map', $finalString );
 
-  echo 'Neighborhood: ' . $post->post_name . "\n";
-  echo 'Google Maps URL: ' . get_field( 'google_maps_url' ) . "\n";
+  //update_field( 'field_53a25fab352e7', $finalString, get_the_id() );
 
-
+  //update_field( 'field_53a25fab352e7', $finalString, get_the_id() );
+  //$updatePost = array( 'ID' => get_the_id(), );
+  //wp_update_post( $updatePost );
+  //
 endwhile;
 
-
-/*
-$kidsBikePage = get_page_by_title( 'Kids Bike', 'OBJECT', 'nutcase_helmet_type' );
-$lilNuttySnBPage = get_page_by_title( 'Little Nutty Snow & Bike', 'OBJECT', 'nutcase_helmet_type' );
-
-if ( $kidsBikePage ) {
-	$kidsBikeID = $kidsBikePage->ID;
-} else {
-	$kidsBike = array(
-		'post_status' => 'publish',
-		'post_type' => 'nutcase_helmet_type',
-		'post_parent' => 32,
-		'post_title' => 'Kids Bike'
-	);
-
-	$kidsBikeID = wp_insert_post( $kidsBike );
-}
-
-if ( $lilNuttySnBPage ) {
-	$lilNuttySnBID = $lilNuttySnBPage->ID;
-} else {
-	$lilNuttySnB = array(
-		'post_status' => 'publish',
-		'post_type' => 'nutcase_helmet_type',
-		'post_parent' => 32,
-		'post_title' => 'Little Nutty Snow & Bike'
-	);
-	
-	$lilNuttySnBID = wp_insert_post( $lilNuttySnB );
-}
-
-
-foreach ($affectedPosts as $postToUpdate) {
-	$newPost = array();
-	
-	$newPost['ID'] = $postToUpdate['ID'];
-	$newPost['post_content'] = $postToUpdate['post_content'];
-	
-	wp_update_post( $newPost );
-	
-	update_post_meta( $postToUpdate['ID'], 'nutcase_product_sku', $postToUpdate['nutcase_product_sku'] );
-	update_post_meta( $postToUpdate['ID'], 'nutcase_product_price', $postToUpdate['nutcase_product_price'] );
-	
-	echo 'Updated Helmet ID: ' . $postToUpdate['ID'] . "\n";
-	
-	if (isset($postToUpdate['product_category'])) {
-			
-		if ($postToUpdate['product_category'] == 'Kids Bike') {
-			
-			p2p_type( 'helmets_to_helmetType' )->connect( $postToUpdate['ID'], $kidsBikeID, array(
-				'date' => current_time('mysql')
-			) );
-			
-		}
-		
-		if ($postToUpdate['product_category'] == 'Little Nutty Snow & Bike') {
-			p2p_type( 'helmets_to_helmetType' )->connect( $postToUpdate['ID'], $lilNuttySnBID, array(
-				'date' => current_time('mysql')
-			) );
-		}
-		
-		echo 'Added Helmet ID: ' . $postToUpdate['ID'] . ' to product category: ' . $postToUpdate['product_category'] . "\n";
-
-	}
-	
-}
-*/
 
 ?>

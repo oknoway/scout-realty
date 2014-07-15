@@ -6,3 +6,57 @@
   width: 100%;
   height: 450px;
 }
+
+.post-type-archive-scout_neighborhoods .neighborhood-filters {
+  
+    @include span-columns( 10 );
+    @include shift ( 1 );
+    
+    @include media( $firstBreak ) {
+      
+      max-width: flex-grid( 12, 12 );
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+    
+    @at-root .no-mediaqueries & {
+      @include span-columns( 10 );
+    }
+  
+  .neighborhood-filter-criterion-wrapper {
+      @include span-columns( 3 );
+      
+      @include omega( 3 );
+    
+    label,
+    select,
+    .btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+
+// neighborhood list
+.neighborhood-list {
+  
+  @include container();
+  
+  a { color: inherit; }
+  
+  .neighborhood-header {
+    
+    
+  }
+  
+  .neighborhood-content-wrapper {
+    @extend %clearfix;
+  }
+  
+  .neighborhood-map {
+    @include span-columns( 5.5 );
+  }
+}

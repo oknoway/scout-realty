@@ -12,8 +12,8 @@
   $agentData = get_fields();
   $socialKeys = array( 'facebook', 'twitter', 'pinterest', 'instagram' ); 
 ?>
-<article id="agent-<?php the_ID(); ?>" <?php post_class( 'main-page-content agent' ); ?>>
-  <header class="page-header agent-header">
+<article id="agent-<?php the_ID(); ?>" <?php post_class( 'agent' ); ?>>
+  <header class="page-header agent-header container">
   <?php if ( get_field( 'headline' ) ) : ?>
     <h1 class="page-title page-headline agent-title agent-headline"><?php the_field( 'headline' ); ?></h1>
   <?php else : ?>
@@ -22,38 +22,40 @@
   </header>
   <?php if ( $agentData[ 'photo' ] || $agentData[ 'phone_number' ] || $agentData[ 'email_address' ] ) : ?>
   <div class="agent-info-wrapper">
-    <div class="agent-info">
+    <div class="agent-info container">
     <?php if ( !empty( $agentData[ 'photo' ] ) ) : ?>
       <figure class="agent-photo">
-        <span class="fake-img" style="background-image:url('<?php echo $agentData['photo']['sizes']['one-third']; ?>');"><img src="<?php echo $agentData['photo']['sizes']['one-third']; ?>" height="<?php echo $agentData['photo']['sizes']['one-third-height']; ?>" width="<?php echo $agentData['photo']['sizes']['one-third-width']; ?>" alt="<?php echo $agentData['photo']['title']; ?>" class="visuallyhidden"></span>
+        <span class="fake-img delayed" data-delayed-background-image="<?php echo esc_url( $agentData['photo']['sizes']['agent-bio'] ); ?>">
+          <noscript><img src="<?php echo esc_url( $agentData['photo']['sizes']['agent-bio'] ); ?>" height="<?php echo $agentData['photo']['sizes']['agent-bio-height']; ?>" width="<?php echo $agentData['photo']['sizes']['agent-bio-width']; ?>" class="no-js visuallyhidden"></noscript>
+        </span>
       </figure>
     <?php endif; ?>
     
     <?php if ( $agentData['phone_number'] || $agentData['email_address'] || $agentData['twitter'] || $agentData['facebook'] || $agentData['instagram'] || $agentData['pinterest'] ) : ?>
       <ul class="agent-details">
       <?php if ( $agentData['phone_number'] ) : ?>
-        <li>
+        <li class="agent-meta">
           <span class="agent-meta-title">Phone:</span>
           <a href="tel:<?php echo $agentData['phone_number']; ?>" class="agent-meta"><?php echo $agentData['phone_number']; ?></a>
         </li>
       <?php endif; ?>
         
       <?php if ( $agentData['email_address'] ) : ?>
-        <li>
+        <li class="agent-meta">
           <span class="agent-meta-title">Email:</span>
           <a href="mailto:<?php echo $agentData['email_address']; ?>" class="agent-meta"><?php echo $agentData['email_address']; ?></a>
         </li>
       <?php endif; ?>
         
       <?php if ( $agentData['twitter'] || $agentData['facebook'] || $agentData['instagram'] || $agentData['pinterest'] ) : ?>
-        <li>
+        <li class="agent-meta">
           <span class="agent-meta-title">Social:</span>
           <ul class="agent-social">
         <?php foreach( $socialKeys as $social ) : 
         ?>
           <?php if ( !empty( $agentData[ $social ] ) ) :
             $socialField = get_field_object( $social ); ?>
-            <li>
+            <li class="social">
               <a href="<?php echo $socialField['prepend'] . $agentData[ $social ]; ?>" class="icon icon-<?php echo $social; ?> "><?php the_title(); ?> on <?php echo ucwords( $social ); ?>.</a>
             </li>
           <?php endif; ?>
@@ -66,7 +68,7 @@
     </div>
   </div>
   <?php endif; ?>
-  <div class="agent-contact">
+  <div class="agent-contact small-container">
     <header class="section-header">
       <h2 class="section-title">Contact <?php echo $agentData['first_name']; ?> to:</h2>
     </header>
@@ -82,7 +84,7 @@
       </li>
     </ul>
   </div>
-  <div class="page-content agent-content">
+  <div class="page-content agent-content small-container">
     <?php echo $agentData['bio']; ?>
   </div>
 </article><!-- /#page-<?php the_ID(); ?> -->

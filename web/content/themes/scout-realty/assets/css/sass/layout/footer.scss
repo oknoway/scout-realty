@@ -5,8 +5,12 @@
 .site-footer {
   @extend %no-list;
   
+  background-color: $footerBlack;
+  color: $grey;
   
   .copyright { @extend %visuallyhidden; }
+  
+  a { color: inherit; }
 }
 
 .navigation-footer {
@@ -21,8 +25,12 @@
   > .widget-container {
     @include flex( 1 1 100% );
     
+    @include pad();
+    
     @include media( $firstBreak ) {
       @include flex( 1 1 33% );
+      
+      padding-top: 40px;
     }
     
     &.widget_nav_menu {
@@ -31,11 +39,40 @@
     
       @include media( $firstBreak ) {
         @include flex( 1 1 66% );
+        
+        padding-top: 0;
       }
     
       &:first-child {
         @include flex( 1 1 100% );
         @include order( 0 );
+      }
+    }
+    
+    &.gform_widget {
+      
+      
+      background-color: $footerGrey;
+      
+      @include media( $firstBreak ) {
+        
+        @include pad( 40px flex-gutter() );
+        //padding-bottom: 40px;
+      }
+      
+    }
+    
+    .widget-title {
+      margin-top: 0;
+      margin-bottom: 0.25em;
+      
+      color: $dkGrey;
+    }
+    
+    .textwidget {
+      
+      span {
+        display: block;
       }
     }
   }
@@ -55,7 +92,9 @@
     height: 90px;
   }
   
-  .page-home & { display: none; }
+  .page-home & {
+    display: none;
+  }
   
   .menu-item {
     @include flex( 1 1 100% );
@@ -87,7 +126,8 @@
   
   @include media( $firstBreak ) {
     max-width: 66%;
-    margin-top: -2%;
+    margin-top: -5.5%;
+    padding-top: 0;
   }
   
   .widget-title {
@@ -107,6 +147,7 @@
   
   @include media( $firstBreak ) {
     width: 50%;
+    padding-top: 0;
   }
   
   .menu-item {

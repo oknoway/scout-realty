@@ -24,10 +24,18 @@ h1,
   text-transform: uppercase;
 }
 
+h2,
+%h2 {
+  font-weight: 300;
+  font-size: 1.5em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
 h3,
 %h3 {
   font-weight: 300;
-  font-size: 1.111111111em;
+  font-size: 1.5em;
   line-height: 1.05;
   text-transform: uppercase;
 }
@@ -35,7 +43,16 @@ h3,
 h4,
 %h4 {
   font-weight: 300;
-  font-size: 1.5em;
+  font-size: 1.111111111em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+
+h5,
+%h5 {
+  font-weight: 300;
+  font-size: 1em;
   line-height: 1.05;
   text-transform: uppercase;
 }
@@ -45,6 +62,7 @@ a:link,
   text-decoration: none
 }
 
+.button,
 .btn,
 .cta {
   font-size: 0.722222222em;
@@ -53,8 +71,48 @@ a:link,
   text-align: center;
 }
 
+.btn {
+  
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 2em;
+  font-family: $georgia;
+}
+
 // Header
-.site-header { text-transform: uppercase; } 
+.site-header { text-transform: uppercase; }
+
+// Footer
+.site-footer {
+  
+  .widget-container {
+    font-weight: 300;
+    font-size: .777777778em;
+
+  }
+  
+  .widget-title {
+    font-weight: 300;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  
+  .widget_nav_menu:nth-child( 4 ) {
+      
+    .widget-title {
+      
+      font-style: italic;
+      font-size: .857142857em;
+      font-family: $georgia;
+      
+      text-transform: none;
+    }
+  
+  }
+
+}
 
 // Home
 .featured-home .post-header { text-align: center; }
@@ -74,7 +132,7 @@ a:link,
 .post-header,
 .post-footer { text-align: center; }
 
-.section-title { @extend %h3; }
+.section-title { @extend %h2; }
 
 // Post
 
@@ -97,13 +155,62 @@ a:link,
     }
   }
   
+  .home-price {
+    font-size: .888888889em;
+  }
+  
   .post-header { text-align: left; }
+  
+  .post-title { font-size: 1.111111111em; }
   
   .post-excerpt {
     font-size: 0.777777778em;
     line-height: 1.571428571;
   }
+  
+  .address { font-size: 0.842352941em; }
 }
+
+.main-page-content .page-content {
+  text-align: left;
+  
+  font-size: .777777778em;
+  line-height: 1.571428571;
+  
+  .home & { text-align: center; }
+}
+
+
+.call-to-action,
+.neighborhood-finder,
+.post-column {
+  text-align: center;
+  
+  .section-content,
+  .column-content {
+    font-family: $georgia;
+    font-size: .777777778em;
+    line-height: 1.571428571;
+  }
+}
+
+.content-section { text-align: center; }
+.content-section .section-content p:last-of-type {
+  font-style: italic;
+  font-family: $georgia;
+  font-size: .877777778em;
+  line-height: 1.571428571;
+}
+
+.neighborhood-filter-criterion-wrapper {
+  label,
+  select {
+    font-size: .822222222em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
 
 .listing-meta-wrapper {
   
@@ -112,6 +219,10 @@ a:link,
     @include media( $firstBreak ) {
       text-align: right;
     }
+  }
+  
+  & + .listing-meta-wrapper {
+    text-align: left;
   }
   
   a { text-decoration: underline; }
@@ -129,14 +240,49 @@ a:link,
   &.listing-region { font-style: italic; }
 }
 
-a.post-neighborhood,
-.post-neighborhood {
+a.post-location,
+.post-location {
   font-style: italic;
   font-size: 0.833333333em;
   
   text-decoration: underline;
 }
 
+// Neighborhoods
+
+.neighborhood-list {
+  .neighborhood-header {
+    text-align: center;
+  }
+}
+
 // Agents
 
 .agents-archive { text-align: center; }
+
+.agent-list {
+  .agent-bio {
+    font-style: italic;
+  }
+}
+
+.agent-details {
+  font-size: 1.111111111em;
+  
+  .agent-meta-title {
+    font-size: .65em;
+    text-transform: uppercase;
+  }
+}
+
+.agent-contact-links {
+  font-size: .722222222em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+// Sidebar 
+
+.sidebar .section-title {
+  @extend %h5;
+}

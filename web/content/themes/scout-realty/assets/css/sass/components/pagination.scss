@@ -1,0 +1,11 @@
+/**
+ * Pagination
+ */
+ 
+ .pagination {
+   @extend %no-list;
+   
+   li {
+     display: inline-block;
+   }
+ }

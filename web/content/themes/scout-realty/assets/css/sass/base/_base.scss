@@ -29,6 +29,10 @@ a:visited,
   @include container();
 }
 
+.small-container {
+  @include small-container();
+}
+
 figure { margin: 0 0 1em; }
 
 .fake-img {

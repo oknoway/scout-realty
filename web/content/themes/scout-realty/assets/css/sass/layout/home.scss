@@ -19,7 +19,10 @@
         margin-left: auto;
         margin-right: auto;
       }
-      
+    }
+    
+    .page-content {
+      @include columns( 1 );
     }
   }
 }
@@ -40,7 +43,7 @@
 }
 
 .featured-home {
-  
+  margin-bottom: 2em;
   .post-excerpt {
     
     color: $grey;
@@ -50,4 +53,20 @@
       @include omega();
     }
   }
+  
+  .post-footer {
+    .cta {
+      display: inline-block;
+      margin-top: 2em;
+    }
+  }
+}
+
+.post-column-wrapper {
+  .post-column {
+    margin: 0 $half-gutter;
+  }
+}
+
+.neighborhood-finder {
 }

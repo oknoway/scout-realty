@@ -1,0 +1,35 @@
+/**
+ * Page Content
+ */
+
+.page-content {
+  color: $grey;
+}
+
+.main-page-content .page-content {
+  
+  @include media( $firstBreak ) {
+    @include columns( 2 );
+  }
+  
+  p {
+    margin-top: 0;
+    margin-bottom: 1.5em;
+  }
+}
+
+.content-section {
+  
+  .section-content { color: $grey; }
+  
+  &.neighborhood-finder,
+  &.call-to-action {
+    
+    
+    .small-container {
+      @include content-box();
+      
+      @include inset();
+    }
+  }
+}

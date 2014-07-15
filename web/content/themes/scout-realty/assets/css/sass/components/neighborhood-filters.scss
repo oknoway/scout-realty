@@ -1,0 +1,20 @@
+/**
+ * Neighborhood Filter
+ */
+
+.post-type-archive-scout_neighborhoods .neighborhood-filters {
+  @include content-box();
+}
+
+.neighborhood-filter-criterion-wrapper {
+  label {
+    color: $grey;
+  }
+  
+  select {
+    background-color: $white;
+    color: $grey;
+    
+    border: 1px solid $grey;
+  }
+}

@@ -1,0 +1,24 @@
+/**
+ * Logo
+ */
+
+.menu .scout-logo a {
+  @extend %ir;
+  
+  height: 59px;
+  width: 60px;
+  
+  background-image: url( '../../img/scout-logo.svg' );
+  background-size: 59px 60px;
+  
+  @include media( $firstBreak ) {
+    height: 72px;
+    width: 75px;
+    
+    background-size: 72px 75px;
+  }
+  
+  @at-root .no-svg & {
+    background-image: url( '../../img/scout-logo.png' );
+  }
+}

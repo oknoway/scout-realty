@@ -90,16 +90,16 @@ $postClasses = array( 'post-detail' );
       <?php if ( $postMeta[ 'rmls_url' ] ) : ?>
         <a href="<?php echo esc_url( $postMeta[ 'rmls_url' ] ); ?>" class="listing-meta listing-url">View Listing Profile</a>
       <?php endif; ?>
-      
-      <?php foreach( $postMeta[ 'neighborhood' ] as $neighborhood ) : ?>
-        <a href="<?php echo get_the_permalink( $neighborhood->ID ); ?>" class="listing-meta listing-neighborhood">Learn more about the <?php echo $neighborhood->post_title; ?> neighborhood.</a>
-      <?php endforeach; ?>
+
+      <?php if( !empty( $postMeta[ 'neighborhood' ] ) ) : ?>
+        <a href="<?php echo get_the_permalink( $postMeta[ 'neighborhood' ]->ID ); ?>" class="listing-meta listing-neighborhood post-neighborhood">Learn more about the <?php echo $postMeta[ 'neighborhood' ]->post_title; ?> neighborhood.</a>
+      <?php endif; ?>
         
       </div>
     <?php endif; ?>
     
     <?php if ( get_field( 'agent' ) ) : ?>
-      <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent=' . urlencode( get_the_title( $postMeta[ 'agent' ]->ID ) ) ) . '&listing=' . urlencode( $postMeta[ 'rmls_id' ] ); ?>" class="agent-contact">Contact <?php echo ( get_field( 'first_name', $postMeta[ 'agent' ]->ID ) ) ? get_field( 'first_name', $postMeta[ 'agent' ]->ID ) : get_the_title( $postMeta[ 'agent' ]->ID ); ?> about this home</a>
+      <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent=' . urlencode( get_the_title( $postMeta[ 'agent' ]->ID ) ) ) . '&listing=' . urlencode( $postMeta[ 'rmls_id' ] ); ?>" class="agent-contact cta">Contact <?php echo ( get_field( 'first_name', $postMeta[ 'agent' ]->ID ) ) ? get_field( 'first_name', $postMeta[ 'agent' ]->ID ) : get_the_title( $postMeta[ 'agent' ]->ID ); ?> about this home</a>
     <?php endif; ?>
     
       <div class="post-meta">
@@ -109,7 +109,9 @@ $postClasses = array( 'post-detail' );
         <a href="<?php echo get_permalink( $postMeta[ 'agent' ] ); ?>" class="post-author">
       <?php if ( !empty( $agentData[ 'photo' ] ) ) : ?>
         <figure class="agent-photo">
-          <span class="fake-img" style="background-image:url('<?php echo $agentData['photo']['sizes']['one-third']; ?>');"><img src="<?php echo $agentData['photo']['sizes']['agent-bio']; ?>" height="<?php echo $agentData['photo']['sizes']['agent-bio-height']; ?>" width="<?php echo $agentData['photo']['sizes']['agent-bio-width']; ?>" alt="<?php echo $agentData['photo']['title']; ?>" class="visuallyhidden"></span>
+          <span class="fake-img delayed" data-delayed-background-image="<?php echo esc_url( $agentData['photo']['sizes']['one-third'] ); ?>">
+            <noscript><img src="<?php echo esc_url( $agentData['photo']['sizes']['one-third'] ); ?>" height="<?php echo $agentData['photo']['sizes']['one-third-height']; ?>" width="<?php echo $agentData['photo']['sizes']['one-third-width']; ?>" class="no-js visuallyhidden"></noscript>
+          </span>
         </figure>
       <?php endif; ?>
          By <?php echo get_the_title( $postMeta[ 'agent' ]->ID ); ?></a>

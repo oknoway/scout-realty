@@ -1,0 +1,20 @@
+/**
+ * Button
+ */
+
+.button,
+.btn {
+  @include pad();
+  
+  background-color: $black;
+  color: $red;
+  
+  border: 0;
+}
+
+.cta {
+  @include pad( 7.88px 0 );
+  
+  border: 1px solid $ltGrey;
+  border-width: 1px 0;
+}

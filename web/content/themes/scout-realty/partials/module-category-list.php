@@ -17,7 +17,7 @@ $categories = get_categories( $categoryArgs );
 if ( !empty( $categories ) ) : ?>
   <nav class="category-navigation">
     <header class="navigation-header section-header">
-      <h3 class="navigation-title section-title">Post Categories</h3>
+      <h5 class="navigation-title section-title">Post Categories</h5>
     </header>
     <ul>
     <?php foreach ( $categories as $category ) : ?>
