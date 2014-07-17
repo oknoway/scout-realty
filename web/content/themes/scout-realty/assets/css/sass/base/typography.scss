@@ -205,12 +205,21 @@ blockquote {
 .neighborhood-filter-criterion-wrapper {
   label,
   select {
+    font-weight: 300;
     font-size: .822222222em;
-    text-transform: uppercase;
     text-align: center;
   }
+  
+  label { text-transform: uppercase; }
 }
 
+.neighborhood-filter-content {
+  font-style: italic;
+  font-family: $georgia;
+  font-size: .877777778em;
+  line-height: 1.571428571;
+  text-align: center;
+}
 
 .listing-meta-wrapper {
   
@@ -250,9 +259,40 @@ a.post-location,
 
 // Neighborhoods
 
+.neighborhood-sort {
+  font-size: .722222222em;
+  text-transform: uppercase;
+  
+  a {
+    text-transform: none;
+    text-decoration: underline;
+  }
+}
+
 .neighborhood-list {
   .neighborhood-header {
     text-align: center;
+  }
+  
+  .neighborhood-content-wrapper {
+    @include GothamBook;
+    
+    font-size: .722222222em;
+    
+    .neighborhood-meta-key {
+      text-transform: uppercase;
+    }
+    
+    .neighborhood-regions {
+      font-style: italic;
+      font-size: 1.153846154em;
+    }
+    
+    .neighborhood-qualities { text-transform: none; }
+    
+    .avg-home-price {
+      font-size: 1.538461538em;
+    }
   }
 }
 

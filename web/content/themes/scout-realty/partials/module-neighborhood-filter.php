@@ -8,7 +8,7 @@
 ?>
 
 <section class="neighborhood-filters">
-  <form>
+  <form class="neighborhood-filter-wrapper">
   
     <!-- Region Filter -->
     <?php
@@ -70,4 +70,7 @@
     <button type="button" class="btn submit-btn">Find Neighborhoods</button>
     
   </form>
+  <div class="neighborhood-filter-content post-excerpt">
+    <p>Average home prices are released yearly by XYZ. While prices shown are an average, actual home prices can vary greatly across a neighborhood.</p>
+  </div>
 </section>

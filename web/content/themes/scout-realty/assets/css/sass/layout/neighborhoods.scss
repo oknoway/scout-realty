@@ -9,25 +9,47 @@
 
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   
+  @include span-columns( 10 );
+  @include shift ( 1 );
+  
+  @include media( $firstBreak ) {
+    
+    max-width: flex-grid( 12, 12 );
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+  }
+  
+  @at-root .no-mediaqueries & {
     @include span-columns( 10 );
-    @include shift ( 1 );
+  }
+  
+  .neighborhood-filter-wrapper {
+    
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    @include flex-wrap( wrap );
+    
+    max-width: flex-grid( 8, 10 );
+    margin-left: auto;
+    margin-right: auto;
     
     @include media( $firstBreak ) {
-      
-      max-width: flex-grid( 12, 12 );
-      margin-left: auto;
-      margin-right: auto;
-      float: none;
+      max-width: flex-grid( 10, 12 );
     }
-    
-    @at-root .no-mediaqueries & {
-      @include span-columns( 10 );
-    }
+  }
   
   .neighborhood-filter-criterion-wrapper {
-      @include span-columns( 3 );
-      
-      @include omega( 3 );
+    @include flex( 1 1 100% );
+    
+    @include pad();
+    
+    @include media( $firstBreak ) {
+      @include flex( 1 1 33% );
+    }
     
     label,
     select,
@@ -37,8 +59,31 @@
       margin-bottom: 1em;
     }
   }
+  
+  .btn {
+    @include flex( 1 1 100% );
+    @include pad( 8px );
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 33% );
+      @include align-self( center );
+    }
+  }
+  
+  .neighborhood-filter-content {
+    max-width: flex-grid( 8, 10 );
+    margin-top: 2em;
+    margin-left: auto;
+    margin-bottom: 2em;
+    margin-right: auto;
+  }
 }
 
+// neighborhood sort
+.neighborhood-sort {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
 
 // neighborhood list
 .neighborhood-list {
@@ -57,6 +102,13 @@
   }
   
   .neighborhood-map {
-    @include span-columns( 5.5 );
+    
+    @include media( max-width $firstBreak ) {
+      max-height: 300px;
+    }
+    
+    @include media( $firstBreak ) {
+      @include span-columns( 5.5 );
+    }
   }
 }

@@ -27,8 +27,8 @@
  <?php do_action( 'before' ); ?>
  <header id="masthead" class="site-header" role="banner">
    <div class="container">
-     <h1 class="site-title">
-       <a href="<?php bloginfo('url'); ?>" title="<?php esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php esc_attr( get_bloginfo( 'name' ) ); ?></a>
+     <h1 class="site-title visuallyhidden">
+       <a href="<?php bloginfo('url'); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php echo esc_attr( get_bloginfo( 'name' ) ); ?></a>
      </h1>
      <nav id="site-navigation" class="navigation-main" role="navigation">
        <?php if ( ! dynamic_sidebar( 'Header' ) ) : ?>

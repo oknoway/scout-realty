@@ -33,6 +33,10 @@ a:visited,
   @include small-container();
 }
 
+.visuallyhidden {
+  @extend %visuallyhidden;
+}
+
 figure { margin: 0 0 1em; }
 
 .fake-img {
@@ -50,3 +54,25 @@ figure { margin: 0 0 1em; }
 }
 
 .post-excerpt p { margin: 0; }
+
+.alignleft,
+.alignright,
+.aligncenter,
+.alignnone {
+  margin-bottom: 1.5em;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 0.5em;
+}
+
+.alignright {
+  float: right;
+  margin-left: 0.5em;
+}
+.aligncenter {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+}

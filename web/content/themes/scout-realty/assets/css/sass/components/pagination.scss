@@ -5,7 +5,18 @@
  .pagination {
    @extend %no-list;
    
+   color: $ltGrey;
+   
    li {
      display: inline-block;
+     
+     white-space: nowrap;
+     
+     a {
+       display: inline-block;
+       @include pad();
+       
+       color: $dkGrey;
+     }
    }
  }

@@ -381,7 +381,7 @@ td {
     width: 0;
     height: 150%; }
 
-.fake-img img, .site-footer .copyright {
+.visuallyhidden, .fake-img img, .site-footer .copyright {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -590,8 +590,17 @@ blockquote {
 
 .neighborhood-filter-criterion-wrapper label,
 .neighborhood-filter-criterion-wrapper select {
+  font-weight: 300;
   font-size: .822222222em;
-  text-transform: uppercase;
+  text-align: center; }
+.neighborhood-filter-criterion-wrapper label {
+  text-transform: uppercase; }
+
+.neighborhood-filter-content {
+  font-style: italic;
+  font-family: "Georgia", serif;
+  font-size: .877777778em;
+  line-height: 1.571428571;
   text-align: center; }
 
 @media screen and (min-width: 47.9375em) {
@@ -615,8 +624,29 @@ a.post-location,
   font-size: 0.833333333em;
   text-decoration: underline; }
 
+.neighborhood-sort {
+  font-size: .722222222em;
+  text-transform: uppercase; }
+  .neighborhood-sort a {
+    text-transform: none;
+    text-decoration: underline; }
+
 .neighborhood-list .neighborhood-header {
   text-align: center; }
+.neighborhood-list .neighborhood-content-wrapper {
+  font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: .722222222em; }
+  .neighborhood-list .neighborhood-content-wrapper .neighborhood-meta-key {
+    text-transform: uppercase; }
+  .neighborhood-list .neighborhood-content-wrapper .neighborhood-regions {
+    font-style: italic;
+    font-size: 1.153846154em; }
+  .neighborhood-list .neighborhood-content-wrapper .neighborhood-qualities {
+    text-transform: none; }
+  .neighborhood-list .neighborhood-content-wrapper .avg-home-price {
+    font-size: 1.538461538em; }
 
 .agents-archive {
   text-align: center; }
@@ -688,6 +718,25 @@ figure {
 .post-excerpt p {
   margin: 0; }
 
+.alignleft,
+.alignright,
+.aligncenter,
+.alignnone {
+  margin-bottom: 1.5em; }
+
+.alignleft {
+  float: left;
+  margin-right: 0.5em; }
+
+.alignright {
+  float: right;
+  margin-left: 0.5em; }
+
+.aligncenter {
+  clear: both;
+  margin-left: auto;
+  margin-right: auto; }
+
 /**
  * Layout
  */
@@ -696,10 +745,12 @@ figure {
  */
 .site-header {
   margin-bottom: 2em;
+  padding: 3.0303% 0;
   box-shadow: 0 1px 4px rgba(24, 24, 29, 0.5); }
   @media screen and (min-width: 47.9375em) {
     .site-header {
-      margin-bottom: 4em; } }
+      margin-bottom: 4em;
+      padding: 0; } }
 
 .menu-top-nav-container .menu {
   display: -webkit-box;
@@ -763,11 +814,11 @@ figure {
     -webkit-align-content: stretch;
     align-content: stretch;
     -ms-flex-line-pack: stretch;
-    box-align: stretch;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    align-items: stretch;
-    -ms-flex-align: stretch;
+    box-align: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -ms-flex-align: center;
     box-pack: center;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
@@ -813,9 +864,15 @@ figure {
       -webkit-justify-content: center;
       justify-content: center;
       -ms-flex-pack: center;
+      margin-bottom: 0.25em;
+      padding: 3.0303%;
       color: #18181d;
       -webkit-transition: all 0.15s ease-out 0s;
       transition: all 0.15s ease-out 0s; }
+      @media screen and (min-width: 47.9375em) {
+        .menu-top-nav-container .menu .menu-item a {
+          margin-bottom: 0;
+          padding: 0; } }
       .menu-top-nav-container .menu .menu-item a:hover {
         color: #8e8e95; }
       .menu-top-nav-container .menu .menu-item a .item-wrapper {
@@ -2044,17 +2101,58 @@ figure {
     width: 82.82828%; }
     .no-mediaqueries .post-type-archive-scout_neighborhoods .neighborhood-filters:last-child {
       margin-right: 0; }
+  .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: box;
+    box-orient: horizontal;
+    box-pack: center;
+    -ms-flex-pack: center;
+    box-align: center;
+    -ms-flex-align: center;
+    display: -webkit-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-content: stretch;
+    align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    box-align: stretch;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -ms-flex-align: stretch;
+    box-pack: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 79.26829%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 47.9375em) {
+      .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-wrapper {
+        max-width: 82.82828%; } }
   .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper {
-    float: left;
-    display: block;
-    margin-right: 3.0303%;
-    width: 22.72727%; }
-    .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper:last-child {
-      margin-right: 0; }
-    .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper:nth-child(3) {
-      margin-right: 0; }
-    .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper:nth-child(3+1) {
-      clear: left; }
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding: 3.0303%; }
+    @media screen and (min-width: 47.9375em) {
+      .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper {
+        box-flex: 1;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 33%;
+        -ms-flex: 1 1 33%;
+        flex: 1 1 33%; } }
     .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper label,
     .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper select,
     .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper .btn,
@@ -2063,6 +2161,33 @@ figure {
       display: block;
       width: 100%;
       margin-bottom: 1em; }
+  .post-type-archive-scout_neighborhoods .neighborhood-filters .btn, .post-type-archive-scout_neighborhoods .neighborhood-filters .content-section.call-to-action .cta, .content-section.call-to-action .post-type-archive-scout_neighborhoods .neighborhood-filters .cta {
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 100%;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding: 8px; }
+    @media screen and (min-width: 47.9375em) {
+      .post-type-archive-scout_neighborhoods .neighborhood-filters .btn, .post-type-archive-scout_neighborhoods .neighborhood-filters .content-section.call-to-action .cta, .content-section.call-to-action .post-type-archive-scout_neighborhoods .neighborhood-filters .cta {
+        box-flex: 0;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 1 33%;
+        -ms-flex: 0 1 33%;
+        flex: 0 1 33%;
+        -webkit-align-self: center;
+        align-self: center;
+        -ms-flex-item-align: center; } }
+  .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-content {
+    max-width: 79.26829%;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-bottom: 2em;
+    margin-right: auto; }
+
+.neighborhood-sort {
+  margin-top: 2em;
+  margin-bottom: 2em; }
 
 .neighborhood-list {
   max-width: 65em;
@@ -2076,13 +2201,17 @@ figure {
       padding-right: 3.0303%; } }
   .neighborhood-list a {
     color: inherit; }
-  .neighborhood-list .neighborhood-map {
-    float: left;
-    display: block;
-    margin-right: 3.0303%;
-    width: 44.19192%; }
-    .neighborhood-list .neighborhood-map:last-child {
-      margin-right: 0; }
+  @media screen and (max-width: 47.9375em) {
+    .neighborhood-list .neighborhood-map {
+      max-height: 300px; } }
+  @media screen and (min-width: 47.9375em) {
+    .neighborhood-list .neighborhood-map {
+      float: left;
+      display: block;
+      margin-right: 3.0303%;
+      width: 44.19192%; }
+      .neighborhood-list .neighborhood-map:last-child {
+        margin-right: 0; } }
 
 /**
  * Blog
@@ -2674,12 +2803,12 @@ figure {
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   background-color: white;
   background-clip: padding-box;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 0px 1px 1px #d8d8e0;
   border: 10px solid white;
   border-radius: 10px; }
 
 .neighborhood-filter-criterion-wrapper label {
-  color: #8e8e95; }
+  color: #4b4b50; }
 .neighborhood-filter-criterion-wrapper select {
   background-color: white;
   color: #8e8e95;
@@ -2688,6 +2817,15 @@ figure {
 /**
  * Neighborhood Lists
  */
+.neighborhood-sort {
+  color: #8e8e95; }
+  .neighborhood-sort a {
+    display: inline-block;
+    color: black; }
+    .neighborhood-sort a:before {
+      content: ' | ';
+      color: #8e8e95; }
+
 .neighborhood-list .neighborhood-content-wrapper {
   background-color: white;
   background-clip: padding-box;
@@ -2748,5 +2886,14 @@ figure {
 /**
  * Pagination
  */
+.pagination {
+  color: #d8d8e0; }
+  .pagination li {
+    display: inline-block;
+    white-space: nowrap; }
+    .pagination li a {
+      display: inline-block;
+      padding: 3.0303%;
+      color: #4b4b50; }
 
 /*# sourceMappingURL=scout_realty.css.map */

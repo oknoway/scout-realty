@@ -39,7 +39,9 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
     });
     
     $( '.delayed' ).each( function( ) {
-      console.log( $(this).data( 'delayed-background-image' ) );
+      
+      //console.log( $(this).data( 'delayed-background-image' ) );
+      
       $(this).css( 'background-image', 'url(' + $(this).data( 'delayed-background-image' ) + ')' );
     });
   

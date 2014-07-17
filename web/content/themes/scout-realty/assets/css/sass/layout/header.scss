@@ -6,11 +6,13 @@
   @extend %no-list;
   
   margin-bottom: 2em;
+  @include pad( flex-gutter() 0 );
   
   box-shadow: 0 1px 4px rgba(24,24,29,.5);
 
   @include media( $firstBreak ) {
     margin-bottom: 4em;
+    @include pad( 0 );
   }
 }
 
@@ -34,7 +36,7 @@
     @include box( horizontal, center, center );
     @include display( flex );
     @include align-content( stretch );
-    @include align-items( stretch );
+    @include align-items( center );
     @include justify-content( center );
     
     @include media( $firstBreak ) {
@@ -50,9 +52,18 @@
       @include align-items( center );
       @include justify-content( center );
       
+      margin-bottom: 0.25em;
+      @include pad();
+      
+      
       color: $black;
       
       @include transition();
+      
+      @include media( $firstBreak ) {
+        margin-bottom: 0;
+        @include pad( 0 );
+      }
       
       &:hover {
         color: $grey;
@@ -60,7 +71,6 @@
       
       .item-wrapper {
         @include flex( 0 1 auto );
-
       }
     }
   }

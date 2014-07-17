@@ -3,12 +3,12 @@
  */
 
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
-  @include content-box();
+  @include content-box( inset );
 }
 
 .neighborhood-filter-criterion-wrapper {
   label {
-    color: $grey;
+    color: $dkGrey;
   }
   
   select {

@@ -1,6 +1,21 @@
 /**
  * Neighborhood Lists
  */
+ 
+.neighborhood-sort {
+  color: $grey;
+  
+  a {
+    display: inline-block;
+    color: black;
+    
+    &:before {
+      content: ' | ';
+      
+      color: $grey;
+    }
+  }
+}
 
 .neighborhood-list {
   
