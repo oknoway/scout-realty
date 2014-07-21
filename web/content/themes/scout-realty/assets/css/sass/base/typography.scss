@@ -278,6 +278,7 @@ a.post-location,
     @include GothamBook;
     
     font-size: .722222222em;
+    line-height: 1.692307692;
     
     .neighborhood-meta-key {
       text-transform: uppercase;
@@ -286,12 +287,19 @@ a.post-location,
     .neighborhood-regions {
       font-style: italic;
       font-size: 1.153846154em;
+      
+      a { text-decoration: underline; }
     }
     
     .neighborhood-qualities { text-transform: none; }
     
     .avg-home-price {
       font-size: 1.538461538em;
+    }
+    
+    .neighborhood-content {
+      font-size: 1.076923077em;
+      line-height: 1.571428571
     }
   }
 }

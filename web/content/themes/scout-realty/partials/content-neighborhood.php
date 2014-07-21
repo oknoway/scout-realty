@@ -6,33 +6,20 @@
  * @since 0.1.0
  */
  
-// Extra post classes.
-
-$postClasses = array();
-
-if ( is_neighborhood_archive() ) :
-  $postClasses[] = 'neighborhood-list';
-elseif ( is_single() ) :
-  $postClasses[] = 'main-page-content';
-endif;
-
-// Build the headline
-
-$headline = null;
-
-$headline .= is_neighborhood_archive() ? '<h3 class="neighborhood-title">' : '<h1 class="neighborhood-title">';
-$headline .= is_neighborhood_archive() ? '<a href="' . get_the_permalink() . '">' : null;
-$headline .= get_the_title(  );
-$headline .= is_neighborhood_archive() ? '</a>' : null;
-$headline .= is_neighborhood_archive() ? '</h3>' : '</h1>';
-
 ?>
-<article id="neighborhood-<?php the_ID(); ?>" <?php post_class( $postClasses ); ?>>
-  
+
+<?php get_template_part( 'partials/module', 'hero' ); ?>
+
+<article id="neighborhood-<?php the_ID(); ?>" <?php post_class( 'main-page-content' ); ?>>
+
   <header class="neighborhood-header">
-    <?php echo $headline ?>
+    <h1 class="neighborhood-title"><?php the_title(); ?></h1>
   </header>
   
+  <?php if ( get_field('map') ) : ?>
+    <?php get_template_part( 'partials/module', 'neighborhood-map' ); ?>
+  <?php endif; ?>
+
   <div class="neighborhood-content-wrapper">
   
     <div class="neighborhood-meta">
@@ -51,9 +38,6 @@ $headline .= is_neighborhood_archive() ? '</h3>' : '</h1>';
     
     </div><!-- /.neighborhood-meta -->
     
-    <?php if ( get_field('map') ) : ?>
-      <?php get_template_part( 'partials/module', 'neighborhood-map' ); ?>
-    <?php endif; ?>
     <div class="neighborhood-content">
       <?php the_content(); ?>
     </div><!-- /.neighborhood-content -->

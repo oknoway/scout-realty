@@ -101,6 +101,8 @@ module.exports = function( grunt ) {
       },
       scout_realty: {
         src: [
+          '<%= dirs.vendor %>/js/slick-carousel/slick.js',
+          '<%= dirs.vendor %>/js/fitvids/jquery.fitvids.js',
           '<%= dirs.vendor %>/js/leaflet/leaflet.js',
           '<%= dirs.vendor %>/js/maps.stamen.com/tile.stamen.js',
           //'<%= dirs.vendor %>/js/catiline/catiline.js',

@@ -1,0 +1,74 @@
+/**
+ * Hero
+ */
+
+.slick-list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+  &.slick-slide,
+  & .slick-slide {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+  
+  .slick-track { height: 100%; }
+}
+
+
+.slick-prev,
+.slick-next {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  
+  height: 53px;
+  width: 41px;
+  margin-top: -26.5px;
+  overflow: visible;
+  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  
+  border: 0;
+  
+  
+  @include transition();
+  
+  .lt-ie9 & {}
+}
+
+.slick-prev {
+  left: 0px;
+  
+  background-image: url( '../../img/arrow_left.svg' );
+  
+  @include media( $firstBreak ) {
+    left: 25px;
+  }
+  
+  @at-root .no-svg & {
+    background-image: url( '../../img/arrow_left.png' );
+  }
+}
+
+.slick-next {
+  right: 0px;
+  
+  background-image: url( '../../img/arrow_right.svg' );
+
+  @include media( $firstBreak ) {
+    right: 25px;
+  }
+  
+  @at-root .no-svg & {
+    background-image: url( '../../img/arrow_right.png' );
+  }
+}

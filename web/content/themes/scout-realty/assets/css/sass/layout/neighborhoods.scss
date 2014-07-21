@@ -99,9 +99,13 @@
   
   .neighborhood-content-wrapper {
     @extend %clearfix;
+    
+    padding-right: flex-grid( 1, 10 );
   }
   
   .neighborhood-map {
+    
+    margin-bottom: 2em;
     
     @include media( max-width $firstBreak ) {
       max-height: 300px;
@@ -109,6 +113,16 @@
     
     @include media( $firstBreak ) {
       @include span-columns( 5.5 );
+      
+      margin-bottom: 0;
+    }
+  }
+  
+  .neighborhood-meta {
+    margin-bottom: 1em;
+    
+    @include media( $firstBreak ) {
+      margin-bottom: 0;
     }
   }
 }

@@ -11,6 +11,7 @@
     "background-size-polyfill": "~0.2.0",
     "responsive-nav": "viljamis/responsive-nav.js#~1.0.20",
     "fitvids": "~1.0.3",
+    "slick-carousel": "~1.3.6",
     "shp": "~1.3.1",
     "leaflet": "~0.7.3",
     "maps.stamen.com": "Citytracking/maps.stamen.com#~1.3.0",
@@ -38,6 +39,19 @@
     "modernizr": {
       "js": "modernizr.js"
     },
+    "responsive-nav": {
+      "scss": "*.css",
+      "js": "*.js"
+    },
+    "fitvids": {
+      "js": "jquery.fitvids.js"
+    },
+    "slick-carousel": {
+      "scss": "slick/slick.scss",
+      "js": "slick/slick.js",
+      "fonts": "slick/fonts/*",
+      "img": "slick/ajax-loader.gif"
+    },
     "leaflet": {
       "js": "dist/leaflet.js",
       "scss": "dist/leaflet.css"
@@ -53,13 +67,6 @@
     },
     "maps.stamen.com": {
       "js": "js/tile.stamen.js"
-    },
-    "responsive-nav": {
-      "scss": "*.css",
-      "js": "*.js"
-    },
-    "fitvids": {
-      "js": "jquery.fitvids.js"
     },
     "background-size-polyfill": {
       "scss": "backgroundsize.min.htc"

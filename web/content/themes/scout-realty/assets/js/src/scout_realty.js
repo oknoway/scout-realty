@@ -38,12 +38,29 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
   
     });
     
+    // Lazy Loading
+    
     $( '.delayed' ).each( function( ) {
       
       //console.log( $(this).data( 'delayed-background-image' ) );
       
       $(this).css( 'background-image', 'url(' + $(this).data( 'delayed-background-image' ) + ')' );
     });
+    
+    
+    // Gallery
+    $( '.gallery' ).slick({
+      'autoplay' : false,
+      'autoplaySpeed' : 3000,
+      'arrows' : true,
+      'dots' : false,
+      'draggable' : false,
+      'infinite' : true,
+      'slide' : 'figure'
+    });
+    
+    // FitVids
+    $('.article-content').fitVids();
   
 
  } )( this );

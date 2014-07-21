@@ -21,5 +21,17 @@
   
   .neighborhood-content-wrapper {
     @include content-box();
+    
+    color: $grey;
   }
+  
+  .neighborhood-regions {
+    display: block;
+    
+    color: $dkGrey;
+  }
+  
+  .neighborhood-meta {}
+  
+  .avg-home-price { color: $dkGrey; }
 }

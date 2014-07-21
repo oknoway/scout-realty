@@ -26,7 +26,7 @@ elseif ( has_post_thumbnail() ) :
 endif; ?>
 
 <?php if ( !empty( $heroImgs ) ) : ?>
-<div class="hero-wrapper">
+<div class="hero-wrapper gallery">
 <?php foreach ( $heroImgs as $heroImg ) : ?>
 
   <figure class="hero-img">
