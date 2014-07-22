@@ -12,6 +12,12 @@
     @include columns( 2 );
   }
   
+  .page-agents & {
+    @include media( $firstBreak ) {
+      @include columns( initial );
+    }
+  }
+  
   p {
     margin-top: 0;
     margin-bottom: 1.5em;

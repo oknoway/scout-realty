@@ -21,7 +21,7 @@ get_header(); ?>
 
     <?php if ( have_posts() ) : ?>
     
-      <section class="page-section">
+      <section class="page-section neighborhood-list-wrapper">
         <header class="section-header">
           <?php get_template_part( 'partials/module', 'neighborhood-sort' ); ?>
         </header>

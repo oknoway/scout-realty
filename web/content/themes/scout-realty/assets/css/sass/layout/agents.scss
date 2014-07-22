@@ -69,6 +69,11 @@
 }
 
 // Agent Detail
+
+.agent-info-wrapper {
+  @include pad( 2em 0 );
+}
+
 .agent-info {
   @include box( horizontal, center, center );
   @include display( flex );

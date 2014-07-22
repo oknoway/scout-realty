@@ -2127,6 +2127,9 @@ figure {
     width: 100%;
     margin-top: 2em; }
 
+.agent-info-wrapper {
+  padding: 2em 0; }
+
 .agent-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3013,6 +3016,9 @@ figure {
 .address {
   color: #8e8e95; }
 
+/**
+ * Post Meta
+ */
 .post-list .post-meta {
   background: #4b4b50;
   color: #8e8e95; }
@@ -3033,6 +3039,9 @@ figure {
 .post-excerpt {
   color: #8e8e95; }
 
+/**
+ * Post Lists
+ */
 .neighborhood-finder .container,
 .post-column,
 .post-list {
@@ -3104,6 +3113,11 @@ figure {
     -webkit-columns: 2;
     -moz-columns: 2;
     columns: 2; } }
+@media screen and (min-width: 47.9375em) {
+  .page-agents .main-page-content .page-content {
+    -webkit-columns: initial;
+    -moz-columns: initial;
+    columns: initial; } }
 .main-page-content .page-content p {
   margin-top: 0;
   margin-bottom: 1.5em; }
@@ -3146,5 +3160,57 @@ figure {
       display: inline-block;
       padding: 3.0303%;
       color: #4b4b50; }
+
+/**
+ * Patterns
+ */
+.home-content-wrapper {
+  background-image: url("../../img/pattern_home-hero.png");
+  background-position: center 18px; }
+  .home-content-wrapper .main-page-content {
+    background-color: white;
+    background-clip: padding-box;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3), inset 0 0px 1px 1px #d8d8e0;
+    border: 10px solid white;
+    border-radius: 10px;
+    border-top-right-radius: 55%;
+    border-bottom-right-radius: 55%;
+    border-bottom-left-radius: 55%;
+    border-top-left-radius: 55%; }
+
+.neighborhood-filters,
+.neighborhood-finder .small-container {
+  background-image: url("../../img/pattern_inset.png"); }
+
+.post-list .post-meta {
+  background-image: url("../../img/pattern_post-list-header.png"); }
+
+.page-section.neighborhood-list-wrapper,
+.page-section.related-posts {
+  position: relative;
+  z-index: 1; }
+  .page-section.neighborhood-list-wrapper:before,
+  .page-section.related-posts:before {
+    content: '';
+    position: absolute;
+    top: 125px;
+    bottom: 75px;
+    left: 50%;
+    z-index: -1;
+    width: 100vw;
+    background-image: url("../../img/pattern_content-bg.png");
+    -webkit-transform: translateX(-50vw);
+    -ms-transform: translateX(-50vw);
+    transform: translateX(-50vw); }
+
+.navigation-footer > .widget-container.gform_widget {
+  background-image: url("../../img/pattern_email-signup.png"); }
+
+.content-section.call-to-action .small-container,
+.find-an-agent {
+  background-image: url("../../img/pattern_find-an-agent.png"); }
+
+.agent-info-wrapper {
+  background-image: url("../../img/pattern_content-bg.png"); }
 
 /*# sourceMappingURL=scout_realty.css.map */

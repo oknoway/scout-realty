@@ -1,0 +1,64 @@
+/**
+ * Patterns
+ */
+
+.home-content-wrapper {
+  background-image: url( '../../img/pattern_home-hero.png' );
+  background-position: center 18px;
+  
+  
+  .main-page-content {
+    
+    @include content-box( inset );
+    
+    border-top-right-radius: 55%;
+    border-bottom-right-radius: 55%;
+    border-bottom-left-radius: 55%;
+    border-top-left-radius: 55%;
+  }
+}
+
+.neighborhood-filters,
+.neighborhood-finder .small-container {
+  background-image: url('../../img/pattern_inset.png');
+}
+
+.post-list .post-meta {
+  background-image: url('../../img/pattern_post-list-header.png');
+}
+
+.page-section.neighborhood-list-wrapper,
+.page-section.related-posts {
+  position: relative;
+  z-index: 1;
+  
+  &:before {
+    content: '';
+    
+    position: absolute;
+    top: 125px;
+    bottom: 75px;
+    left: 50%;
+    z-index: -1;
+    
+    width: 100vw;
+    
+    background-image: url('../../img/pattern_content-bg.png');
+    
+    @include transform( translateX( -50vw ) );
+    
+  }
+}
+
+.navigation-footer > .widget-container.gform_widget {
+  background-image: url('../../img/pattern_email-signup.png');
+}
+
+.content-section.call-to-action .small-container,
+.find-an-agent {
+  background-image: url('../../img/pattern_find-an-agent.png');
+}
+
+.agent-info-wrapper {
+  background-image: url('../../img/pattern_content-bg.png');
+}
