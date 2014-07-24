@@ -196,12 +196,19 @@ if ( ! function_exists( 'scout_scripts_styles' ) ) :
     if ( !is_admin() ) {
       $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
       
+      wp_register_script( 'google-maps', 'https://www.google.com/maps/api/js?key=AIzaSyD7CaOXb1xCmve_O4_FVNUcX9fpxbDkiyg', array(), SCOUT_VERSION, false );
+      
+      
+      if ( is_neighborhood_archive() || get_post_type() == 'scout_neighborhoods' ) {
+        
+        wp_enqueue_script( 'google-maps' );
+      }
+      
       
       wp_enqueue_script( 'scout', get_template_directory_uri() . "/assets/js/scout_realty{$postfix}.js", array(), SCOUT_VERSION, true );
       wp_enqueue_script( 'scout-head', get_template_directory_uri() . "/assets/js/head{$postfix}.js", array(), SCOUT_VERSION, false );
       
-      
-      wp_enqueue_script( 'leaflet.shpfile', get_template_directory_uri() . "/assets/js/vendor/leaflet.shpfile.js", array(), SCOUT_VERSION, true );
+      //wp_enqueue_script( 'leaflet.shpfile', get_template_directory_uri() . "/assets/js/vendor/leaflet.shpfile.js", array(), SCOUT_VERSION, true );
       
       if ( defined( 'LIVERELOAD' ) && true === LIVERELOAD ) {
         wp_enqueue_script( 'livereload', 'http://' . $_SERVER['HTTP_HOST'] . ':35729/livereload.js', array(), NULL, true );

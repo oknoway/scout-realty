@@ -16,7 +16,7 @@
 <?php endif; ?>
 
 <?php if ( !empty( $agentData[ 'photo' ] ) ) : ?>
-  <figure class="agent-photo column-photo">
+  <figure class="agent-photo column-photo column-img post-img">
     <span class="fake-img" style="background-image:url('<?php echo $agentData[ 'photo' ]['sizes']['one-third']; ?>');"><img src="<?php echo $agentData[ 'photo' ]['sizes']['one-third']; ?>" height="<?php echo $agentData[ 'photo' ]['sizes']['one-third-height']; ?>" width="<?php echo $agentData[ 'photo' ]['sizes']['one-third-width']; ?>" alt="<?php echo $agentData[ 'photo' ]['title']; ?>" class="visuallyhidden"></span>
   </figure>
 <?php endif; ?>

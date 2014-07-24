@@ -11,7 +11,7 @@
 
   @include media( $firstBreak ) {
     
-    max-width: flex-grid( 8, 12 );
+    max-width: 880px;
     margin-left: auto;
     margin-bottom: 4em;
     margin-right: auto;
@@ -132,7 +132,7 @@
       @include pad( 8px );
       
       @include media( $firstBreak ) {
-        max-width: flex-grid( 10, 12 );
+        max-width: 880px;
         margin-left: auto;
         margin-right: auto;
         
@@ -144,14 +144,16 @@
       > * {
         display: block;
         margin: auto;
+      }
+      
+      .section-content,
+      .neighborhood-filters {
         
         @include media( $firstBreak ) {
-          max-width: flex-grid( 6, 10 );
+          max-width: flex-grid( 4, 10 );
         }
       }
     }
-    
-    
   }
   
   &.call-to-action {

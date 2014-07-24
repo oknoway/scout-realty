@@ -52,6 +52,44 @@
   box-shadow: inset 0 0px 1px 1px $ltGrey;
 }
 
+@mixin middle-border {
+  position: relative;
+  display: inline-block;
+  
+  &:before,
+  &:after {
+    content: '';
+    
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    width: 50px;
+    
+    background-color: $red;
+  }
+  
+  &:before { left: -80px; }
+  &:after { right: -80px; }
+}
+
+@mixin bottom-border {
+  position: relative;
+  
+  &:after {
+    content: '';
+    
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    height: 1px;
+    width: 50px;
+    margin-left: -25px;
+    
+    background-color: $red;
+    
+  }
+}
+
 // =Utility Classes
 @mixin container() {
   max-width: $max-width;

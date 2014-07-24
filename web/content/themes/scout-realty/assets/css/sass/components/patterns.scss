@@ -15,6 +15,29 @@
     border-bottom-right-radius: 55%;
     border-bottom-left-radius: 55%;
     border-top-left-radius: 55%;
+    
+    
+    /*
+      shape?
+      
+      http://coveloping.com/tools/css-shapes-generator
+      
+      *, *:before, *:after{ 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+} 
+.css-shapes-preview{ 
+    position: relative; 
+    height: 200px; 
+    width: 0px; 
+    border-top: 60px solid transparent; 
+    border-right: 100px solid #428bca; 
+    border-bottom: 60px solid transparent; 
+}
+
+*/
+    
   }
 }
 
@@ -25,6 +48,41 @@
 
 .post-list .post-meta {
   background-image: url('../../img/pattern_post-list-header.png');
+}
+
+.post-column {
+  //background-image: url('../../img/pattern_post-column-cap.png');
+  //background-repeat: repeat-x;
+  
+  position: relative;
+  
+  &:before {
+    content: '';
+    
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    height: 80px;
+    
+    background-image: url('../../img/pattern_post-column-cap.png');
+    background-repeat: repeat-x;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .column-img {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.team-archive .post-column:before {
+  background-image: url('../../img/pattern_team.png');
+  background-repeat: repeat;
 }
 
 .page-section.neighborhood-list-wrapper,

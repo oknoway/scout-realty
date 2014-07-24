@@ -1,0 +1,15 @@
+/**
+ * Borders
+ */
+
+.section-title,
+.neighborhood-title {
+  @include middle-border();
+}
+
+.page-title,
+.featured-home .post-title,
+.find-an-agent .post-title,
+.single .post-title {
+  @include bottom-border();
+}

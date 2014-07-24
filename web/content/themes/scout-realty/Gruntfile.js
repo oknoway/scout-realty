@@ -103,11 +103,12 @@ module.exports = function( grunt ) {
         src: [
           '<%= dirs.vendor %>/js/slick-carousel/slick.js',
           '<%= dirs.vendor %>/js/fitvids/jquery.fitvids.js',
-          '<%= dirs.vendor %>/js/leaflet/leaflet.js',
-          '<%= dirs.vendor %>/js/maps.stamen.com/tile.stamen.js',
+          //'<%= dirs.vendor %>/js/leaflet/leaflet.js',
+          //'<%= dirs.vendor %>/js/maps.stamen.com/tile.stamen.js',
           //'<%= dirs.vendor %>/js/catiline/catiline.js',
-          '<%= dirs.vendor %>/js/shp/shp.js',
+          //'<%= dirs.vendor %>/js/shp/shp.js',
           //'<%= dirs.vendor %>/js/leaflet.shapefile/leaflet.shpfile.js',
+          '<%= dirs.js %>/src/maps.js',
           '<%= dirs.js %>/src/scout_realty.js'
         ],
         dest: '<%= dirs.js %>/scout_realty.js'

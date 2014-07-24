@@ -25,6 +25,7 @@
       @include columns( 1 );
     }
   }
+  
 }
 
 .hero-wrapper,
@@ -45,6 +46,26 @@
 
 .featured-home {
   margin-bottom: 2em;
+  
+  .post-content-wrapper {
+    
+      
+    padding-top: 4.25em;
+    
+    @include media( $firstBreak ) {
+      position: relative;
+      z-index: 10;
+      max-width: 880px;
+      margin-top: -9em;
+    }
+    
+  }
+  
+  .post-title {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  
   .post-excerpt {
     
     color: $grey;
@@ -55,10 +76,13 @@
     }
   }
   
+  
   .post-footer {
+    padding-top: 2em;
+    clear: both;
+    
     .cta {
-      display: inline-block;
-      margin-top: 2em;
+      display: block;
     }
   }
 }

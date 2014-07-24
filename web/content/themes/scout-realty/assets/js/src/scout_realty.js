@@ -11,26 +11,32 @@
   
     // Maps
     $( '.neighborhood-map' ).each( function() {
-    
-    /*
-var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(this).data( 'leaflet-lng' ) ], $(this).data( 'leaflet-zoom_level' ) );
-        var watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',{attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(m);    
       
-*/
+      
+      render_map( $(this) );
+      
+      
+      /*
+      // Leaflet: this actually works
       var map = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(this).data( 'leaflet-lng' )], $(this).data( 'leaflet-zoom_level' ) );
+      var tiles = new L.StamenTileLayer( 'terrain' );
       
-      
-      
-        var tiles = new L.StamenTileLayer( 'terrain' );
-        
-        map.addLayer( tiles );
+      map.addLayer( tiles );
 /*
+      // Leaflet: this does not
     	  var shpfile = new L.Shapefile('congress.zip');
          shpfile.addTo(m);
          shpfile.once("load", function(){
           console.log("finished loaded shapefile");
          });
+         
+         
+      // Leaflet: neither does this
+         
+var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(this).data( 'leaflet-lng' ) ], $(this).data( 'leaflet-zoom_level' ) );
+        var watercolor = L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg',{attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'}).addTo(m);    
       */
+      
       
       
       

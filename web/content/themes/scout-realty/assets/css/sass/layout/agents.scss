@@ -58,6 +58,8 @@
   @include align-items( center );
   @include justify-content( center );
   
+  &.post-column:before { display: none; }
+  
   > * {
     @include flex ( 0 1 auto );
   }
