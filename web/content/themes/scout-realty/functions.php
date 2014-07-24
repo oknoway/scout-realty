@@ -149,6 +149,7 @@ if ( ! function_exists( 'scout_widgets_init' ) ) :
     register_sidebar( array(
       'name'          => __( 'Footer', 'scout' ),
       'id'            => 'footer-sidebar',
+      'class'         => 'container',
       'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
       'after_widget'  => '</div>',
       'before_title'  => '<h5 class="widget-title">',
@@ -197,7 +198,6 @@ if ( ! function_exists( 'scout_scripts_styles' ) ) :
       $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
       
       wp_register_script( 'google-maps', 'https://www.google.com/maps/api/js?key=AIzaSyD7CaOXb1xCmve_O4_FVNUcX9fpxbDkiyg', array(), SCOUT_VERSION, false );
-      
       
       if ( is_neighborhood_archive() || get_post_type() == 'scout_neighborhoods' ) {
         

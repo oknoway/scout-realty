@@ -5,15 +5,14 @@
 .site-footer {
   @extend %no-list;
   
-  background-color: $footerBlack;
-  color: $grey;
   
   .copyright { @extend %visuallyhidden; }
   
   a { color: inherit; }
 }
 
-.navigation-footer {
+.navigation-footer,
+.footer-wrapper {
 
   @include box( horizontal, center, center );
   @include display( flex );
@@ -32,7 +31,7 @@
       
       padding-top: 40px;
     }
-    
+
     &.widget_nav_menu {
       @include flex( 1 1 100% );
       @include order( 5 );
@@ -48,7 +47,7 @@
         @include order( 0 );
       }
     }
-    
+
     &.gform_widget {
       
       
@@ -59,7 +58,6 @@
         @include pad( 40px flex-gutter() );
         //padding-bottom: 40px;
       }
-      
     }
     
     .widget-title {
@@ -78,7 +76,13 @@
   }
 }
 
-.menu-footer-nav-container .menu {
+.navigation-footer {
+  @include media( $firstBreak ) {
+    @include flex-wrap( nowrap );
+  }
+}
+
+.navigation-footer .menu {
   @include box( horizontal, center, center );
   @include display( flex );
   @include align-content( stretch );
@@ -89,7 +93,7 @@
   @include media( $firstBreak ) {
     @include flex-wrap( no-wrap );
     
-    height: 90px;
+    //height: 90px;
   }
   
   .page-home & {
@@ -105,6 +109,8 @@
     @include align-items( stretch );
     @include justify-content( center );
     
+    @include pad();
+    
     @include media( $firstBreak ) {
       @include flex( 0 1 33% );
     }
@@ -117,11 +123,20 @@
       .sub {
         display: block;
       }
+      
+      br { display: none;}
+      
+      .item-wrapper {
+        margin: 0;
+      }
     }
   }
 }
 
-.widget_nav_menu:nth-child( 4 ) {
+.footer-wrapper {
+}
+
+.widget_nav_menu:nth-child( 3 ) {
   width: 100%;
   
   @include media( $firstBreak ) {

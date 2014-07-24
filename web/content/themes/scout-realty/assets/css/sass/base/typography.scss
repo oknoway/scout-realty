@@ -114,6 +114,26 @@ blockquote {
 
 }
 
+.navigation-footer {
+  .menu-item {
+    text-align: center;
+  }
+  
+  .item-wrapper {
+    @extend %h4;
+    
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  
+  .sub {
+    font-style: italic;
+    font-size: .777777778em;
+    line-height: 1.571428571;
+    font-family: $georgia;
+  }
+}
+
 // Home
 .featured-home .post-header { text-align: center; }
 
