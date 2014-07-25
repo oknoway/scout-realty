@@ -1,0 +1,55 @@
+/**
+ * Social
+ */
+
+.social {
+  height: 23px;
+  width: 28px;
+  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  
+
+  &.social-facebook {
+    
+    background-image: url('../../img/social_facebook.svg');
+    
+    @at-root .no-svg & {
+      background-image: url('../../img/social_facebook.png');
+    }
+  }
+  
+  &.social-twitter {
+    background-image: url('../../img/social_twitter.svg');
+    
+    @at-root .no-svg & {
+      background-image: url('../../img/social_twitter.png');
+    }
+  }
+  
+  &.social-pinterest {
+    background-image: url('../../img/social_pinterest.svg');
+    
+    @at-root .no-svg & {
+      background-image: url('../../img/social_pinterest.png');
+    }
+  }
+  
+  &.social-instagram {
+    background-image: url('../../img/social_instagram.svg');
+    
+    @at-root .no-svg & {
+      background-image: url('../../img/social_instagram.png');
+    }
+  }
+  
+  .item-wrapper {
+    @extend %ir;
+    
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+}
+

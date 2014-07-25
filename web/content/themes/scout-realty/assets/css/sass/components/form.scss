@@ -1,0 +1,24 @@
+/**
+ * Form
+ */
+
+input,
+textarea,
+selection {
+  
+  @include pad();
+  
+  border: 1px solid $borderGrey;
+}
+
+.email-signup {
+  
+  input {
+    background-color: $formGrey;
+    color: $white;
+    
+    border-color: $black;
+  }
+  
+  .button { @extend .button; }
+}

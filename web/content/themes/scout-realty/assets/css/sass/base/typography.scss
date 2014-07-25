@@ -90,7 +90,7 @@ blockquote {
   .widget-container {
     font-weight: 300;
     font-size: .777777778em;
-
+    line-height: 1.571428571;
   }
   
   .widget-title {
@@ -99,7 +99,7 @@ blockquote {
     text-transform: uppercase;
   }
   
-  .widget_nav_menu:nth-child( 4 ) {
+  .widget_nav_menu:nth-child( 3 ) {
       
     .widget-title {
       
@@ -109,9 +109,7 @@ blockquote {
       
       text-transform: none;
     }
-  
   }
-
 }
 
 .navigation-footer {
@@ -353,4 +351,18 @@ a.post-location,
 
 .sidebar .section-title {
   @extend %h5;
+}
+
+// Forms
+
+.email-signup {
+
+  .button {
+    font-size: 1.071428571em;
+  }
+  
+  .gform_heading {
+    font-size: .8em;
+    line-height: 1.2;
+  }
 }

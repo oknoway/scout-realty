@@ -41,8 +41,12 @@
     @include align-items( flex-start );
     @include justify-content( center );
     
+    max-width: 75px;
+    
     @include media( $firstBreak ) {
       @include flex( 1 0 75px );
+      
+      & + .post-content-wrapper { max-width: none; }
     }
     
     .blog-archive-link,

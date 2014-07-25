@@ -12,7 +12,7 @@
   <footer id="colophon" class="site-footer" role="contentinfo">
   <?php if ( !is_front_page() ) : ?>
     <nav id="footer-navigation" class="navigation-footer" role="navigation">
-      <?php wp_nav_menu( array( 'theme_location' => 'footer-nav', 'container_class' => 'container' ) ); ?>
+      <?php wp_nav_menu( array( 'theme_location' => 'footer-nav' ) ); ?>
     </nav><!-- #site-navigation -->
   <?php endif; ?>
     <div class="footer-wrapper container">

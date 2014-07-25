@@ -62,7 +62,7 @@
     
     .widget-title {
       margin-top: 0;
-      margin-bottom: 0.25em;
+      margin-bottom: 0.75em;
       
       color: $dkGrey;
     }
@@ -76,6 +76,12 @@
   }
 }
 
+.menu-footer-nav-container {
+  @include container();
+
+  width: 100%;
+}
+
 .navigation-footer {
   @include media( $firstBreak ) {
     @include flex-wrap( nowrap );
@@ -83,12 +89,15 @@
 }
 
 .navigation-footer .menu {
+  
   @include box( horizontal, center, center );
   @include display( flex );
   @include align-content( stretch );
   @include align-items( stretch );
-  @include justify-content( center );
+  @include justify-content( space-between );
   @include flex-wrap( wrap );
+  
+  width: 100%;
   
   @include media( $firstBreak ) {
     @include flex-wrap( no-wrap );
@@ -109,7 +118,7 @@
     @include align-items( stretch );
     @include justify-content( center );
     
-    @include pad();
+    //@include pad();
     
     @include media( $firstBreak ) {
       @include flex( 0 1 33% );
@@ -118,6 +127,8 @@
     a {
       
       @include flex( 1 1 100% );
+      
+      @include pad( 2em 0 );
       
       .item-wrapper,
       .sub {
@@ -128,6 +139,8 @@
       
       .item-wrapper {
         margin: 0;
+        
+        color: $dkGrey;
       }
     }
   }
@@ -163,6 +176,7 @@
   @include media( $firstBreak ) {
     width: 50%;
     padding-top: 0;
+    padding-left: flex-gutter() * 1.5;
   }
   
   .menu-item {
@@ -170,3 +184,38 @@
   }
 }
 
+.email-signup {
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( flex-end );
+  @include justify-content( space-between );
+  @include flex-wrap( wrap );
+  
+  .gform_heading {
+    @include flex( 1 1 100% );
+    @include order( 3 );
+    
+    margin-top: 1em;
+  }
+  
+  .gform_body {
+    @include flex( 0 1 55% );
+    
+    padding-bottom: 1px;
+    
+    .ginput_container,
+    input { max-width: 100%; }
+    
+  }
+  
+  .gform_footer {
+    @include flex( 1 1 45% );
+    
+    .button { 
+      height: 28px;
+      width: 100%;
+    }
+  }
+  
+}

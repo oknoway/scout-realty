@@ -12,3 +12,45 @@
   background-color: $bgGrey;
 }
 
+.widget_nav_menu:nth-child( 3 ) {
+  
+  .widget-title {
+    
+    &:before,
+    &:after {
+      content: '';
+      
+      display: inline-block;
+      height: 12px;
+      width: 42px;
+      vertical-align: middle;
+      
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    
+    &:before {
+      background-image: url( '../../img/arrow_tail.svg' );
+      background-position: left center;
+    }
+    
+    &:after {
+      background-image: url( '../../img/arrow_head.svg' );
+      background-position: right center;
+    }
+    
+    /*
+    background-repeat: no-repeat;
+    background-image: url( '../../img/arrow_tail.svg' ),
+      url( '../../img/arrow_head.svg' );
+    background-position: left center,
+      right center;
+    
+    @at-root .no-svg & {
+      background-image: url( '../../img/arrow_tail.png' ),
+        url( '../../img/arrow_head.png' );
+    }
+    
+    */
+  }
+}
