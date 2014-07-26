@@ -10,6 +10,7 @@
     
     @include media( $firstBreak ) {
       max-width: flex-grid( 6, 12 );
+      @include pad( 0 flex-grid( 1, 12 ) )
     }
     
     .page-header {
@@ -23,6 +24,8 @@
     
     .page-content {
       @include columns( 1 );
+      
+      p:last-child { margin-bottom: 0; }
     }
   }
   

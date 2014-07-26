@@ -24,6 +24,8 @@
 
 .slick-prev,
 .slick-next {
+  @extend %ir;
+  
   position: absolute;
   top: 50%;
   z-index: 10;
@@ -31,14 +33,12 @@
   height: 53px;
   width: 41px;
   margin-top: -26.5px;
-  overflow: visible;
   
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
   
   border: 0;
-  
   
   @include transition();
   

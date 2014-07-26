@@ -6,38 +6,29 @@
   background-image: url( '../../img/pattern_home-hero.png' );
   background-position: center 18px;
   
-  
   .main-page-content {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
     
-    @include content-box( inset );
-    
-    border-top-right-radius: 55%;
-    border-bottom-right-radius: 55%;
-    border-bottom-left-radius: 55%;
-    border-top-left-radius: 55%;
-    
-    
-    /*
-      shape?
+    &:before {
+      content: '';
       
-      http://coveloping.com/tools/css-shapes-generator
+      position: absolute;
+      top: -20%;
+      right: 0;
+      bottom: -20%;
+      left: 0;
+      z-index: -1;
       
-      *, *:before, *:after{ 
-    box-sizing: border-box; 
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
-} 
-.css-shapes-preview{ 
-    position: relative; 
-    height: 200px; 
-    width: 0px; 
-    border-top: 60px solid transparent; 
-    border-right: 100px solid #428bca; 
-    border-bottom: 60px solid transparent; 
-}
-
-*/
-    
+      background-color: transparent;
+      background-image: url( '../../img/shield_bg.svg' );
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: contain;
+      
+      @at-root .no-svg & { background-image: url( '../../img/shield_bg.png' ); }
+    }
   }
 }
 

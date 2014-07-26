@@ -195,7 +195,11 @@ blockquote {
   font-size: .777777778em;
   line-height: 1.571428571;
   
-  .home & { text-align: center; }
+  .home & {
+    font-size: 1.125em;
+    line-height: 1.388888889;
+    text-align: center;
+  }
 }
 
 
