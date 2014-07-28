@@ -18,15 +18,16 @@ body {
 
 h1,
 %h1 {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 2em;
   line-height: 1.05;
+  letter-spacing: -0.025em;
   text-transform: uppercase;
 }
 
 h2,
 %h2 {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1.5em;
   line-height: 1.05;
   text-transform: uppercase;
@@ -34,15 +35,15 @@ h2,
 
 h3,
 %h3 {
-  font-weight: 300;
-  font-size: 1.5em;
+  font-weight: 100;
+  font-size: 1.25em;
   line-height: 1.05;
   text-transform: uppercase;
 }
 
 h4,
 %h4 {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1.111111111em;
   line-height: 1.05;
   text-transform: uppercase;
@@ -51,7 +52,7 @@ h4,
 
 h5,
 %h5 {
-  font-weight: 300;
+  font-weight: 100;
   font-size: 1em;
   line-height: 1.05;
   text-transform: uppercase;
@@ -82,7 +83,10 @@ blockquote {
 }
 
 // Header
-.site-header { text-transform: uppercase; }
+.site-header {
+  font-size: .888888889em;
+  text-transform: uppercase;
+}
 
 // Footer
 .site-footer {
@@ -133,7 +137,17 @@ blockquote {
 }
 
 // Home
-.featured-home .post-header { text-align: center; }
+.featured-home {
+  
+  .post-header { text-align: center; }
+  
+  .post-excerpt {
+    font-size: 0.75em;
+    line-height: 1.55;  
+  }
+  
+}
+
 
 // Page
 
@@ -150,7 +164,7 @@ blockquote {
 .post-header,
 .post-footer { text-align: center; }
 
-.section-title { @extend %h2; }
+.section-title { @extend %h3; }
 
 // Post
 
@@ -196,8 +210,8 @@ blockquote {
   line-height: 1.571428571;
   
   .home & {
-    font-size: 1.125em;
-    line-height: 1.388888889;
+    font-size: 1em;
+    line-height: 1.389888;
     text-align: center;
   }
 }
@@ -279,6 +293,18 @@ a.post-location,
   text-decoration: underline;
 }
 
+.post-detail .post-meta {
+  font-size: 0.833333333em;
+
+  .post-date {
+    text-align: left;
+  }
+  
+  .post-author {
+    text-align: right;
+  }
+}
+
 // Neighborhoods
 
 .neighborhood-sort {
@@ -346,7 +372,7 @@ a.post-location,
 }
 
 .agent-contact-links {
-  font-size: .722222222em;
+  font-size: 1em;
   text-align: center;
   text-transform: uppercase;
 }

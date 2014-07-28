@@ -2,6 +2,7 @@
  * Logo
  */
 
+
 .menu .scout-logo a {
   @extend %ir;
   
@@ -12,10 +13,10 @@
   background-size: 59px 60px;
   
   @include media( $firstBreak ) {
-    height: 72px;
-    width: 75px;
+    height: 90px;
+    width: 85px;
     
-    background-size: 72px 75px;
+    background-size: 82px 85px;
   }
   
   @at-root .no-svg & {

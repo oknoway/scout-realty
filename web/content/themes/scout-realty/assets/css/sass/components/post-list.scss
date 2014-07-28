@@ -10,3 +10,14 @@
 
 }
 
+.single .post-list .post-title {
+
+  margin-bottom: 1em;
+  
+  &:after {
+    bottom: -10px;
+    left: 0;
+    margin-left: 0;
+  
+  }
+}

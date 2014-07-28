@@ -55,7 +55,7 @@
         ?>
           <?php if ( !empty( $agentData[ $social ] ) ) :
             $socialField = get_field_object( $social ); ?>
-            <li class="social">
+            <li class="social social-<?php echo $social; ?>">
               <a href="<?php echo $socialField['prepend'] . $agentData[ $social ]; ?>" class="icon icon-<?php echo $social; ?> "><?php the_title(); ?> on <?php echo ucwords( $social ); ?>.</a>
             </li>
           <?php endif; ?>
@@ -70,17 +70,17 @@
   <?php endif; ?>
   <div class="agent-contact small-container">
     <header class="section-header">
-      <h2 class="section-title">Contact <?php echo $agentData['first_name']; ?> to:</h2>
+      <h3 class="section-title">Contact <?php echo $agentData['first_name']; ?> to:</h3>
     </header>
     <ul class="agent-contact-links">
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>">Buy a House</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>" class="cta">Buy a House</a>
       </li>
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>">Sell Your House</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>" class="cta">Sell Your House</a>
       </li>
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling-to-buy' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>">Selling to Buy</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling-to-buy' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>" class="cta">Selling to Buy</a>
       </li>
     </ul>
   </div>

@@ -9,8 +9,8 @@
   .main-page-content {
     
     @include media( $firstBreak ) {
-      max-width: flex-grid( 6, 12 );
-      @include pad( 0 flex-grid( 1, 12 ) )
+      width: 36.345486111em;
+      @include pad( 0.55781em 5.23212em )
     }
     
     .page-header {
@@ -20,15 +20,33 @@
         margin-left: auto;
         margin-right: auto;
       }
+      
+      .page-title {
+        margin-top: 0;
+        margin-bottom: 0.85em;
+        
+        &:after {
+          bottom: -13px;
+          width: 80px;
+          margin-left: -40px;
+        }
+      }
     }
     
     .page-content {
       @include columns( 1 );
       
-      p:last-child { margin-bottom: 0; }
+      p {
+        margin-bottom: 1.15em;
+        
+        &:last-child { margin-bottom: 0; }
+      }
+      
+      .cta {
+        padding: 13.08px 32px;
+      }
     }
   }
-  
 }
 
 .hero-wrapper,
@@ -48,7 +66,7 @@
 }
 
 .featured-home {
-  margin-bottom: 2em;
+  margin-bottom: 2.85em;
   
   .post-content-wrapper {
     

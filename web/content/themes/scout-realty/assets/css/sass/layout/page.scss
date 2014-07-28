@@ -16,6 +16,8 @@
     margin-bottom: 4em;
     margin-right: auto;
   }
+  
+  .page-title { margin-bottom: 1.25em;}
 }
 
 // Sections
@@ -29,14 +31,14 @@
 }
 
 .content-section {
-  margin-bottom: 4em;
+  margin-bottom: 5em;
 
   .section-img { margin-bottom: 0; }
 
   .section-header {
     .section-title {
       margin-top: 0;
-      margin-bottom: 0.66em;
+      margin-bottom: 0.4em;
     }
   }
 
@@ -221,6 +223,8 @@
         width: 100%;
         margin-bottom: 1em;
       }
+      
+      .submit-btn { margin-bottom: 0; }
     }  
   }
 }

@@ -167,13 +167,14 @@
   @include align-items( stretch );
   @include justify-content( space-between );
   
-  max-width: 990px;
   padding-left: 0;
   padding-right: 0;
 
   @include media( $firstBreak ) {
     @include box( vertical, center, center );
     @include flex-direction( row );
+    
+    max-width: 1016px;
   }
   
   @at-root .no-flexbox.no-flexboxlegacy & {
@@ -192,7 +193,7 @@
     
     max-width: 260px;
     
-    @include pad( 35px 25px );
+    @include pad( 25px 15px );
     
   }
   
@@ -203,15 +204,17 @@
   }
   
   .post-img {
-    max-width: 245px;
-    height: 164px;
+    max-width: 254px;
+    height: 172px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1.15em;
     
     border: 5px solid $white;
     border-radius: 5px;
     
     @include media( $firstBreak ) {
+      
     }
     
     .fake-img { min-height: 0; }
@@ -260,6 +263,11 @@
 
 
 // Home Listing Meta
+.listing-meta-wrapper {
+  @include clearfix();
+  
+  margin-bottom: 2em;
+}
 
 .listing-meta {
   display: block;
@@ -270,7 +278,6 @@
     margin-bottom: 0.5em;
     
     @include media( $firstBreak ) {
-      margin-bottom: 1em;
     }
   }
   
@@ -308,6 +315,28 @@
 
 .post-detail {
   
+  .post-content-wrapper {
+    
+      
+    padding-top: 4.25em;
+    
+    background-color: $white;
+    background-image: url( '../../img/pattern_post-cap.png');
+    background-repeat: repeat-x;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    @include media( $firstBreak ) {
+      position: relative;
+      z-index: 10;
+      max-width: 880px;
+      margin-top: -9em;
+    }
+    
+    
+    
+  }
   
   .agent-contact {
     
@@ -325,6 +354,10 @@
     @include justify-content( center );
     @include flex-wrap( wrap );
     
+    margin-top: 3em;
+    margin-bottom: 3em;
+    clear: both;
+    
     @include media( $firstBreak ) {
       @include flex-wrap( nowrap );
     }
@@ -335,6 +368,12 @@
       @include media( $firstBreak ) {
         @include flex( 1 1 50% );
       }
+    }
+    
+    .post-date {
+    }
+    
+    .post-author {
     }
     
     .agent-photo {
@@ -355,4 +394,15 @@
     
   }
   
+  
+}
+
+blockquote {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  
+  border: 3px solid $dkGrey;
+  border-width: 3px 0;
 }

@@ -38,6 +38,8 @@
 .team-archive {
   .post-column {
     @include flex( 0 1 flex-grid( 3, $grid-columns ) );
+    
+    @include pad( flex-gutter() * 0.25 );
   }
 }
 
@@ -64,6 +66,10 @@
     @include flex ( 0 1 auto );
   }
   
+  .post-title {
+    margin-bottom: 1.85em;
+  }
+  
   .btn {
     width: 100%;
     margin-top: 2em;
@@ -71,6 +77,15 @@
 }
 
 // Agent Detail
+
+.agent-title {
+  
+  margin-bottom: 1.5em;
+  
+  &:after {
+    bottom: -10px;
+  }
+}
 
 .agent-info-wrapper {
   @include pad( 2em 0 );
@@ -136,7 +151,26 @@
     .agent-meta-title {
       display: block;
     }
+    
+    .agent-social {
+      margin-top: 0.25em;
+    }
+    
+    .social {
+      .icon {
+        @extend %ir;
+        
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
+}
+
+.agent-contact {
+  margin-top: 2em;
+  margin-bottom: 4em;
 }
 
 .agent-contact-links {
@@ -146,5 +180,10 @@
   > * {
     @include span-columns( 4 );
     @include omega( 3 );
+  }
+  
+  a {
+    display: block;
+    width: 100%;
   }
 }

@@ -2,9 +2,12 @@
  * Listing
  */
 
-.listing-meta {
+.listing-meta,
+a.listing-meta {
   
-  color: inherit;
+  color: $dkGrey;
+  
+  
 }
 
 .address { color: $grey; }
