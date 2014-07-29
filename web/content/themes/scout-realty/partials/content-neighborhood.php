@@ -10,7 +10,7 @@
 
 <?php get_template_part( 'partials/module', 'hero' ); ?>
 
-<article id="neighborhood-<?php the_ID(); ?>" <?php post_class( 'main-page-content' ); ?>>
+<article id="neighborhood-<?php the_ID(); ?>" <?php post_class( 'main-page-content neighborhood-detail' ); ?>>
 
   <header class="neighborhood-header">
     <h1 class="neighborhood-title"><?php the_title(); ?></h1>

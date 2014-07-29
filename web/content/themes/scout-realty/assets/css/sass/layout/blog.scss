@@ -3,7 +3,7 @@
  */
 
 .blog .page-section {
-  
+  @include container();
   
   @include box( horizontal, center, center );
   @include display( flex );
@@ -25,22 +25,33 @@
   .archive-wrapper {
     
     @include media( $firstBreak ) {
-      @include flex( 1 0 flex-grid( 8, $grid-columns ) );
-      @include shift( 1 );
-      @include order( 2 );
     }
   }
   
   .archive-sidebar {
-    
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    @include flex-wrap( wrap );
+
     @include media( $firstBreak ) {
-      @include flex( 0 1 flex-grid( 3, $grid-columns ) );
-      @include order( 1 );
+      @include flex-wrap( nowrap );
+    }
+    
+    > * {
+      @include flex( 1 0 100% );
+      
+      @include pad( flex-gutter() * 2 );
+      
+      @include media( $firstBreak ) {
+        @include flex( 1 0 33% );
+      }
     }
   }
   
   .section-footer {
     @include flex( 1 0 100% );
-    @include order( 4 );
   }
 }

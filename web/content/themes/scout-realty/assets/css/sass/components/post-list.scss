@@ -10,6 +10,26 @@
 
 }
 
+.post-list {
+  @include pad( 0 );
+  
+  border: 1px solid transparent;
+  
+  
+  .post-meta {
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    
+    & + .post-content-wrapper {
+      padding-top: flex-gutter();
+      padding-bottom: flex-gutter();
+    }
+  }
+  
+}
+
 .single .post-list .post-title {
 
   margin-bottom: 1em;

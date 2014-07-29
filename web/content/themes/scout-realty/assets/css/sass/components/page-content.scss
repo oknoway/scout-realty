@@ -9,12 +9,13 @@
 .main-page-content .page-content {
   
   @include media( $firstBreak ) {
-    @include columns( 2 );
+
   }
   
-  .page-agents & {
+  .parent-page-how-we-help &,
+  .parent-pageid-12 &, {
     @include media( $firstBreak ) {
-      @include columns( initial );
+      @include columns( 2 );
     }
   }
   

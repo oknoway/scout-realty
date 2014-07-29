@@ -6,9 +6,82 @@ input,
 textarea,
 selection {
   
-  @include pad();
+  @include pad( );
   
   border: 1px solid $borderGrey;
+}
+
+.gform_wrapper {
+  @extend %no-list;
+}
+
+.contact-form {
+  @include small-container();
+  
+  @include media( $firstBreak ) {
+    max-width: flex-grid( 7, 12 ) + flex-gutter( 12 );
+  }
+  
+  .gfield {
+    margin-bottom: 3em;
+  }
+  
+  .gfield_label,
+  .ginput_container,
+  .gfield_description,
+  input,
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .gform_heading,
+  .validation_error {
+    margin-bottom: 1em;
+  }
+  
+  .validation_message,
+  .validation_error,
+  .gfield_required { color: $red; }
+  
+  .gfield_label {
+    max-width: 80%;
+    margin-bottom: 0.5em;
+    
+    color: $dkGrey;
+  }
+  
+  .gfield_description {
+    max-width: 80%;
+  }
+  
+  .ginput_container input {
+    margin-bottom: 0.5em;
+  }
+  
+  .ginput_container select {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ginput_container .gfield_radio,
+  .ginput_container .gfield_checkbox {
+    
+    li { margin-bottom: 1em; }
+    
+    input,
+    label {
+      display: inline-block;
+      width: auto;
+    }
+    
+    input { margin-right: 10px; }
+  }
+  
 }
 
 .email-signup {

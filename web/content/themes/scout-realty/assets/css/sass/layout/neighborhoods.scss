@@ -126,3 +126,46 @@
     }
   }
 }
+
+.neighborhood-detail {
+  
+  .neighborhood-map {
+    margin-bottom: 2em;
+  }
+  
+  .neighborhood-content-wrapper {
+    padding-top: 4.25em;
+    
+    background-color: $white;
+    background-image: url( '../../img/pattern_post-cap.png');
+    background-repeat: repeat-x;
+    
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    @include media( $firstBreak ) {
+      position: relative;
+      max-width: 880px;
+    }
+    
+    .neighborhood-content {
+      max-width: 650px;
+      margin: auto;
+    }
+  }
+  
+  .neighborhood-meta {
+    
+    .neighborhood-regions {
+      color: $dkGrey;
+      
+      a { color: inherit; }
+    }
+    
+    .neighborhood-meta-key {
+      margin-left: 12px;
+      
+      color: $ltGrey;
+    }
+  }
+}

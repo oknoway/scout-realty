@@ -203,6 +203,12 @@ blockquote {
   .address { font-size: 0.842352941em; }
 }
 
+.post-detail {
+  .post-author {
+    font-style: italic;
+  }
+}
+
 .main-page-content .page-content {
   text-align: left;
   
@@ -275,7 +281,7 @@ blockquote {
 
 .listing-meta {
   
-  font-size: 0.9375em;
+  font-size: 0.76375em;
   
   &.price {
     font-size: 1.25em;
@@ -293,15 +299,23 @@ a.post-location,
   text-decoration: underline;
 }
 
-.post-detail .post-meta {
-  font-size: 0.833333333em;
-
+.post-detail {
+  
   .post-date {
-    text-align: left;
+    span { text-transform: uppercase; }
   }
   
-  .post-author {
-    text-align: right;
+  .post-meta {
+    font-size: 0.833333333em;
+  
+    .post-date {
+      text-align: left;
+    }
+    
+    .post-author {
+      text-align: right;
+    }
+    
   }
 }
 
@@ -352,6 +366,19 @@ a.post-location,
   }
 }
 
+.neighborhood-detail {
+  .neighborhood-meta {
+    font-size: 0.76375em;
+    
+    &.avg-home-price {
+      font-size: 1.25em;
+    }
+    
+    &.neighborhood-regions { font-style: italic; }
+    
+  }
+}
+
 // Agents
 
 .agents-archive { text-align: center; }
@@ -384,6 +411,29 @@ a.post-location,
 }
 
 // Forms
+.gform-wrapper {
+  
+}
+
+.contact-form {
+  .gform_title,
+  .gform_description { text-align: center; }
+  
+  .gfield_label {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  
+  .validation_error,
+  .gfield_description {
+    font-style: italic;
+    font-size: .927142857em;
+    font-family: $georgia;
+    text-align: center;
+  }
+  
+  .button { font-size: 1em; }
+}
 
 .email-signup {
 

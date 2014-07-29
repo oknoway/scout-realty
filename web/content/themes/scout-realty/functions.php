@@ -510,12 +510,37 @@ if ( ! function_exists( 'scout_body_class' ) ) :
     
     if ( is_page() )
       $classes[] = $post->post_type . '-' . $post->post_name;
+      
+    if ( is_page() && $post->post_parent > 0 )
+      $classes[] = 'parent-page-' . basename( get_permalink( $post->post_parent ) );
 
     return $classes;
   }
 endif; // scout_body_class
 
 add_filter( 'body_class', 'scout_body_class' );
+
+if ( ! function_exists( 'scout_post_class' ) ) :
+  /**
+   * Some extra classes for the body.
+   *
+   * @param $classes
+   *
+   *
+   * @return $classes
+   */
+
+  function scout_post_class( $classes ) {
+    global $post;
+    
+    if ( get_field( 'gallery', $post->ID ) || has_post_thumbnail( $post->ID ) )
+      $classes[] = 'has-post-img';
+
+    return $classes;
+  }
+endif; // scout_post_class
+
+add_filter( 'post_class', 'scout_post_class' );
 
 
 if ( ! function_exists( 'custom_img_sizes' ) ):
@@ -579,6 +604,12 @@ function ellipses_excerpt( $more ) {
 }
 
 add_filter('excerpt_more', 'ellipses_excerpt');
+
+function excerpt_length( $length ) {
+	return 20;
+}
+add_filter( 'excerpt_length', 'excerpt_length', 999 );
+
 
 
 // acf post object filter

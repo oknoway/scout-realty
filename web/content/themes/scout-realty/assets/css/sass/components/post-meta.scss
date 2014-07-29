@@ -10,27 +10,35 @@
   }
 }
 
+.post-meta {
   
-  .post-img {
-    
-    .home-price {
-      background-color: $black;
-      color: $white;
-    }
-  }
+  a { color: inherit; }
+  
+}
 
-  .post-region,
-  .post-neighborhood {
-    color: $black;
-  }
+.post-img {
   
-  .post-title {
-    
-    color: $dkGrey;
-    
-    a { color: inherit; }
+  .home-price {
+    background-color: $black;
+    color: $white;
   }
+}
+
+.post-region,
+.post-neighborhood {
+  color: $black;
+}
+
+.post-title {
   
-  .post-excerpt {
-    color: $grey;
-  }
+  color: $dkGrey;
+  
+}
+
+.post-excerpt {
+  color: $grey;
+}
+
+.post-author {
+  color: $grey;
+}
