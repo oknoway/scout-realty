@@ -16,6 +16,8 @@
   
   .widget-title {
     
+    color: $grey;
+    
     &:before,
     &:after {
       content: '';

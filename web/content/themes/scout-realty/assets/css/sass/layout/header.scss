@@ -43,14 +43,29 @@
     @include align-items( center );
     @include justify-content( center );
     
+    margin-bottom: 0;
+    
+    &:after { display: none; }
+    
     @include media( $firstBreak ) {
       @include flex( 1 1 auto );
+      
+      &:after {
+        bottom: 25px;
+        display: none;
+        width: 30px;
+        margin-left: -15px;
+      }
+      
+      &.current-page-ancestor:after,
+      &.current_page_item:after { display: block; }
     }
     
     &.scout-logo {
       max-width: 133px;
+      
+      &:after { display: none; }
     }
-    
     
     a {
       @include flex( 1 1 100% );
@@ -64,6 +79,7 @@
       margin-bottom: 0.25em;
       @include pad();
       
+      opacity: 1;
       
       color: $black;
       
@@ -75,7 +91,7 @@
       }
       
       &:hover {
-        color: $grey;
+        opacity: 0.7;
       }
       
       .item-wrapper {

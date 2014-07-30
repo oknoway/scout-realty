@@ -618,7 +618,7 @@ td {
  */
 body {
   font-family: "Gotham SSm A", "Gotham SSm B", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-size: 14px; }
   @media screen and (min-width: 35.4375em) {
@@ -698,6 +698,8 @@ blockquote {
   font-size: .857142857em;
   font-family: "Georgia", serif;
   text-transform: none; }
+.site-footer a[href="mailto:hello@scoutportland.com"] {
+  text-decoration: underline; }
 
 .navigation-footer .menu-item {
   text-align: center; }
@@ -731,7 +733,7 @@ blockquote {
   text-align: center; }
 
 .post-list .post-meta {
-  font-weight: 300;
+  font-weight: 100;
   text-transform: uppercase;
   text-align: center; }
   .post-list .post-meta .blog-archive-link {
@@ -760,6 +762,7 @@ blockquote {
   font-size: .777777778em;
   line-height: 1.571428571; }
   .home .main-page-content .page-content {
+    font-weight: 300;
     font-size: 1em;
     line-height: 1.389888;
     text-align: center; }
@@ -918,10 +921,16 @@ html {
 .js .no-js {
   display: none; }
 
-a:link,
-a:visited,
+:link,
+:visited,
 .clickable {
-  color: #ff4338; }
+  color: inherit;
+  -webkit-transition: color 250ms ease-in-out;
+  transition: color 250ms ease-in-out; }
+  :link:hover,
+  :visited:hover,
+  .clickable:hover {
+    color: #ff4338; }
 
 .container {
   max-width: 65em;
@@ -1067,16 +1076,28 @@ figure {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
-    -ms-flex-pack: center; }
+    -ms-flex-pack: center;
+    margin-bottom: 0; }
+    .menu-top-nav-container .menu .menu-item:after {
+      display: none; }
     @media screen and (min-width: 47.9375em) {
       .menu-top-nav-container .menu .menu-item {
         box-flex: 1;
         -webkit-box-flex: 1;
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
-        flex: 1 1 auto; } }
+        flex: 1 1 auto; }
+        .menu-top-nav-container .menu .menu-item:after {
+          bottom: 25px;
+          display: none;
+          width: 30px;
+          margin-left: -15px; }
+        .menu-top-nav-container .menu .menu-item.current-page-ancestor:after, .menu-top-nav-container .menu .menu-item.current_page_item:after {
+          display: block; } }
     .menu-top-nav-container .menu .menu-item.scout-logo {
       max-width: 133px; }
+      .menu-top-nav-container .menu .menu-item.scout-logo:after {
+        display: none; }
     .menu-top-nav-container .menu .menu-item a {
       box-flex: 1;
       -webkit-box-flex: 1;
@@ -1112,6 +1133,7 @@ figure {
       -ms-flex-pack: center;
       margin-bottom: 0.25em;
       padding: 3.0303%;
+      opacity: 1;
       color: #18181d;
       -webkit-transition: all 0.15s ease-out 0s;
       transition: all 0.15s ease-out 0s; }
@@ -1120,7 +1142,7 @@ figure {
           margin-bottom: 0;
           padding: 0; } }
       .menu-top-nav-container .menu .menu-item a:hover {
-        color: #8e8e95; }
+        opacity: 0.7; }
       .menu-top-nav-container .menu .menu-item a .item-wrapper {
         box-flex: 0;
         -webkit-box-flex: 0;
@@ -1406,7 +1428,20 @@ figure {
         -webkit-box-flex: 0;
         -webkit-flex: 0 1 33%;
         -ms-flex: 0 1 33%;
-        flex: 0 1 33%; } }
+        flex: 0 1 33%; }
+        .navigation-footer .menu .menu-item:nth-child(2) {
+          position: relative; }
+          .navigation-footer .menu .menu-item:nth-child(2):before, .navigation-footer .menu .menu-item:nth-child(2):after {
+            content: '';
+            position: absolute;
+            top: 2em;
+            left: 1px;
+            bottom: 2em;
+            width: 1px;
+            background-color: white; }
+          .navigation-footer .menu .menu-item:nth-child(2):after {
+            left: auto;
+            right: 1px; } }
     .navigation-footer .menu .menu-item a {
       box-flex: 1;
       -webkit-box-flex: 1;
@@ -2077,6 +2112,8 @@ figure {
   .post-column .column-title {
     margin-top: 0;
     margin-bottom: 0.5em; }
+  .post-column .cta {
+    width: 100%; }
 
 .post-content-wrapper {
   padding-left: 3.0303%;
@@ -2312,6 +2349,8 @@ blockquote {
   height: 185px; }
 .agent-list a {
   color: inherit; }
+  .agent-list a:hover .agent-name {
+    color: #ff4338; }
 
 .find-an-agent {
   display: -webkit-box;
@@ -2362,7 +2401,9 @@ blockquote {
     margin-top: 2em; }
 
 .agent-title {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
   .agent-title:after {
     bottom: -10px; }
 
@@ -2818,12 +2859,25 @@ blockquote {
   padding: 3.0303%;
   background-color: #18181d;
   color: #ff4338;
-  border: 0; }
+  border: 0;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
+  .button:hover,
+  .btn:hover,
+  .content-section.call-to-action .cta:hover {
+    background-color: #ff4338;
+    color: white; }
 
 .cta {
   padding: 14.08px 0;
+  color: #ff4338;
   border: 1px solid #d8d8e0;
-  border-width: 1px 0; }
+  border-width: 1px 0;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
+  .cta:hover {
+    background-color: #ff4338;
+    color: white; }
 
 /**
  * Form
@@ -3049,10 +3103,14 @@ a.listing-meta {
 .neighborhood-sort {
   color: #8e8e95; }
   .neighborhood-sort a {
+    position: relative;
     display: inline-block;
+    margin-left: 32px;
     color: black; }
     .neighborhood-sort a:before {
       content: ' | ';
+      position: absolute;
+      left: -16px;
       color: #8e8e95; }
 
 .neighborhood-list .neighborhood-content-wrapper {
@@ -3210,7 +3268,7 @@ a.listing-meta {
 .site-footer {
   background-image: url("../../img/pattern_footer-bg.png"); }
 
-.navigation-footer > .widget-container.gform_widget {
+.footer-wrapper > .widget-container.gform_widget {
   background-image: url("../../img/pattern_email-signup.png"); }
 
 .content-section.call-to-action .small-container,
@@ -3243,12 +3301,14 @@ a.listing-meta {
   .neighborhood-title:after {
     right: -80px; }
 
+.menu-top-nav-container .menu-item,
 .page-title,
 .featured-home .post-title,
 .find-an-agent .post-title,
 .single .post-title {
   position: relative;
   margin-bottom: 1.25em; }
+  .menu-top-nav-container .menu-item:after,
   .page-title:after,
   .featured-home .post-title:after,
   .find-an-agent .post-title:after,
@@ -3289,6 +3349,7 @@ a.listing-meta {
   background-color: #e6e6ed; }
 
 .widget_nav_menu:nth-child(3) .widget-title {
+  color: #8e8e95;
   /*
   background-repeat: no-repeat;
   background-image: url( '../../img/arrow_tail.svg' ),

@@ -3,7 +3,7 @@
  */
 
 body {
-  @include GothamBook;
+  @include GothamLight;
   
   font-size: 14px;
   
@@ -114,6 +114,8 @@ blockquote {
       text-transform: none;
     }
   }
+  
+  a[href="mailto:hello@scoutportland.com"] { text-decoration: underline; }
 }
 
 .navigation-footer {
@@ -170,7 +172,7 @@ blockquote {
 
 .post-list {
   .post-meta {
-    font-weight: 300;
+    font-weight: 100;
     text-transform: uppercase;
     text-align: center;
     
@@ -216,6 +218,7 @@ blockquote {
   line-height: 1.571428571;
   
   .home & {
+    font-weight: 300;
     font-size: 1em;
     line-height: 1.389888;
     text-align: center;

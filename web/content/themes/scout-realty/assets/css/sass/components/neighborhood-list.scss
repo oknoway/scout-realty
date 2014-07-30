@@ -6,11 +6,17 @@
   color: $grey;
   
   a {
+    position: relative;
     display: inline-block;
+    margin-left: 32px;
+    
     color: black;
     
     &:before {
       content: ' | ';
+      
+      position: absolute;
+      left: -16px;
       
       color: $grey;
     }

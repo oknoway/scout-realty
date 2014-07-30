@@ -19,10 +19,16 @@ html {
 
 .js .no-js { display: none; }
 
-a:link,
-a:visited,
+:link,
+:visited,
 .clickable {
-  color: $red;
+  color: inherit;
+  
+  @include transition( color 250ms ease-in-out );
+  
+  &:hover {
+    color: $red;
+  }
 }
 
 .container {

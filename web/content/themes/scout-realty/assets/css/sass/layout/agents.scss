@@ -49,7 +49,11 @@
     height: 185px;
   }
   
-  a { color: inherit; }
+  a {
+    color: inherit;
+    
+    &:hover .agent-name { color: $red; }
+  }
 }
 
 .find-an-agent {
@@ -81,6 +85,8 @@
 .agent-title {
   
   margin-bottom: 1.5em;
+  
+  @include transition();
   
   &:after {
     bottom: -10px;

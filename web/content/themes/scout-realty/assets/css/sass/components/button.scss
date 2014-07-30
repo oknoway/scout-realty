@@ -10,11 +10,27 @@
   color: $red;
   
   border: 0;
+  
+  @include transition();
+  
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
 }
 
 .cta {
   @include pad( 14.08px 0 );
   
+  color: $red;
+  
   border: 1px solid $ltGrey;
   border-width: 1px 0;
+  
+  @include transition();
+  
+  &:hover {
+    background-color: $red;
+    color: $white;
+  }
 }
