@@ -42,6 +42,7 @@
     @include justify-content( center );
     
     max-width: 75px;
+    @include pad( flex-gutter() 0 );
     
     @include media( $firstBreak ) {
       @include flex( 1 0 75px );
@@ -167,6 +168,7 @@
   @include align-items( stretch );
   @include justify-content( space-between );
   
+  margin-bottom: 3.5em;
   padding-left: 0;
   padding-right: 0;
 
@@ -286,6 +288,7 @@
   }
   
   &.listing-address {
+    margin-top: 1.25em;
     margin-bottom: 1em;
     
     @include media( $firstBreak ) {
@@ -321,7 +324,7 @@
   
   &.has-post-img {
     .post-content-wrapper {
-      padding-top: 4.25em;
+      padding-top: 4.09em;
       
       background-color: $white;
       background-image: url( '../../img/pattern_post-cap.png');
@@ -375,8 +378,7 @@
     .post-date {
     }
     
-    .post-author {
-    }
+    .post-author {}
     
     .agent-photo {
       display: inline-block;
@@ -393,11 +395,18 @@
     	border-radius: 20px;
       
     }
-    
   }
-  
-  
 }
+
+// Related Posts
+
+.related-posts {
+  
+  .related-posts-header {
+    margin-bottom: 0.35em;
+  }
+}
+
 
 blockquote {
   margin-left: 0;

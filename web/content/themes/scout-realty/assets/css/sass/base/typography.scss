@@ -239,8 +239,14 @@ blockquote {
   }
 }
 
+.call-to-action {
+  .section-content {
+    font-size: .877777778em;
+  }
+}
+
 .content-section { text-align: center; }
-.content-section .section-content p:last-of-type {
+.content-section .section-content p + p:last-of-type {
   font-style: italic;
   font-family: $georgia;
   font-size: .877777778em;
@@ -287,7 +293,7 @@ blockquote {
   font-size: 0.76375em;
   
   &.price {
-    font-size: 1.25em;
+    font-size: 1.1em;
   }
   
   &.listing-neighborhood,
@@ -395,10 +401,15 @@ a.post-location,
 .agent-details {
   font-size: 1.111111111em;
   
+  .agent-meta { font-weight: 100; }
+  
   .agent-meta-title {
+    font-weight: 300;
     font-size: .65em;
     text-transform: uppercase;
   }
+  
+  a[href^="mailto"] { text-decoration: underline;}
 }
 
 .agent-contact-links {

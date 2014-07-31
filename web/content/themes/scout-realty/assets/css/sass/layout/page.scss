@@ -152,7 +152,7 @@
       .neighborhood-filters {
         
         @include media( $firstBreak ) {
-          max-width: flex-grid( 4, 10 );
+          max-width: flex-grid( 6, 10 );
         }
       }
     }

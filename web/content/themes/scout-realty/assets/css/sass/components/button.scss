@@ -4,7 +4,7 @@
 
 .button,
 .btn {
-  @include pad();
+  @include pad( 12px );
   
   background-color: $black;
   color: $red;

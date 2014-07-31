@@ -20,7 +20,7 @@
     
     @include flex( 0 1 flex-grid( 4, $grid-columns ) );
     
-    @include pad();
+    @include pad( 24px 16px );
     
     @include media( $firstBreak ) {
       

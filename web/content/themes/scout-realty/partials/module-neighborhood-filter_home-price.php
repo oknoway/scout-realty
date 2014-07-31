@@ -8,7 +8,7 @@
 ?>
 
 <section class="neighborhood-filters">
-  <form>
+  <form action="<?php echo get_post_type_archive_link( 'scout_neighborhoods' ); ?>" method="get">
   
     <!-- Avg. Home Price Filter -->
     <fieldsection class="neighborhood-filter-criterion-wrapper">
@@ -27,7 +27,7 @@
       </select>
     </fieldsection>
   
-    <button type="button" class="btn submit-btn">Find Neighborhoods</button>
+    <button type="submit" class="btn submit-btn">Find Neighborhoods</button>
     
   </form>
 </section>

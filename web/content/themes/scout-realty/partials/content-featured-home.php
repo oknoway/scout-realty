@@ -26,9 +26,9 @@ $postClasses = array( 'featured-home', 'post-detail' );
   <div class="post-content-wrapper">
     <header class="post-header">
     <?php if ( !empty( $postMeta[ 'headline' ] ) ) : ?>
-      <h1 class="post-title post-headline"><?php echo $postMeta[ 'headline' ]; ?></h1>
+      <h1 class="post-title post-headline"><a href="<?php the_permalink(); ?>"><?php echo $postMeta[ 'headline' ]; ?></a></h1>
     <?php else : ?>
-      <h1 class="post-title"><?php the_title(); ?></h1>
+      <h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
     <?php endif; ?>
     </header>
     

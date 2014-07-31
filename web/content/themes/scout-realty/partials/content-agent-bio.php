@@ -56,7 +56,7 @@
           <?php if ( !empty( $agentData[ $social ] ) ) :
             $socialField = get_field_object( $social ); ?>
             <li class="social social-<?php echo $social; ?>">
-              <a href="<?php echo $socialField['prepend'] . $agentData[ $social ]; ?>" class="icon icon-<?php echo $social; ?> "><?php the_title(); ?> on <?php echo ucwords( $social ); ?>.</a>
+              <a href="<?php echo $socialField['prepend'] . $agentData[ $social ]; ?>" class="icon icon-<?php echo $social; ?> " target="_blank"><?php the_title(); ?> on <?php echo ucwords( $social ); ?>.</a>
             </li>
           <?php endif; ?>
         <?php endforeach; ?>
