@@ -15,17 +15,26 @@
       content: '';
       
       position: absolute;
-      top: -20%;
+      top: 0;
       right: 0;
-      bottom: -20%;
+      bottom: 0;
       left: 0;
       z-index: -1;
       
       background-color: transparent;
-      background-image: url( '../../img/shield_bg.svg' );
+      background-image: url( '../../img/shield_bg.svg#svgView(preserveAspectRatio(none))' );
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: contain;
+      background-size: 106% 90%;
+      
+      @include media( $firstBreak ) {
+        top: -20%;
+        right: 0;
+        bottom: -20%;
+        left: 0;
+        
+        background-size: contain;
+      }
       
       @at-root .no-svg & { background-image: url( '../../img/shield_bg.png' ); }
     }
@@ -37,6 +46,26 @@
   background-image: url('../../img/pattern_inset.png');
 }
 
+
+.neighborhood-content-wrapper {
+  position: relative;
+
+  &:before {
+    content: '';
+  
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: block;
+    width: 80px;
+    
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+}
+
+.neighborhood-content-wrapper:before,
 .post-list .post-meta {
   background-image: url('../../img/pattern_post-list-header.png');
 }

@@ -4,13 +4,21 @@
 
 .home {
   
-  .home-content-wrapper {}
+  .home-content-wrapper {
+    margin-bottom: 2em;
+    
+    @include media( $firstBreak ) { margin-bottom: 0; }
+  }
   
   .main-page-content {
     
+    @include pad( flex-gutter() * 1.5 );
+    padding-top: 6em;
+    padding-bottom: 6em;
+    
     @include media( $firstBreak ) {
       width: 36.345486111em;
-      @include pad( 0.55781em 5.23212em )
+      @include pad( 0.55781em 5.23212em );
     }
     
     .page-header {
@@ -52,7 +60,7 @@
 .hero-wrapper,
 .hero-img {
   position: relative;
-  height: 180px;
+  height: 320px;
   width: 100%;
   margin-bottom: 0;
   
@@ -110,7 +118,15 @@
 
 .post-column-wrapper {
   .post-column {
-    margin: 0 $half-gutter;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+    @include media( $firstBreak ) {
+      margin-top: 0;
+      margin-bottom: 0;
+    margin-left: $half-gutter;
+    margin-right: $half-gutter;
+    }
   }
 }
 

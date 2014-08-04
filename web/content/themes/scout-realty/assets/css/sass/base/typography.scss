@@ -80,12 +80,20 @@ blockquote {
   font-style: italic;
   font-size: 2em;
   font-family: $georgia;
+  
+  &:before {
+    font-size: 4.575em;
+  }
 }
 
 // Header
 .site-header {
   font-size: .888888889em;
   text-transform: uppercase;
+  
+  @include media( max-width $firstBreak ) {
+    font-size: 1.2em;
+  }
 }
 
 // Footer
@@ -104,14 +112,27 @@ blockquote {
   }
   
   .widget_nav_menu:nth-child( 3 ) {
+    
+    .menu {
+      text-align: center;
       
+      @include media( $firstBreak ) {
+        text-align: left;
+      }
+    }
+    
     .widget-title {
       
       font-style: italic;
-      font-size: .857142857em;
+      font-size: 1.157142857em;
       font-family: $georgia;
-      
       text-transform: none;
+      text-align: center;
+      
+      @include media( $firstBreak ) {
+        font-size: .857142857em;
+        text-align: left;
+      }
     }
   }
   
@@ -452,7 +473,7 @@ a.post-location,
 .email-signup {
 
   .button {
-    font-size: 1.071428571em;
+    font-size: .971428571em;
   }
   
   .gform_heading {

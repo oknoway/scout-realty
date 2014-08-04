@@ -24,11 +24,12 @@
   > .widget-container {
     @include flex( 1 1 100% );
     
-    @include pad();
+    @include pad( 2em flex-gutter() );
     
     @include media( $firstBreak ) {
       @include flex( 1 1 33% );
       
+      @include pad( );
       padding-top: 40px;
     }
 
@@ -175,17 +176,18 @@
   
   @include media( $firstBreak ) {
     max-width: 66%;
-    margin-top: -5.5%;
+    margin-top: -60px;
     padding-top: 0;
   }
   
   .widget-title {
     display: inline-block;
     width: 100%;
-    margin: 0;
+    margin: 1.5em 0;
     
     @include media( $firstBreak ) {
       width: 50%;
+      margin: 0;
     }
   }
 }
@@ -193,6 +195,7 @@
 .menu-social-container {
   display: inline-block;
   width: 100%;
+  vertical-align: middle;
   
   @include media( $firstBreak ) {
     width: 50%;
@@ -202,6 +205,15 @@
   
   .menu-item {
     display: inline-block;
+    
+    a {
+      
+      @include pad( 22px );
+      
+      @include media( $firstBreak ) {
+        @include pad( 0 );
+      }
+    }
   }
 }
 
@@ -236,6 +248,7 @@
     .button { 
       height: 28px;
       width: 100%;
+      @include pad( 0 12px );
     }
   }
   

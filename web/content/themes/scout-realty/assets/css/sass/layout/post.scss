@@ -13,13 +13,13 @@
   @include align-content( flex-start );
   @include align-items( stretch );
   @include justify-content( center );
-  @include flex-wrap( wrap );
+  @include flex-wrap( nowrap );
   
   margin-right: auto;
   margin-bottom: 2em;
   margin-left: auto;
   
-  @include pad( 13px );
+  @include pad( 0 );
   
   @include media( $firstBreak ) {
     @include flex-wrap( nowrap );
@@ -29,10 +29,17 @@
     @include pad( 10px );
   }
   
+  &.has-post-thumbnail {
+    @include flex-wrap( wrap );
+    
+    @include media( $firstBreak ) {
+      @include flex-wrap( nowrap );
+    }
+  }
   
   .post-meta {
     
-    @include flex( 0 1 75px );
+    @include flex( 0 1 50px );
     
     @include box( vertical, center, center );
     @include display( flex );
@@ -41,11 +48,15 @@
     @include align-items( flex-start );
     @include justify-content( center );
     
-    max-width: 75px;
+    min-width: 50px;
+    max-width: 50px;
     @include pad( flex-gutter() 0 );
     
     @include media( $firstBreak ) {
       @include flex( 1 0 75px );
+      
+      min-height: 145px;
+      max-width: 75px;
       
       & + .post-content-wrapper { max-width: none; }
     }
@@ -78,6 +89,10 @@
       //max-width: flex-grid( 5.5, 12 );
     }
     
+    & + .post-content-wrapper {
+      @include flex( 1 1 100% );
+    }
+    
     a {
       @include flex( 1 1 100% );
       
@@ -87,7 +102,6 @@
       @include align-content( stretch );
       @include align-items( stretch );
       @include justify-content( center );
-      
     }
     
     .fake-img {
@@ -111,7 +125,7 @@
   }
   
   .post-content-wrapper {
-    @include flex( 1 1 100% );
+    @include flex( 0 1 auto );
     
     @include pad();
     
@@ -130,6 +144,8 @@
       padding-top: 0;
       padding-bottom: 0;
     }
+    
+    &
     
     > * {
       @include flex( 0 1 auto );
@@ -163,18 +179,18 @@
   
   @include box( vertical, center, center );
   @include display( flex );
-  @include flex-direction( column );
+  @include flex-direction( row );
   @include align-content( stretch );
   @include align-items( stretch );
   @include justify-content( space-between );
+  @include flex-wrap( wrap );
   
   margin-bottom: 3.5em;
   padding-left: 0;
   padding-right: 0;
 
   @include media( $firstBreak ) {
-    @include box( vertical, center, center );
-    @include flex-direction( row );
+    @include flex-wrap( nowrap );
     
     max-width: 1016px;
   }
@@ -189,12 +205,22 @@
   
   @include flex( 1 1 100% );
   
+  @include box( vertical, center, center );
+  @include display( flex );
+  @include flex-direction( column );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( space-between );
+  
+  margin-bottom: 2em;
+  @include pad( 25px 15px );
+
   @include media( $firstBreak ) {
     
     @include flex( 1 1 flex-grid( 4, 12 ) );
     
-    max-width: 260px;
-    
+    max-width: 310px;
+    margin-bottom: 0;
     @include pad( 25px 15px );
     
   }
@@ -205,7 +231,24 @@
     
   }
   
+  > *,
+  a > * {
+    @include flex( 0 1 auto );
+  }
+  
+  > a {
+    @include flex( 1 1 auto );
+    
+    @include box( vertical, center, center );
+    @include display( flex );
+    @include flex-direction( column );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( space-between );
+  }
+  
   .post-img {
+    width: 100%;
     max-width: 254px;
     height: 172px;
     margin-left: auto;
@@ -222,12 +265,21 @@
     .fake-img { min-height: 0; }
   }
   
+  .column-header { color: $dkGrey; }
+  
+  .column-content { color: $grey; }
+  
   .column-title {
     margin-top: 0;
     margin-bottom: 0.5em;
   }
   
+  .section-footer {
+  
+  }
+  
   .cta {
+    display: block;
     width: 100%;
   }
 }
@@ -255,7 +307,6 @@
       
       @include span-columns( 4 of 8 );
       
-      
     }
     
     &:nth-of-type( 2n ) {
@@ -264,7 +315,6 @@
       }
     }
   }
-  
 }
 
 
@@ -409,11 +459,26 @@
 
 
 blockquote {
+  position: relative;
   margin-left: 0;
   margin-right: 0;
-  padding-left: 1em;
+  padding-left: 3em;
   padding-right: 1em;
+  
+  color: $dkGrey;
   
   border: 3px solid $dkGrey;
   border-width: 3px 0;
+  
+  &:before {
+    content: '“';
+    
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    padding-right: 1em;
+    opacity: 0.15;
+    
+    color: $grey;
+  }
 }

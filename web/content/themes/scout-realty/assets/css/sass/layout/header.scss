@@ -5,18 +5,91 @@
 .site-header {
   @extend %no-list;
   
-  margin-bottom: 2em;
+  position: relative;
+  margin-bottom: 0em;
   @include pad( flex-gutter() 0 );
   
   box-shadow: 0 1px 4px rgba(24,24,29,.5);
 
   @include media( $firstBreak ) {
+    min-height: 90px;
     margin-bottom: 4.6em;
     @include pad( 0 );
   }
   
   .container {
-    @include pad( 0 );
+    position: relative;
+    @include media( max-width $firstBreak ) {
+      @include clearfix();
+      
+      @include pad();
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    
+    @include media( $firstBreak ) {
+      @include pad( 0 );
+    }
+  }
+}
+
+.site-title {
+  display: inline-block;
+  margin: 0;
+  float: left;
+  vertical-align: middle;
+  
+  @include media( $firstBreak ) {
+    display: none;
+  }
+  
+  a {
+    display: block;
+  }
+}
+
+.nav-toggle {
+  display: inline-block;
+  height: 59px;
+  width: 60px;
+  float: right;
+  vertical-align: middle;
+  
+  @include media( $firstBreak ) {
+    display: none; 
+  }
+}
+
+.navigation-main {
+  clear: both;
+  
+  
+  @include media( max-width $firstBreak ) {
+    .js &.nav-collapse {
+      top: 68px;
+      left: 0;
+      right: 0;
+      max-height: 0;
+      opacity: 0;
+      
+      background: $black;
+      
+      .menu-item { color: $white; }
+      
+      &.opened {
+        z-index: 10;
+        max-height: 99em;
+        opacity: 1;
+      }
+    }
+  }
+  
+  @include media( $firstBreak ) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 90px;
   }
 }
 
@@ -34,6 +107,10 @@
     height: 90px;
   }
   
+  @include media( max-width $firstBreak ) {
+    @include pad( 1em 0 );
+  }
+  
   .menu-item {
     @include flex( 1 1 100% );
     
@@ -44,6 +121,8 @@
     @include justify-content( center );
     
     margin-bottom: 0;
+    
+    color: $black;
     
     &:after { display: none; }
     
@@ -65,6 +144,10 @@
       max-width: 133px;
       
       &:after { display: none; }
+      
+      @include media( max-width $firstBreak ) {
+        display: none;
+      }
     }
     
     a {
@@ -76,12 +159,13 @@
       @include align-items( center );
       @include justify-content( center );
       
-      margin-bottom: 0.25em;
       @include pad();
+      padding-top: 6%;
+      padding-bottom: 6%;
       
       opacity: 1;
       
-      color: $black;
+      color: inherit;
       
       @include transition();
       

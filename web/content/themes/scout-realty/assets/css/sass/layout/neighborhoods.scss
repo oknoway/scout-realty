@@ -14,7 +14,7 @@
   
   @include media( $firstBreak ) {
     
-    max-width: flex-grid( 12, 12 );
+    max-width: 990px;
     margin-left: auto;
     margin-right: auto;
     float: none;
@@ -71,7 +71,7 @@
   }
   
   .neighborhood-filter-content {
-    max-width: flex-grid( 8, 10 );
+    max-width: 650px;
     margin-top: 2em;
     margin-left: auto;
     margin-bottom: 2em;
@@ -90,6 +90,8 @@
   
   @include container();
   
+  max-width: 1070px;
+  
   a { color: inherit; }
   
   .neighborhood-header {
@@ -100,21 +102,28 @@
   .neighborhood-content-wrapper {
     @extend %clearfix;
     
+    @include pad( 25px );
     padding-right: flex-grid( 1, 10 );
+    padding-left: 30px;
   }
   
   .neighborhood-map {
     
     margin-bottom: 2em;
     
+    border: 5px solid $white;
+    border-radius: 5px;
+    
     @include media( max-width $firstBreak ) {
       max-height: 300px;
     }
     
     @include media( $firstBreak ) {
-      @include span-columns( 5.5 );
-      
+
+      width: 50%;
+      margin-right: flex-gutter();
       margin-bottom: 0;
+      float: left;
     }
   }
   

@@ -4,7 +4,10 @@
 
 .section-title,
 .neighborhood-title {
-  @include middle-border();
+  
+  @include media( $firstBreak ) {
+    @include middle-border();
+  }
 }
 
 .menu-top-nav-container .menu-item,

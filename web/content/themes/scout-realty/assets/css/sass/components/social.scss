@@ -3,16 +3,16 @@
  */
 
 .social {
-  height: 23px;
-  width: 28px;
+  display: inline-block;
+  min-height: 23px;
+  min-width: 28px;
   
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: 28px 23px;
   
   
   .agent-social & {
-    display: inline-block;
     height: 26px;
     width: 32px;
   }
@@ -50,12 +50,17 @@
     }
   }
   
-  .item-wrapper {
+  a {
     @extend %ir;
     
     display: block;
     height: 100%;
     width: 100%;
+  }
+  
+  .item-wrapper {
+    @extend %visuallyhidden;
+    
   }
 }
 

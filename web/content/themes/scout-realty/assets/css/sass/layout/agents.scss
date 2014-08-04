@@ -18,15 +18,17 @@
   
   .post-column {
     
-    @include flex( 0 1 flex-grid( 4, $grid-columns ) );
+    @include flex( 1 1 100% );
     
     @include pad( 24px 16px );
     
     @include media( $firstBreak ) {
       
+      @include flex( 0 1 flex-grid( 4, $grid-columns ) );
+
       max-width: 310px;
       margin-right: flex-gutter();
-      margin-bottom: flex-gutter();
+      margin-bottom: 30px;
       
       &:nth-of-type( 3n ) {
         margin-right: 0;
@@ -37,9 +39,12 @@
 
 .team-archive {
   .post-column {
-    @include flex( 0 1 flex-grid( 3, $grid-columns ) );
     
     @include pad( flex-gutter() * 0.25 );
+    
+    @include media( $firstBreak ) {
+      @include flex( 0 1 flex-grid( 3, $grid-columns ) );
+    }
   }
 }
 
@@ -66,13 +71,17 @@
   
   &.post-column:before { display: none; }
   
-  > * {
+  > *,
+  > a {
     @include flex ( 0 1 auto );
   }
   
   .post-title {
     margin-bottom: 1.85em;
+    
+    &:before { bottom: -10px; }
   }
+  
   
   .btn {
     width: 100%;

@@ -11,7 +11,10 @@
     background-image: url( '../../img/pattern_post-cap.png');
     background-repeat: repeat-x;
     
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    
+    @include media( $firstBreak ) {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
   }
 }

@@ -29,6 +29,8 @@
     @include content-box();
     
     color: $grey;
+    
+    border: 0;
   }
   
   .neighborhood-regions {

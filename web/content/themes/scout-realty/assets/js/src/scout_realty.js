@@ -9,6 +9,20 @@
 	'use strict';
     var $ = jQuery;
   
+    // responsive nav
+    var navigation = responsiveNav( '#site-navigation', {
+      label: '',
+      insert: 'before',
+      openPos: 'absolute',
+      open: function() {
+        jQuery('.nav-toggle').addClass('opened');
+      },
+      close: function() {
+        jQuery('.nav-toggle').removeClass('opened');
+      }
+    });
+  
+  
     // Maps
     $( '.neighborhood-map' ).each( function() {
       
