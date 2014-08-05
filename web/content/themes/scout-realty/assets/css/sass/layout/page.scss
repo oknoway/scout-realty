@@ -150,6 +150,8 @@
       
       .section-content,
       .neighborhood-filters {
+        position: relative;
+        z-index: 2;
         
         @include media( $firstBreak ) {
           max-width: flex-grid( 6, 10 );

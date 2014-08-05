@@ -21,15 +21,15 @@
     <div class="neighborhood-meta">
     
     <?php if ( has_term( '', 'scout_region' ) ) : ?>
-      <div class="neighborhood-regions"><?php the_terms( $post->ID, 'scout_region', '', ' / ' ); ?></span>
-    <?php endif; ?>
-    
-    <?php if ( get_field( 'average_home_price' ) ) : ?>
-      <div class="neighborhood-meta-key">Average Home: <span class="avg-home-price">$<?php the_field( 'average_home_price' ); ?></span></div>
+      <div class="neighborhood-regions"><?php the_terms( $post->ID, 'scout_region', '', ' / ' ); ?></div>
     <?php endif; ?>
     
     <?php if ( has_term( '', 'scout_quality' ) ) : ?>
       <div class="neighborhood-meta-key">Unique Qualities: <span class="neighborhood-qualities"><?php the_terms( $post->ID, 'scout_quality', '', ', ' ); ?></span></div>
+    <?php endif; ?>
+    
+    <?php if ( get_field( 'average_home_price' ) ) : ?>
+      <div class="neighborhood-meta-key">Average Home: <span class="avg-home-price">$<?php the_field( 'average_home_price' ); ?></span></div>
     <?php endif; ?>
     
     </div><!-- /.neighborhood-meta -->

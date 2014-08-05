@@ -1066,16 +1066,21 @@ figure {
   height: 59px;
   width: 60px;
   float: right;
-  vertical-align: middle; }
+  vertical-align: middle;
+  background-image: url("../../img/hamburger.svg");
+  background-repeat: no-repeat;
+  background-position: center; }
   @media screen and (min-width: 47.9375em) {
     .nav-toggle {
       display: none; } }
+  .no-svg .nav-toggle {
+    background-image: url("../../img/hamburger.png"); }
 
 .navigation-main {
   clear: both; }
   @media screen and (max-width: 47.9375em) {
     .js .navigation-main.nav-collapse {
-      top: 68px;
+      top: 73px;
       left: 0;
       right: 0;
       max-height: 0;
@@ -1788,11 +1793,16 @@ figure {
       .content-section.call-to-action .small-container > *, .content-section.neighborhood-finder .small-container > * {
         display: block;
         margin: auto; }
-      @media screen and (min-width: 47.9375em) {
-        .content-section.call-to-action .small-container .section-content,
-        .content-section.call-to-action .small-container .neighborhood-filters, .content-section.neighborhood-finder .small-container .section-content,
-        .content-section.neighborhood-finder .small-container .neighborhood-filters {
-          max-width: 58.53659%; } }
+      .content-section.call-to-action .small-container .section-content,
+      .content-section.call-to-action .small-container .neighborhood-filters, .content-section.neighborhood-finder .small-container .section-content,
+      .content-section.neighborhood-finder .small-container .neighborhood-filters {
+        position: relative;
+        z-index: 2; }
+        @media screen and (min-width: 47.9375em) {
+          .content-section.call-to-action .small-container .section-content,
+          .content-section.call-to-action .small-container .neighborhood-filters, .content-section.neighborhood-finder .small-container .section-content,
+          .content-section.neighborhood-finder .small-container .neighborhood-filters {
+            max-width: 58.53659%; } }
   @media screen and (min-width: 47.9375em) {
     .content-section.call-to-action {
       padding: 50px 0; }
@@ -2810,14 +2820,15 @@ blockquote {
  */
 .neighborhood-map {
   width: 100%;
-  height: 450px; }
+  height: 300px; }
 
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   float: left;
   display: block;
   margin-right: 3.0303%;
   width: 82.82828%;
-  margin-left: 8.58586%; }
+  margin-left: 8.58586%;
+  z-index: 1; }
   .post-type-archive-scout_neighborhoods .neighborhood-filters:last-child {
     margin-right: 0; }
   @media screen and (min-width: 47.9375em) {
@@ -2927,7 +2938,8 @@ blockquote {
   margin-right: auto;
   -webkit-transition: all 0.15s ease-out 0s;
   transition: all 0.15s ease-out 0s;
-  max-width: 1070px; }
+  max-width: 1070px;
+  margin-bottom: 2em; }
   @media screen and (min-width: 65em) {
     .neighborhood-list {
       padding-left: 3.0303%;
@@ -2938,24 +2950,24 @@ blockquote {
     padding: 25px;
     padding-right: 6.70732%;
     padding-left: 30px; }
-  .neighborhood-list .neighborhood-map {
-    margin-bottom: 2em;
-    border: 5px solid white;
-    border-radius: 5px; }
-    @media screen and (max-width: 47.9375em) {
-      .neighborhood-list .neighborhood-map {
-        max-height: 300px; } }
-    @media screen and (min-width: 47.9375em) {
-      .neighborhood-list .neighborhood-map {
-        width: 50%;
-        margin-right: 3.0303%;
-        margin-bottom: 0;
-        float: left; } }
-  .neighborhood-list .neighborhood-meta {
-    margin-bottom: 1em; }
-    @media screen and (min-width: 47.9375em) {
-      .neighborhood-list .neighborhood-meta {
-        margin-bottom: 0; } }
+    .neighborhood-list .neighborhood-content-wrapper .neighborhood-map {
+      margin-bottom: 2em;
+      border: 5px solid white;
+      border-radius: 5px; }
+      @media screen and (max-width: 47.9375em) {
+        .neighborhood-list .neighborhood-content-wrapper .neighborhood-map {
+          max-height: 300px; } }
+      @media screen and (min-width: 47.9375em) {
+        .neighborhood-list .neighborhood-content-wrapper .neighborhood-map {
+          width: 50%;
+          margin-right: 3.0303%;
+          margin-bottom: 0;
+          float: left; } }
+    .neighborhood-list .neighborhood-content-wrapper .neighborhood-meta {
+      margin-bottom: 2em; }
+      .neighborhood-list .neighborhood-content-wrapper .neighborhood-meta:after {
+        bottom: -10px;
+        margin-left: 25px; }
 
 .neighborhood-detail .neighborhood-map {
   margin-bottom: 2em; }
@@ -3586,14 +3598,16 @@ a.listing-meta {
 .page-title,
 .featured-home .post-title,
 .find-an-agent .post-title,
-.single .post-title {
+.single .post-title,
+.neighborhood-list .neighborhood-meta {
   position: relative;
   margin-bottom: 1.05em; }
   .menu-top-nav-container .menu-item:after,
   .page-title:after,
   .featured-home .post-title:after,
   .find-an-agent .post-title:after,
-  .single .post-title:after {
+  .single .post-title:after,
+  .neighborhood-list .neighborhood-meta:after {
     content: '';
     position: absolute;
     bottom: -20px;

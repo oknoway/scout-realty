@@ -55,8 +55,16 @@
   float: right;
   vertical-align: middle;
   
+  background-image: url('../../img/hamburger.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  
   @include media( $firstBreak ) {
     display: none; 
+  }
+  
+  @at-root .no-svg & {
+    background-image: url('../../img/hamburger.png');
   }
 }
 
@@ -66,7 +74,7 @@
   
   @include media( max-width $firstBreak ) {
     .js &.nav-collapse {
-      top: 68px;
+      top: 73px;
       left: 0;
       right: 0;
       max-height: 0;
