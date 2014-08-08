@@ -1055,11 +1055,44 @@ figure {
   margin-left: auto;
   margin-right: auto;
   -webkit-transition: all 0.15s ease-out 0s;
-  transition: all 0.15s ease-out 0s; }
+  transition: all 0.15s ease-out 0s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: box;
+  box-orient: horizontal;
+  box-pack: center;
+  -ms-flex-pack: center;
+  box-align: center;
+  -ms-flex-align: center;
+  display: -webkit-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  box-align: stretch;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -ms-flex-align: stretch;
+  box-pack: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
   @media screen and (min-width: 65em) {
     .home-search-wrapper .widget-container {
       padding-left: 3.0303%;
       padding-right: 3.0303%; } }
+  .home-search-wrapper .widget-container > * {
+    box-flex: 1;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
 
 .IDX-quicksearchForm {
   display: -webkit-box;

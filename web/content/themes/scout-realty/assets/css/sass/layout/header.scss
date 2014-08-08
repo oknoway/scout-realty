@@ -38,6 +38,16 @@
   
   .widget-container {
     @include container();
+    
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    
+    > * {
+      @include flex( 1 1 auto );
+    }
   }
 }
 
