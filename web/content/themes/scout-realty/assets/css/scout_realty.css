@@ -1050,7 +1050,18 @@ figure {
       .site-header .container {
         padding: 0; } }
 
-.IDX-quicksearchWrapper {
+.home-search-wrapper .widget-container {
+  max-width: 65em;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s; }
+  @media screen and (min-width: 65em) {
+    .home-search-wrapper .widget-container {
+      padding-left: 3.0303%;
+      padding-right: 3.0303%; } }
+
+.IDX-quicksearchForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: box;
@@ -1083,12 +1094,12 @@ figure {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   @media screen and (min-width: 47.9375em) {
-    .IDX-quicksearchWrapper {
+    .IDX-quicksearchForm {
       box-lines: single;
       -webkit-flex-wrap: nowrap;
       -ms-flex-wrap: nowrap;
       flex-wrap: nowrap; } }
-  .IDX-quicksearchWrapper > * {
+  .IDX-quicksearchForm > * {
     box-flex: 1;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;

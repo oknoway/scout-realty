@@ -33,7 +33,17 @@
   }
 }
 
-.IDX-quicksearchWrapper {
+.home-search-wrapper {
+  
+  
+  .widget-container {
+    @include container();
+  }
+}
+
+  
+
+.IDX-quicksearchForm {
   @include box( horizontal, center, center );
   @include display( flex );
   @include align-content( stretch );
