@@ -33,6 +33,23 @@
   }
 }
 
+.IDX-quicksearchWrapper {
+  @include box( horizontal, center, center );
+  @include display( flex );
+  @include align-content( stretch );
+  @include align-items( stretch );
+  @include justify-content( center );
+  @include flex-wrap( wrap );
+  
+  @include media( $firstBreak ) {
+    @include flex-wrap( nowrap );
+  }
+  
+  > * {
+    @include flex( 1 1 auto );
+  }
+}
+
 .site-title {
   display: inline-block;
   margin: 0;

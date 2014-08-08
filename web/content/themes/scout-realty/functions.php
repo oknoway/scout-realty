@@ -139,6 +139,15 @@ if ( ! function_exists( 'scout_widgets_init' ) ) :
       'after_title'   => '</h5>',
     ) );
     register_sidebar( array(
+      'name'          => __( 'Home Search', 'scout' ),
+      'id'            => 'home-search-sidebar',
+      'class'         => 'container',
+      'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+      'after_widget'  => '</div>',
+      'before_title'  => '<h5 class="widget-title">',
+      'after_title'   => '</h5>',
+    ) );
+    register_sidebar( array(
       'name'          => __( 'Header', 'scout' ),
       'id'            => 'header-sidebar',
       'before_widget' => '',
