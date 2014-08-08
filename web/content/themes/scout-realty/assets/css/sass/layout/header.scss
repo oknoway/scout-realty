@@ -12,7 +12,7 @@
   box-shadow: 0 1px 4px rgba(24,24,29,.5);
 
   @include media( $firstBreak ) {
-    min-height: 90px;
+    min-height: 152px;
     margin-bottom: 4.6em;
     @include pad( 0 );
   }

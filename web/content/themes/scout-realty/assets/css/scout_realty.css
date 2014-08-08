@@ -1027,7 +1027,7 @@ figure {
   box-shadow: 0 1px 4px rgba(24, 24, 29, 0.5); }
   @media screen and (min-width: 47.9375em) {
     .site-header {
-      min-height: 90px;
+      min-height: 152px;
       margin-bottom: 4.6em;
       padding: 0; } }
   .site-header .container {
