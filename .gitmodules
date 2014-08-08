@@ -1,3 +1,4 @@
 [submodule "web/wp"]
 	path = web/wp
 	url = git@github.com:WordPress/WordPress.git
+	fetchRecurseSubmodules = false
