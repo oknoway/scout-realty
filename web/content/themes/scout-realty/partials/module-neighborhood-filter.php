@@ -55,9 +55,9 @@
     
     if ( !empty( $qualitiesTerms ) && !is_wp_error( $qualitiesTerms ) ) : ?>
     <fieldsection class="neighborhood-filter-criterion-wrapper">
-      <label>Unique Quality</label>
+      <label>Neighborhood Features</label>
       <select name="scout_quality" class="neighborhood-filter-criterion">
-        <option value="0">View all Unique Qualities&hellip;</option>
+        <option value="0">View all Features&hellip;</option>
       <?php foreach( $qualitiesTerms as $quality ) : ?>
       
         <option value="<?php echo $quality->ID; ?>"><?php echo $quality->name; ?></option>

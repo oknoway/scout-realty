@@ -47,7 +47,7 @@
   .neighborhood-filter-criterion-wrapper {
     @include flex( 1 1 100% );
     
-    @include pad();
+    @include pad( 2.2% );
     
     @include media( $firstBreak ) {
       @include flex( 1 1 33% );

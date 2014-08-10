@@ -406,17 +406,17 @@ if ( ! function_exists( 'scout_taxonomies' ) ):
     register_taxonomy( 'scout_region', array( 'posts', 'scout_neighborhoods' ), $args );
 
     $labels = array(
-      'name'              => _x( 'Qualities', 'taxonomy general name' ),
-      'singular_name'     => _x( 'Quality', 'taxonomy singular name' ),
-      'search_items'      => __( 'Search Qualities' ),
-      'all_items'         => __( 'All Regions' ),
-      'parent_item'       => __( 'Parent Quality' ),
-      'parent_item_colon' => __( 'Parent Quality:' ),
-      'edit_item'         => __( 'Edit Quality' ),
-      'update_item'       => __( 'Update Quality' ),
-      'add_new_item'      => __( 'Add New Quality' ),
-      'new_item_name'     => __( 'New Quality Name' ),
-      'menu_name'         => __( 'Quality' ),
+      'name'              => _x( 'Features', 'taxonomy general name' ),
+      'singular_name'     => _x( 'Feature', 'taxonomy singular name' ),
+      'search_items'      => __( 'Search Features' ),
+      'all_items'         => __( 'All Features' ),
+      'parent_item'       => __( 'Parent Feature' ),
+      'parent_item_colon' => __( 'Parent Feature:' ),
+      'edit_item'         => __( 'Edit Feature' ),
+      'update_item'       => __( 'Update Feature' ),
+      'add_new_item'      => __( 'Add New Feature' ),
+      'new_item_name'     => __( 'New Feature Name' ),
+      'menu_name'         => __( 'Feature' ),
     );
   
     $args = array(
@@ -425,7 +425,7 @@ if ( ! function_exists( 'scout_taxonomies' ) ):
       'show_ui'           => true,
       'show_admin_column' => true,
       'query_var'         => 'quality',
-      'rewrite'           => array( 'slug' => 'quality' ),
+      'rewrite'           => array( 'slug' => 'feature' ),
     );
   
     register_taxonomy( 'scout_quality', array( 'scout_neighborhoods' ), $args );

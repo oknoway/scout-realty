@@ -33,7 +33,7 @@
     <?php endif; ?>
     
     <?php if ( has_term( '', 'scout_quality' ) ) : ?>
-      <span class="neighborhood-meta-key">Unique Qualities: <span class="neighborhood-qualities"><?php the_terms( $post->ID, 'scout_quality', '', ', ' ); ?></span>
+      <span class="neighborhood-meta-key">Neighborhood Featured: <span class="neighborhood-qualities"><?php the_terms( $post->ID, 'scout_quality', '', ', ' ); ?></span>
     <?php endif; ?>
     
     </div><!-- /.neighborhood-meta -->
