@@ -35,31 +35,50 @@
 
 .home-search-wrapper {
   
+  display: none;
   
+  border-bottom: 1px solid $ltGrey;
+  
+  @include media( $firstBreak ) { display: block; }
+
   .widget-container {
     @include container();
     
     @include box( horizontal, center, center );
     @include display( flex );
     @include align-content( stretch );
-    @include align-items( stretch );
+    @include align-items( center );
     @include justify-content( center );
     
+    width: 100%;
+    min-height: 60px;
+    
     > * {
-      @include flex( 1 1 auto );
+      @include flex( 0 1 auto );
     }
+    
+    .IDX-quicksearchWrapper {
+      @include flex( 1 1 auto );
+      
+      width: 100%;
+    }
+
+    
   }
   
-  .widget-title { margin: 0; }
+  .widget-title {
+    margin: 0;
+    
+    white-space: nowrap;
+  }
 }
 
-  
 
 .IDX-quicksearchForm {
   @include box( horizontal, center, center );
   @include display( flex );
   @include align-content( stretch );
-  @include align-items( stretch );
+  @include align-items( center );
   @include justify-content( center );
   @include flex-wrap( wrap );
   
@@ -68,7 +87,11 @@
   }
   
   > * {
-    @include flex( 1 1 auto );
+    @include flex( 0 1 auto );
+    
+  }
+  
+  #IDX-qsSubmitWrap-20615 {
   }
 }
 
@@ -185,6 +208,8 @@
       
       &.current-page-ancestor:after,
       &.current_page_item:after { display: block; }
+      
+      &.mobile { display: none; }
     }
     
     &.scout-logo {
