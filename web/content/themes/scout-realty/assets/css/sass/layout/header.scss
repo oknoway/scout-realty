@@ -112,14 +112,14 @@
 
 .nav-toggle {
   display: inline-block;
-  height: 59px;
-  width: 60px;
+  height: 58px;
+  padding:20px 0 20px 60px;
   float: right;
   vertical-align: middle;
   
   background-image: url('../../img/hamburger.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 20px 50%;
   
   @include media( $firstBreak ) {
     display: none; 

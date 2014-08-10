@@ -1,4 +1,4 @@
-/*! Scout Realty - v0.1.0 - 2014-08-04
+/*! Scout Realty - v0.1.0 - 2014-08-10
  * http://scoutrealty.com
  * Copyright (c) 2014; */
 /*! responsive-nav.js 1.0.32
@@ -2398,7 +2398,7 @@ function center_map( map ) {
   
     // responsive nav
     var navigation = responsiveNav( '#site-navigation', {
-      label: '',
+      label: 'Menu',
       insert: 'before',
       openPos: 'absolute',
       open: function() {

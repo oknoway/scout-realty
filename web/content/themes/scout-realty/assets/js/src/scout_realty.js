@@ -11,7 +11,7 @@
   
     // responsive nav
     var navigation = responsiveNav( '#site-navigation', {
-      label: '',
+      label: 'Menu',
       insert: 'before',
       openPos: 'absolute',
       open: function() {
