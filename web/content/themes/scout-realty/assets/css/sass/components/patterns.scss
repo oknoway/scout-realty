@@ -56,13 +56,25 @@
   
     position: absolute;
     top: 0px;
-    bottom: 0px;
     left: 0px;
     display: block;
-    width: 80px;
+    height: 80px;
+    width: 100%;
     
     border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+    @include media( $firstBreak ) {
+      bottom: 0px;
+      left: 0px;
+      display: block;
+      width: 80px;
+      height: 100%;
+      
+      border-top-left-radius: 10px;
+      border-top-right-radius: 0;
+      border-bottom-left-radius: 10px;
+    }
   }
 }
 
@@ -131,12 +143,22 @@
   }
 }
 
+.page-section.neighborhood-list-wrapper {
+  &:before {
+    @include media( max-width $firstBreak ) {
+      top: 600px;
+    }
+  }
+}
+
 .site-footer {
   background-image: url('../../img/pattern_footer-bg.png');
 }
 
 .footer-wrapper > .widget-container.gform_widget {
   background-image: url('../../img/pattern_email-signup.png');
+  
+  box-shadow: inset 4px 0 2px 0 #0d0d0e;
 }
 
 .content-section.call-to-action .small-container,

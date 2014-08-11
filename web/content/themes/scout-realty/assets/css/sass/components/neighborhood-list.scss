@@ -8,7 +8,7 @@
   a {
     position: relative;
     display: inline-block;
-    margin-left: 32px;
+    margin-left: 16px;
     
     color: black;
     
@@ -16,9 +16,25 @@
       content: ' | ';
       
       position: absolute;
-      left: -16px;
+      left: -10px;
       
       color: $grey;
+    }
+    
+    @include media( $firstBreak ) {
+      margin-left: 32px;
+      
+      &:before {
+        left: -16px;
+      }
+    }
+    
+    @at-root .no-mediaqueries & {
+      margin-left: 32px;
+      
+      &:before {
+        left: -16px;
+      }
     }
   }
 }

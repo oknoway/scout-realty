@@ -8,11 +8,9 @@
 }
 
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
-  
-  @include span-columns( 10 );
-  @include shift ( 1 );
-  
-  z-index: 1;
+  width: 88%;
+  margin-left: auto;
+  margin-right: auto;
   
   @include media( $firstBreak ) {
     
@@ -23,11 +21,10 @@
   }
   
   @at-root .no-mediaqueries & {
-    @include span-columns( 10 );
+    max-width: 990px;
   }
   
   .neighborhood-filter-wrapper {
-    
     @include box( horizontal, center, center );
     @include display( flex );
     @include align-content( stretch );
@@ -47,7 +44,7 @@
   .neighborhood-filter-criterion-wrapper {
     @include flex( 1 1 100% );
     
-    @include pad( 2.2% );
+    @include pad( 1.7% );
     
     @include media( $firstBreak ) {
       @include flex( 1 1 33% );
@@ -83,6 +80,8 @@
 
 // neighborhood sort
 .neighborhood-sort {
+  position: relative;
+  z-index: 1;
   margin-top: 2em;
   margin-bottom: 2em;
 }
