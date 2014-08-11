@@ -21,32 +21,64 @@
     
     background-image: url('../../img/social_facebook.svg');
     
+    &:hover {
+      background-image: url('../../img/social_facebook-hover.svg');
+    }
+    
     @at-root .no-svg & {
       background-image: url('../../img/social_facebook.png');
+      
+      &:hover {
+        background-image: url('../../img/social_facebook-hover.png');
+      }
     }
   }
   
   &.social-twitter {
     background-image: url('../../img/social_twitter.svg');
     
+    &:hover {
+      background-image: url('../../img/social_twitter-hover.svg');
+    }
+    
     @at-root .no-svg & {
       background-image: url('../../img/social_twitter.png');
+      
+      &:hover {
+        background-image: url('../../img/social_twitter-hover.png');
+      }
     }
   }
   
   &.social-pinterest {
     background-image: url('../../img/social_pinterest.svg');
     
+    &:hover {
+      background-image: url('../../img/social_pinterest-hover.svg');
+    }
+    
     @at-root .no-svg & {
       background-image: url('../../img/social_pinterest.png');
+      
+      &:hover {
+        background-image: url('../../img/social_pinterest-hover.png');
+      }
     }
   }
   
   &.social-instagram {
     background-image: url('../../img/social_instagram.svg');
     
+    &:hover {
+      background-image: url('../../img/social_instagram-hover.svg');
+    }
+    
     @at-root .no-svg & {
       background-image: url('../../img/social_instagram.png');
+      
+      &:hover {
+        background-image: url('../../img/social_instagram-hover.png');
+      }
     }
   }
   

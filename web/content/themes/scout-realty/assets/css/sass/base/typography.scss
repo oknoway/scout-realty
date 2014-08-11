@@ -60,7 +60,9 @@ h5,
 
 a:link,
 .clickable {
-  text-decoration: none
+  text-decoration: none;
+  
+  .post-content & { text-decoration: underline; }
 }
 
 .button,

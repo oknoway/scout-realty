@@ -2,6 +2,8 @@
  * Neighborhood Filter
  */
 
+.tax-scout_quality .neighborhood-filters,
+.tax-scout_region .neighborhood-filters,
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   @include content-box( inset );
 }

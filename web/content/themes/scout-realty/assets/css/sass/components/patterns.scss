@@ -99,12 +99,14 @@
     z-index: 1;
     display: block;
     height: 80px;
+    width: 100%;
     
     background-image: url('../../img/pattern_post-column-cap.png');
     background-repeat: repeat-x;
     
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-bottom-left-radius: 0;
   }
   
   .column-img {

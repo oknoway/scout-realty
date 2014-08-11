@@ -367,7 +367,7 @@ td {
  */
 .agent-info .agent-details .social .icon, .slick-prev,
 .slick-next, .site-title a,
-.menu .scout-logo a, .social a {
+.menu .scout-logo a, .pagination li a.prev, .pagination li a.next, .social a {
   background-color: transparent;
   background-repeat: no-repeat;
   background-position: center center;
@@ -380,7 +380,7 @@ td {
   *text-indent: -9999px; }
   .agent-info .agent-details .social .icon:before, .slick-prev:before,
   .slick-next:before, .site-title a:before,
-  .menu .scout-logo a:before, .social a:before {
+  .menu .scout-logo a:before, .pagination li a.prev:before, .pagination li a.next:before, .social a:before {
     content: "";
     display: block;
     width: 0;
@@ -669,6 +669,9 @@ h5,
 a:link,
 .clickable {
   text-decoration: none; }
+  .post-content a:link, .post-content
+  .clickable {
+    text-decoration: underline; }
 
 .button, .email-signup .button,
 .btn,
@@ -1032,6 +1035,7 @@ figure {
  */
 .site-header {
   position: relative;
+  z-index: 1;
   margin-bottom: 0em;
   padding: 3.0303% 0;
   box-shadow: 0 1px 4px rgba(24, 24, 29, 0.5); }
@@ -1801,6 +1805,9 @@ figure {
 /**
  * Page
  */
+.page-header .page-title {
+  margin-bottom: 1.5em; }
+
 .main-page-content {
   padding-left: 3.0303%;
   padding-right: 3.0303%; }
@@ -2131,6 +2138,10 @@ figure {
       flex: 0 1 auto;
       display: block;
       width: 100%; }
+    .post-list .post-meta .blog-archive-link:after {
+      bottom: -8px;
+      width: 20px;
+      margin-left: -10px; }
   .post-list .post-img {
     box-flex: 1;
     -webkit-box-flex: 1;
@@ -2546,19 +2557,21 @@ figure {
     .post-img .fake-img {
       min-height: 265px; } }
 
-.post-detail.has-post-img .post-content-wrapper {
-  padding-top: 4.09em;
-  background-color: white;
-  background-image: url("../../img/pattern_post-cap.png");
-  background-repeat: repeat-x;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px; }
-  @media screen and (min-width: 47.9375em) {
-    .post-detail.has-post-img .post-content-wrapper {
-      position: relative;
-      z-index: 10;
-      max-width: 880px;
-      margin-top: -9em; } }
+.post-detail.has-post-img {
+  margin-top: -4.1em; }
+  .post-detail.has-post-img .post-content-wrapper {
+    padding-top: 4.09em;
+    background-color: white;
+    background-image: url("../../img/pattern_post-cap.png");
+    background-repeat: repeat-x;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; }
+    @media screen and (min-width: 47.9375em) {
+      .post-detail.has-post-img .post-content-wrapper {
+        position: relative;
+        z-index: 10;
+        max-width: 880px;
+        margin-top: -9em; } }
 .post-detail .agent-contact {
   display: block;
   margin-top: 2em;
@@ -2951,18 +2964,27 @@ blockquote {
   width: 100%;
   height: 300px; }
 
+.tax-scout_quality .neighborhood-filters,
+.tax-scout_region .neighborhood-filters,
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   width: 88%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  padding-top: 1.25em; }
   @media screen and (min-width: 47.9375em) {
+    .tax-scout_quality .neighborhood-filters,
+    .tax-scout_region .neighborhood-filters,
     .post-type-archive-scout_neighborhoods .neighborhood-filters {
       max-width: 990px;
       margin-left: auto;
       margin-right: auto;
       float: none; } }
-  .no-mediaqueries .post-type-archive-scout_neighborhoods .neighborhood-filters {
+  .no-mediaqueries .tax-scout_quality .neighborhood-filters, .no-mediaqueries
+  .tax-scout_region .neighborhood-filters, .no-mediaqueries
+  .post-type-archive-scout_neighborhoods .neighborhood-filters {
     max-width: 990px; }
+  .tax-scout_quality .neighborhood-filters .neighborhood-filter-wrapper,
+  .tax-scout_region .neighborhood-filters .neighborhood-filter-wrapper,
   .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2999,8 +3021,12 @@ blockquote {
     margin-left: auto;
     margin-right: auto; }
     @media screen and (min-width: 47.9375em) {
+      .tax-scout_quality .neighborhood-filters .neighborhood-filter-wrapper,
+      .tax-scout_region .neighborhood-filters .neighborhood-filter-wrapper,
       .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-wrapper {
         max-width: 82.82828%; } }
+  .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper,
+  .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper,
   .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper {
     box-flex: 1;
     -webkit-box-flex: 1;
@@ -3009,12 +3035,32 @@ blockquote {
     flex: 1 1 100%;
     padding: 1.7%; }
     @media screen and (min-width: 47.9375em) {
+      .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper,
+      .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper,
       .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper {
         box-flex: 1;
         -webkit-box-flex: 1;
         -webkit-flex: 1 1 33%;
         -ms-flex: 1 1 33%;
         flex: 1 1 33%; } }
+    .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper label,
+    .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper select,
+    .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper .btn,
+    .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper .content-section.call-to-action .cta,
+    .content-section.call-to-action .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper .cta,
+    .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper .IDX-qsFieldWrap input.IDX-qsButtonInput,
+    .IDX-qsFieldWrap .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper input.IDX-qsButtonInput,
+    .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper .IDX-qsFieldWrap select.IDX-qsButtonInput,
+    .IDX-qsFieldWrap .tax-scout_quality .neighborhood-filters .neighborhood-filter-criterion-wrapper select.IDX-qsButtonInput,
+    .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper label,
+    .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper select,
+    .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper .btn,
+    .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper .content-section.call-to-action .cta,
+    .content-section.call-to-action .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper .cta,
+    .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper .IDX-qsFieldWrap input.IDX-qsButtonInput,
+    .IDX-qsFieldWrap .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper input.IDX-qsButtonInput,
+    .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper .IDX-qsFieldWrap select.IDX-qsButtonInput,
+    .IDX-qsFieldWrap .tax-scout_region .neighborhood-filters .neighborhood-filter-criterion-wrapper select.IDX-qsButtonInput,
     .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper label,
     .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper select,
     .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-criterion-wrapper .btn,
@@ -3027,7 +3073,21 @@ blockquote {
       display: block;
       width: 100%;
       margin-bottom: 1em; }
-  .post-type-archive-scout_neighborhoods .neighborhood-filters .btn, .post-type-archive-scout_neighborhoods .neighborhood-filters .content-section.call-to-action .cta, .content-section.call-to-action .post-type-archive-scout_neighborhoods .neighborhood-filters .cta, .post-type-archive-scout_neighborhoods .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput, .IDX-qsFieldWrap .post-type-archive-scout_neighborhoods .neighborhood-filters input.IDX-qsButtonInput,
+  .tax-scout_quality .neighborhood-filters .btn, .tax-scout_quality .neighborhood-filters .content-section.call-to-action .cta, .content-section.call-to-action .tax-scout_quality .neighborhood-filters .cta, .tax-scout_quality .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput, .IDX-qsFieldWrap .tax-scout_quality .neighborhood-filters input.IDX-qsButtonInput,
+  .tax-scout_quality .neighborhood-filters .IDX-qsFieldWrap select.IDX-qsButtonInput,
+  .IDX-qsFieldWrap .tax-scout_quality .neighborhood-filters select.IDX-qsButtonInput,
+  .tax-scout_region .neighborhood-filters .btn,
+  .tax-scout_region .neighborhood-filters .content-section.call-to-action .cta,
+  .content-section.call-to-action .tax-scout_region .neighborhood-filters .cta,
+  .tax-scout_region .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput,
+  .IDX-qsFieldWrap .tax-scout_region .neighborhood-filters input.IDX-qsButtonInput,
+  .tax-scout_region .neighborhood-filters .IDX-qsFieldWrap select.IDX-qsButtonInput,
+  .IDX-qsFieldWrap .tax-scout_region .neighborhood-filters select.IDX-qsButtonInput,
+  .post-type-archive-scout_neighborhoods .neighborhood-filters .btn,
+  .post-type-archive-scout_neighborhoods .neighborhood-filters .content-section.call-to-action .cta,
+  .content-section.call-to-action .post-type-archive-scout_neighborhoods .neighborhood-filters .cta,
+  .post-type-archive-scout_neighborhoods .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput,
+  .IDX-qsFieldWrap .post-type-archive-scout_neighborhoods .neighborhood-filters input.IDX-qsButtonInput,
   .post-type-archive-scout_neighborhoods .neighborhood-filters .IDX-qsFieldWrap select.IDX-qsButtonInput,
   .IDX-qsFieldWrap .post-type-archive-scout_neighborhoods .neighborhood-filters select.IDX-qsButtonInput {
     box-flex: 1;
@@ -3037,7 +3097,21 @@ blockquote {
     flex: 1 1 100%;
     padding: 8px; }
     @media screen and (min-width: 47.9375em) {
-      .post-type-archive-scout_neighborhoods .neighborhood-filters .btn, .post-type-archive-scout_neighborhoods .neighborhood-filters .content-section.call-to-action .cta, .content-section.call-to-action .post-type-archive-scout_neighborhoods .neighborhood-filters .cta, .post-type-archive-scout_neighborhoods .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput, .IDX-qsFieldWrap .post-type-archive-scout_neighborhoods .neighborhood-filters input.IDX-qsButtonInput,
+      .tax-scout_quality .neighborhood-filters .btn, .tax-scout_quality .neighborhood-filters .content-section.call-to-action .cta, .content-section.call-to-action .tax-scout_quality .neighborhood-filters .cta, .tax-scout_quality .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput, .IDX-qsFieldWrap .tax-scout_quality .neighborhood-filters input.IDX-qsButtonInput,
+      .tax-scout_quality .neighborhood-filters .IDX-qsFieldWrap select.IDX-qsButtonInput,
+      .IDX-qsFieldWrap .tax-scout_quality .neighborhood-filters select.IDX-qsButtonInput,
+      .tax-scout_region .neighborhood-filters .btn,
+      .tax-scout_region .neighborhood-filters .content-section.call-to-action .cta,
+      .content-section.call-to-action .tax-scout_region .neighborhood-filters .cta,
+      .tax-scout_region .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput,
+      .IDX-qsFieldWrap .tax-scout_region .neighborhood-filters input.IDX-qsButtonInput,
+      .tax-scout_region .neighborhood-filters .IDX-qsFieldWrap select.IDX-qsButtonInput,
+      .IDX-qsFieldWrap .tax-scout_region .neighborhood-filters select.IDX-qsButtonInput,
+      .post-type-archive-scout_neighborhoods .neighborhood-filters .btn,
+      .post-type-archive-scout_neighborhoods .neighborhood-filters .content-section.call-to-action .cta,
+      .content-section.call-to-action .post-type-archive-scout_neighborhoods .neighborhood-filters .cta,
+      .post-type-archive-scout_neighborhoods .neighborhood-filters .IDX-qsFieldWrap input.IDX-qsButtonInput,
+      .IDX-qsFieldWrap .post-type-archive-scout_neighborhoods .neighborhood-filters input.IDX-qsButtonInput,
       .post-type-archive-scout_neighborhoods .neighborhood-filters .IDX-qsFieldWrap select.IDX-qsButtonInput,
       .IDX-qsFieldWrap .post-type-archive-scout_neighborhoods .neighborhood-filters select.IDX-qsButtonInput {
         box-flex: 0;
@@ -3048,9 +3122,11 @@ blockquote {
         -webkit-align-self: center;
         align-self: center;
         -ms-flex-item-align: center; } }
+  .tax-scout_quality .neighborhood-filters .neighborhood-filter-content,
+  .tax-scout_region .neighborhood-filters .neighborhood-filter-content,
   .post-type-archive-scout_neighborhoods .neighborhood-filters .neighborhood-filter-content {
     max-width: 650px;
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-left: auto;
     margin-bottom: 2em;
     margin-right: auto; }
@@ -3098,15 +3174,15 @@ blockquote {
         bottom: -10px;
         margin-left: 25px; }
 
-.neighborhood-detail .neighborhood-map {
-  margin-bottom: 2em; }
 .neighborhood-detail .neighborhood-content-wrapper {
-  padding-top: 4.25em;
+  padding: 10px;
   background-color: white;
   background-image: url("../../img/pattern_post-cap.png");
   background-repeat: repeat-x;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px; }
+  .neighborhood-detail .neighborhood-content-wrapper:before {
+    display: none; }
   @media screen and (min-width: 47.9375em) {
     .neighborhood-detail .neighborhood-content-wrapper {
       position: relative;
@@ -3514,6 +3590,8 @@ a.listing-meta {
 /**
  * Neighborhood Filter
  */
+.tax-scout_quality .neighborhood-filters,
+.tax-scout_region .neighborhood-filters,
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   background-color: white;
   background-clip: padding-box;
@@ -3624,14 +3702,29 @@ a.listing-meta {
  * Pagination
  */
 .pagination {
+  margin-top: 4em;
   color: #d8d8e0; }
   .pagination li {
     display: inline-block;
+    vertical-align: bottom;
     white-space: nowrap; }
+    .pagination li .current {
+      color: #ff4338; }
     .pagination li a {
       display: inline-block;
       padding: 3.0303%;
-      color: #4b4b50; }
+      color: #4b4b50;
+      text-decoration: underline; }
+      .pagination li a.prev, .pagination li a.next {
+        height: 16px;
+        width: 16px;
+        background-image: url("../../img/arrow_left-18181D.svg");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: contain;
+        text-decoration: none; }
+      .pagination li a.next {
+        background-image: url("../../img/arrow_right-18181D.svg"); }
 
 /**
  * Patterns
@@ -3709,10 +3802,12 @@ a.listing-meta {
     z-index: 1;
     display: block;
     height: 80px;
+    width: 100%;
     background-image: url("../../img/pattern_post-column-cap.png");
     background-repeat: repeat-x;
     border-top-left-radius: 10px;
-    border-top-right-radius: 10px; }
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 0; }
   .post-column .column-img {
     position: relative;
     z-index: 2; }
@@ -3785,6 +3880,9 @@ a.listing-meta {
     .neighborhood-title:after {
       right: -80px; } }
 
+.sidebar .post-filter-title,
+.sidebar .navigation-title,
+.blog-archive-link,
 .menu-top-nav-container .menu-item,
 .page-title,
 .featured-home .post-title,
@@ -3793,6 +3891,9 @@ a.listing-meta {
 .neighborhood-list .neighborhood-meta {
   position: relative;
   margin-bottom: 1.05em; }
+  .sidebar .post-filter-title:after,
+  .sidebar .navigation-title:after,
+  .blog-archive-link:after,
   .menu-top-nav-container .menu-item:after,
   .page-title:after,
   .featured-home .post-title:after,
@@ -3811,6 +3912,8 @@ a.listing-meta {
 /**
  * Neighborhood Filter
  */
+.tax-scout_quality .neighborhood-filters,
+.tax-scout_region .neighborhood-filters,
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   background-color: white;
   background-clip: padding-box;
@@ -3879,25 +3982,50 @@ a.listing-meta {
     width: 32px; }
   .social.social-facebook {
     background-image: url("../../img/social_facebook.svg"); }
+    .social.social-facebook:hover {
+      background-image: url("../../img/social_facebook-hover.svg"); }
     .no-svg .social.social-facebook {
       background-image: url("../../img/social_facebook.png"); }
+      .no-svg .social.social-facebook:hover {
+        background-image: url("../../img/social_facebook-hover.png"); }
   .social.social-twitter {
     background-image: url("../../img/social_twitter.svg"); }
+    .social.social-twitter:hover {
+      background-image: url("../../img/social_twitter-hover.svg"); }
     .no-svg .social.social-twitter {
       background-image: url("../../img/social_twitter.png"); }
+      .no-svg .social.social-twitter:hover {
+        background-image: url("../../img/social_twitter-hover.png"); }
   .social.social-pinterest {
     background-image: url("../../img/social_pinterest.svg"); }
+    .social.social-pinterest:hover {
+      background-image: url("../../img/social_pinterest-hover.svg"); }
     .no-svg .social.social-pinterest {
       background-image: url("../../img/social_pinterest.png"); }
+      .no-svg .social.social-pinterest:hover {
+        background-image: url("../../img/social_pinterest-hover.png"); }
   .social.social-instagram {
     background-image: url("../../img/social_instagram.svg"); }
+    .social.social-instagram:hover {
+      background-image: url("../../img/social_instagram-hover.svg"); }
     .no-svg .social.social-instagram {
       background-image: url("../../img/social_instagram.png"); }
+      .no-svg .social.social-instagram:hover {
+        background-image: url("../../img/social_instagram-hover.png"); }
   .social a {
     display: block;
     height: 100%;
     min-height: 23px;
     width: 100%;
     min-width: 28px; }
+
+/**
+ * Sidebar
+ */
+.category-navigation .navigation-title {
+  margin-bottom: 2em; }
+
+.post-filter .post-filter-title {
+  margin-bottom: 2em; }
 
 /*# sourceMappingURL=scout_realty.css.map */

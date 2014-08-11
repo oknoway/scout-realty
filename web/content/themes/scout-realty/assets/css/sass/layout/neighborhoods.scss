@@ -7,10 +7,13 @@
   height: 300px;
 }
 
+.tax-scout_quality .neighborhood-filters,
+.tax-scout_region .neighborhood-filters,
 .post-type-archive-scout_neighborhoods .neighborhood-filters {
   width: 88%;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1.25em;
   
   @include media( $firstBreak ) {
     
@@ -71,7 +74,7 @@
   
   .neighborhood-filter-content {
     max-width: 650px;
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-left: auto;
     margin-bottom: 2em;
     margin-right: auto;
@@ -142,11 +145,10 @@
 .neighborhood-detail {
   
   .neighborhood-map {
-    margin-bottom: 2em;
   }
   
   .neighborhood-content-wrapper {
-    padding-top: 4.25em;
+    padding: 10px;
     
     background-color: $white;
     background-image: url( '../../img/pattern_post-cap.png');
@@ -154,6 +156,8 @@
     
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    
+    &:before { display: none; }
     
     @include media( $firstBreak ) {
       position: relative;

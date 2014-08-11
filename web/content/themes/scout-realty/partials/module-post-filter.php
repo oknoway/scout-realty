@@ -20,7 +20,7 @@ $neighborhoods = get_posts( $neighborhoodPostArgs );
 if ( !empty( $neighborhoods ) ) : ?>
 <nav class="post-filter">
   <header class="post-filter-header section-header">
-    <h5 class="post-filter-title section-title">Portland Neighborhoods</h5>
+    <h5 class="post-filter-title">Portland Neighborhoods</h5>
   </header>
   <form action="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" method="get" accept-charset="utf-8">
     <select id="neighborhood-post-filter" name="neighborhood_posts" class="neighborhood-post-filter post-filter">
@@ -44,7 +44,7 @@ $authors = get_users( $authorArgs );
 if ( !empty( $authors ) ) : ?>
 <nav class="post-filter">
   <header class="post-filter-header section-header">
-    <h5 class="post-filter-title section-title">Authors</h5>
+    <h5 class="post-filter-title">Authors</h5>
   </header>
   <form action="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" method="get" accept-charset="utf-8">
     <select id="author-post-filter" name="author_name" class="author-post-filter post-filter">

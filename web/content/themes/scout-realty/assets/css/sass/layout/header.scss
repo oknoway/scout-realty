@@ -6,6 +6,7 @@
   @extend %no-list;
   
   position: relative;
+  z-index: 1;
   margin-bottom: 0em;
   @include pad( flex-gutter() 0 );
   

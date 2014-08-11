@@ -456,7 +456,7 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
     // only filter the main query
     if ( $query->is_main_query() ) :
     
-      // filter for expedition archive page
+      // filter for neighborhood archive page
       if ( is_neighborhood_archive() ) :
       
         $query->set( 'posts_per_page', 5 );

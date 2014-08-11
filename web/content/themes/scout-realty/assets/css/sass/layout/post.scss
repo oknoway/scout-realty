@@ -70,6 +70,14 @@
       display: block;
       width: 100%;
     }
+    
+    .blog-archive-link {
+      &:after {
+        bottom: -8px;
+        width: 20px;
+        margin-left: -10px;
+      }
+    }
   }
   
   .post-img {
@@ -275,9 +283,7 @@
     margin-bottom: 0.5em;
   }
   
-  .section-footer {
-  
-  }
+  .section-footer { }
   
   .cta {
     display: block;
@@ -354,7 +360,6 @@
   .address-street_address {
     display: block;
   }
-  
 }
 
 
@@ -374,6 +379,9 @@
 .post-detail {
   
   &.has-post-img {
+    
+    margin-top: -4.1em;
+    
     .post-content-wrapper {
       padding-top: 4.09em;
       
