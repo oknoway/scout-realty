@@ -74,13 +74,13 @@
     </header>
     <ul class="agent-contact-links">
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>" class="cta">Buy a House</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ); ?>" class="cta">Buy a House</a>
       </li>
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>" class="cta">Sell Your House</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ); ?>" class="cta">Sell Your House</a>
       </li>
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling-to-buy' ) ) . '?agent=' . urlencode( get_the_title() ) ); ?>" class="cta">Selling to Buy</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling-to-buy' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ); ?>" class="cta">Selling to Buy</a>
       </li>
     </ul>
   </div>
