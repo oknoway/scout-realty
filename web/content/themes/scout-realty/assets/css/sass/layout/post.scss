@@ -380,7 +380,7 @@
   
   &.has-post-img {
     
-    margin-top: -4.1em;
+    @at-root .single & { margin-top: -4.1em; }
     
     .post-content-wrapper {
       padding-top: 4.09em;

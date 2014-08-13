@@ -424,7 +424,7 @@ if ( ! function_exists( 'scout_taxonomies' ) ):
       'labels'            => $labels,
       'show_ui'           => true,
       'show_admin_column' => true,
-      'query_var'         => 'quality',
+      'query_var'         => 'feature',
       'rewrite'           => array( 'slug' => 'feature' ),
     );
   

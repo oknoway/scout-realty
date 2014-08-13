@@ -2557,21 +2557,21 @@ figure {
     .post-img .fake-img {
       min-height: 265px; } }
 
-.post-detail.has-post-img {
+.single .post-detail.has-post-img {
   margin-top: -4.1em; }
-  .post-detail.has-post-img .post-content-wrapper {
-    padding-top: 4.09em;
-    background-color: white;
-    background-image: url("../../img/pattern_post-cap.png");
-    background-repeat: repeat-x;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px; }
-    @media screen and (min-width: 47.9375em) {
-      .post-detail.has-post-img .post-content-wrapper {
-        position: relative;
-        z-index: 10;
-        max-width: 880px;
-        margin-top: -9em; } }
+.post-detail.has-post-img .post-content-wrapper {
+  padding-top: 4.09em;
+  background-color: white;
+  background-image: url("../../img/pattern_post-cap.png");
+  background-repeat: repeat-x;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px; }
+  @media screen and (min-width: 47.9375em) {
+    .post-detail.has-post-img .post-content-wrapper {
+      position: relative;
+      z-index: 10;
+      max-width: 880px;
+      margin-top: -9em; } }
 .post-detail .agent-contact {
   display: block;
   margin-top: 2em;
@@ -3802,7 +3802,6 @@ a.listing-meta {
     z-index: 1;
     display: block;
     height: 80px;
-    width: 100%;
     background-image: url("../../img/pattern_post-column-cap.png");
     background-repeat: repeat-x;
     border-top-left-radius: 10px;

@@ -10,6 +10,12 @@
 <section class="neighborhood-filters">
   <form class="neighborhood-filter-wrapper">
   
+    <!-- Setup existing URL params -->
+    <?php
+      
+      
+    ?>
+  
     <!-- Region Filter -->
     <?php
     $regionTermArgs = array();
@@ -19,14 +25,15 @@
     if ( !empty( $regionTerms ) && !is_wp_error( $regionTerms ) ) : ?>
     <fieldsection class="neighborhood-filter-criterion-wrapper">
       <label>Portland Region</label>
-      <select name="scout_region" class="neighborhood-filter-criterion">
+      <select name="region" class="neighborhood-filter-criterion">
         <option value="0">View all Regions&hellip;</option>
       <?php foreach( $regionTerms as $region ) : ?>
       
-        <option value="<?php echo $region->ID; ?>"><?php echo $region->name; ?></option>
+        <option value="<?php echo ( !empty( $region->slug ) ) ? $region->slug : NULL; ?>" <?php if ( get_query_var( 'region' ) == $region->slug ) echo 'selected'; ?>><?php echo $region->name; ?></option>
         
       <?php endforeach; ?>
       </select>
+      
     </fieldsection>
     <?php endif; ?>
   
@@ -35,15 +42,15 @@
       <label>Average Home Price</label>
       <select name="average_home_price" class="neighborhood-filter-criterion">
         <option value="0">View all Prices&hellip;</option>
-        <option value="300000">Up to $300,000</option>
-        <option value="400000">Up to $400,000</option>
-        <option value="500000">Up to $500,000</option>
-        <option value="600000">Up to $600,000</option>
-        <option value="700000">Up to $700,000</option>
-        <option value="800000">Up to $800,000</option>
-        <option value="900000">Up to $900,000</option>
-        <option value="1000000">Up to $1 million</option>
-        <option value="9999999">$1 million and up</option>
+        <option value="300000" <?php if ( get_query_var( 'average_home_price' ) == '300000' ) echo 'selected'; ?>>Up to $300,000</option>
+        <option value="400000" <?php if ( get_query_var( 'average_home_price' ) == '400000' ) echo 'selected'; ?>>Up to $400,000</option>
+        <option value="500000" <?php if ( get_query_var( 'average_home_price' ) == '500000' ) echo 'selected'; ?>>Up to $500,000</option>
+        <option value="600000" <?php if ( get_query_var( 'average_home_price' ) == '600000' ) echo 'selected'; ?>>Up to $600,000</option>
+        <option value="700000" <?php if ( get_query_var( 'average_home_price' ) == '700000' ) echo 'selected'; ?>>Up to $700,000</option>
+        <option value="800000" <?php if ( get_query_var( 'average_home_price' ) == '800000' ) echo 'selected'; ?>>Up to $800,000</option>
+        <option value="900000" <?php if ( get_query_var( 'average_home_price' ) == '900000' ) echo 'selected'; ?>>Up to $900,000</option>
+        <option value="1000000" <?php if ( get_query_var( 'average_home_price' ) == '1000000' ) echo 'selected'; ?>>Up to $1 million</option>
+        <option value="9999999" <?php if ( get_query_var( 'average_home_price' ) == '9999999' ) echo 'selected'; ?>>$1 million and up</option>
       </select>
     </fieldsection>
   
@@ -56,17 +63,16 @@
     if ( !empty( $qualitiesTerms ) && !is_wp_error( $qualitiesTerms ) ) : ?>
     <fieldsection class="neighborhood-filter-criterion-wrapper">
       <label>Neighborhood Features</label>
-      <select name="scout_quality" class="neighborhood-filter-criterion">
+      <select name="feature" class="neighborhood-filter-criterion">
         <option value="0">View all Features&hellip;</option>
       <?php foreach( $qualitiesTerms as $quality ) : ?>
       
-        <option value="<?php echo $quality->ID; ?>"><?php echo $quality->name; ?></option>
+        <option value="<?php echo ( !empty( $quality->slug ) ) ? $quality->slug : NULL; ?>" <?php if ( get_query_var( 'feature' ) == $quality->slug ) echo 'selected'; ?>><?php echo $quality->name; ?></option>
         
       <?php endforeach; ?>
       </select>
     </fieldsection>
     <?php endif; ?>
-    
     <button type="button" class="btn submit-btn">Find Neighborhoods</button>
     
   </form>
