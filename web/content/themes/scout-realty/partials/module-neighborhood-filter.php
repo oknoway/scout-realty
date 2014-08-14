@@ -8,7 +8,7 @@
 ?>
 
 <section class="neighborhood-filters">
-  <form class="neighborhood-filter-wrapper">
+  <form method="put" action="<?php echo $_SERVER['REQUEST_URI']; ?>" class="neighborhood-filter-wrapper">
   
     <!-- Setup existing URL params -->
     <?php
@@ -73,7 +73,7 @@
       </select>
     </fieldsection>
     <?php endif; ?>
-    <button type="button" class="btn submit-btn">Find Neighborhoods</button>
+    <button type="submit" class="btn submit-btn">Find Neighborhoods</button>
     
   </form>
   <div class="neighborhood-filter-content post-excerpt">

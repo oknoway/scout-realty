@@ -434,6 +434,27 @@ if ( ! function_exists( 'scout_taxonomies' ) ):
 endif; // scout_taxonomies
 
 
+if ( ! function_exists( 'scout_add_query_vars' ) ) :
+  /**
+   * Some loops need to be filtered.
+   *
+   * @param $vars
+   *
+   * @return nothing
+   */
+   
+
+  function scout_add_query_vars( $vars ){
+    $vars[] = 'average_home_price';
+    
+    return $vars;
+  }
+  
+endif; //scout_add_query_vars
+
+add_filter( 'query_vars', 'scout_add_query_vars' );
+
+
 if ( ! function_exists( 'scout_query_filter' ) ) :
   /**
    * Some loops need to be filtered.
@@ -455,7 +476,7 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
     
     // only filter the main query
     if ( $query->is_main_query() ) :
-    
+
       // filter for neighborhood archive page
       if ( is_neighborhood_archive() ) :
       
@@ -491,6 +512,22 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
         //var_dump( $query );
         //die();
       
+      endif;
+      
+      if ( get_query_var( 'average_home_price' ) ) :
+        $meta_query = $query->get('meta_query');
+        
+        $meta_query[] = array(
+          'key' => 'average_home_price',
+          'value' => get_query_var( 'average_home_price' ),
+          'compare' => '<=',
+        );
+        
+        $query->set('meta_query', $meta_query);
+      
+        //var_dump( $query );
+        //die();
+        
       endif;
       
     endif;
