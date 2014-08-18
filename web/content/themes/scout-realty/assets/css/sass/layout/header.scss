@@ -142,6 +142,7 @@
       right: 0;
       max-height: 0;
       opacity: 0;
+      overflow: hidden;
       
       background: $black;
       
@@ -207,6 +208,9 @@
         margin-left: -15px;
       }
       
+      .tax-scout_quality &.neighborhood-archive-menu-item:after
+      .tax-scout_region &.neighborhood-archive-menu-item:after,
+      .post-type-archive-scout_neighborhoods &.neighborhood-archive-menu-item:after,
       &.current-page-ancestor:after,
       &.current_page_item:after { display: block; }
       

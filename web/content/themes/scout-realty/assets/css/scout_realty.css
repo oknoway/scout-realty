@@ -1206,6 +1206,7 @@ figure {
       right: 0;
       max-height: 0;
       opacity: 0;
+      overflow: hidden;
       background: #18181d; }
       .js .navigation-main.nav-collapse .menu-item {
         color: white; }
@@ -1312,7 +1313,8 @@ figure {
           display: none;
           width: 30px;
           margin-left: -15px; }
-        .menu-top-nav-container .menu .menu-item.current-page-ancestor:after, .menu-top-nav-container .menu .menu-item.current_page_item:after {
+        .tax-scout_quality .menu-top-nav-container .menu .menu-item.neighborhood-archive-menu-item:after
+        .tax-scout_region .menu-top-nav-container .menu .menu-item.neighborhood-archive-menu-item:after, .post-type-archive-scout_neighborhoods .menu-top-nav-container .menu .menu-item.neighborhood-archive-menu-item:after, .menu-top-nav-container .menu .menu-item.current-page-ancestor:after, .menu-top-nav-container .menu .menu-item.current_page_item:after {
           display: block; }
         .menu-top-nav-container .menu .menu-item.mobile {
           display: none; } }
@@ -3196,7 +3198,7 @@ blockquote {
     color: inherit; }
 .neighborhood-detail .neighborhood-meta .neighborhood-meta-key {
   margin-left: 12px;
-  color: #d8d8e0; }
+  color: #666666; }
 
 /**
  * Blog
