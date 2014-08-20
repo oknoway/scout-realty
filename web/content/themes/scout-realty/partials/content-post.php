@@ -99,7 +99,6 @@ $postClasses = array( 'post-detail' );
     <?php endif; ?>
     
     <?php if ( get_field( 'agent' ) ) : ?>
-    <pre><?php print_r(); ?></pre>
       <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/buying' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ) . '&listing=' . urlencode( $postMeta[ 'rmls_id' ] ); ?>" class="agent-contact cta">Contact <?php echo ( get_field( 'first_name', $postMeta[ 'agent' ]->ID ) ) ? get_field( 'first_name', $postMeta[ 'agent' ]->ID ) : get_the_title( $postMeta[ 'agent' ]->ID ); ?> about this home</a>
     <?php endif; ?>
     

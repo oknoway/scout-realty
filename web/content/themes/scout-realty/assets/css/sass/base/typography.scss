@@ -457,6 +457,14 @@ a.post-location,
   @extend %h5;
 }
 
+select.post-filter,
+.category-archive-item {
+  font-size: 0.77em;
+  line-height: 1.6;
+}
+
+
+
 // Forms
 .gform-wrapper {
   

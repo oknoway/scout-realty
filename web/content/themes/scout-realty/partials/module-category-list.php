@@ -20,6 +20,7 @@ if ( !empty( $categories ) ) : ?>
       <h5 class="navigation-title">Post Categories</h5>
     </header>
     <ul>
+      <li class="category-archive-item"><a href="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" title="View all posts" class="category-archive-link">View All Posts</a></li>
     <?php foreach ( $categories as $category ) : ?>
       <li class="category-archive-item"><a href="<?php echo get_category_link( $category->term_id ); ?>" title="<?php sprintf( __( "View all posts in %s" ), $category->name ); ?>" class="category-archive-link"><?php echo $category->name; ?></a></li>
     

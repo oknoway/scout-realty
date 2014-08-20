@@ -163,7 +163,6 @@ module.exports = function( grunt ) {
     
     sass:  {
       options: {
-        sourcemap: true,
         compass: false,
         loadPath: [
           '<%= dirs.vendor %>',

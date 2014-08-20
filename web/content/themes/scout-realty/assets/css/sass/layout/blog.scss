@@ -2,15 +2,19 @@
  * Blog
  */
 
+.archive.category .page-section,
 .blog .page-section {
   @include container();
   
   @include box( horizontal, center, center );
   @include display( flex );
   @include align-content( stretch );
-  @include align-items( stretch );
-  @include justify-content( center );
+  @include align-items( flex-start );
+  @include justify-content( space-between );
   @include flex-wrap( wrap );
+  
+  @include media( $firstBreak ) {
+  }
   
   .section-header {
     @include flex( 1 0 100% );
@@ -25,6 +29,9 @@
   .archive-wrapper {
     
     @include media( $firstBreak ) {
+      @include flex( 0 1 75% );
+      
+      margin-right: flex-gutter();
     }
   }
   
@@ -37,13 +44,15 @@
     @include flex-wrap( wrap );
 
     @include media( $firstBreak ) {
+      @include flex( 1 0 15% );
+
       @include flex-wrap( nowrap );
     }
     
     > * {
       @include flex( 1 0 100% );
       
-      @include pad( flex-gutter() * 2 );
+      @include pad( flex-gutter() flex-gutter() * 2 );
       
       @include media( $firstBreak ) {
         @include flex( 1 0 33% );

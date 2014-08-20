@@ -137,7 +137,7 @@
   
   @include media( max-width $firstBreak ) {
     .js &.nav-collapse {
-      top: 73px;
+      top: 69px;
       left: 0;
       right: 0;
       max-height: 0;
@@ -208,7 +208,7 @@
         margin-left: -15px;
       }
       
-      .tax-scout_quality &.neighborhood-archive-menu-item:after
+      .tax-scout_quality &.neighborhood-archive-menu-item:after,
       .tax-scout_region &.neighborhood-archive-menu-item:after,
       .post-type-archive-scout_neighborhoods &.neighborhood-archive-menu-item:after,
       &.current-page-ancestor:after,

@@ -380,7 +380,9 @@
   
   &.has-post-img {
     
-    @at-root .single & { margin-top: -4.1em; }
+    @at-root .single & {
+      @include media( $firstBreak ) { margin-top: -4.1em; }
+    }
     
     .post-content-wrapper {
       padding-top: 4.09em;

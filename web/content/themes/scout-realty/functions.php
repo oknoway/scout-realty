@@ -447,6 +447,7 @@ if ( ! function_exists( 'scout_add_query_vars' ) ) :
   function scout_add_query_vars( $vars ){
     $vars[] = 'average_home_price';
     $vars[] = 'sort';
+    $vars[] = 'in_neighborhood';
     
     return $vars;
   }
@@ -541,6 +542,33 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
         elseif ( get_query_var( 'sort' ) == 'lowest' ) :
           $query->set( 'order', 'ASC' );
         endif;
+          
+        //var_dump( $query );
+        //die();
+        
+      endif;
+      
+      if ( get_query_var( 'in_neighborhood' ) ) :
+        
+        
+        // NOT DONE
+        
+        $query->set( 'meta_key', 'neighborhood' );
+        $query->set( 'meta_value', 'neighborhood' );
+        $query->set( 'orderby', 'meta_value' );
+          
+          
+        $meta_query = $query->get('meta_query');
+        
+        $meta_query[] = array(
+          'key' => 'average_home_price',
+          'value' => get_query_var( 'average_home_price' ),
+          'compare' => '<=',
+        );
+        
+        $query->set('meta_query', $meta_query);
+      
+          
           
         //var_dump( $query );
         //die();

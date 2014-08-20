@@ -2,7 +2,30 @@
  * Sidebar
  */
 
+.archive-sidebar {
+  @include content-box( inset );
+
+}
+
+.category-navigation,
+.post-filter {
+  label {
+    color: $dkGrey;
+  }
+  
+  select {
+    max-width: 100%;
+    
+    background-color: $white;
+    color: $grey;
+    
+    border: 1px solid $grey;
+  }
+}
+
 .category-navigation {
+  @extend %no-list;
+  
   .navigation-title {
     margin-bottom: 2em;
   }

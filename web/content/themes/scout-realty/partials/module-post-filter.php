@@ -22,15 +22,12 @@ if ( !empty( $neighborhoods ) ) : ?>
   <header class="post-filter-header section-header">
     <h5 class="post-filter-title">Portland Neighborhoods</h5>
   </header>
-  <form action="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" method="get" accept-charset="utf-8">
-    <select id="neighborhood-post-filter" name="neighborhood_posts" class="neighborhood-post-filter post-filter">
-      <option selected disabled>Choose a Neighborhood&hellip;</option>
-    <?php foreach ( $neighborhoods as $neighborhood ) : ?>
-      <option value="<?php echo $neighborhood->post_name; ?>"><?php echo apply_filters( 'the_title', $neighborhood->post_title ); ?></option>
-    <?php endforeach; ?>
-    </select>
-    <input type="submit" value="Submit" class="no-js">
-  </form>
+  <select id="neighborhood-post-filter" name="neighborhood_posts" class="neighborhood-post-filter post-filter">
+    <option selected >View all Neighborhoods&hellip;</option>
+  <?php foreach ( $neighborhoods as $neighborhood ) : ?>
+    <option value="<?php echo $neighborhood->post_name; ?>"><?php echo apply_filters( 'the_title', $neighborhood->post_title ); ?></option>
+  <?php endforeach; ?>
+  </select>
 </nav>
 <?php endif; ?>
 
@@ -48,7 +45,7 @@ if ( !empty( $authors ) ) : ?>
   </header>
   <form action="<?php echo esc_url( get_permalink( get_option( 'page_for_posts' ) ) ); ?>" method="get" accept-charset="utf-8">
     <select id="author-post-filter" name="author_name" class="author-post-filter post-filter">
-      <option selected disabled>Choose an Author&hellip;</option>
+      <option selected>View all Authors&hellip;</option>
     <?php foreach ( $authors as $author ) :
       if ( count_user_posts( $author->data->ID ) > 0 ) : ?>
       <option value="<?php echo $author->data->user_nicename; ?>"><?php echo $author->data->display_name; ?></option>
