@@ -26,14 +26,16 @@ get_header(); ?>
       // build archive title
       $archiveTitle = null;
       
-      if ( !empty( $wp_query->query_vars['author_name'] ) ) :
-        $author = get_user_by( 'slug', $wp_query->query_vars['author_name'] );
-        $archiveTitle = 'Posts by ' . $author->data->display_name;
+      if ( isset( $_GET['by_agent'] ) ) :
+        $agentPost = get_page( $_GET['by_agent'], OBJECT, 'scout_agents' );
+
+        $archiveTitle = 'Posts by ' . apply_filters( 'the_title', $agentPost->post_title );
+
       elseif ( is_category() ) : 
         
         $archiveTitle = 'Posts in the ' . single_cat_title( '', false ) . ' category';
-      elseif ( isset( $_GET['neighborhood'] ) ) :
-        $neighborhoodPost = get_page_by_title( $_GET['neighborhood'], OBJECT, 'scout_neighborhoods' );
+      elseif ( isset( $_GET['in_neighborhood'] ) ) :
+        $neighborhoodPost = get_page( $_GET['in_neighborhood'], OBJECT, 'scout_neighborhoods' );
 
         $archiveTitle = 'Posts about the ' . apply_filters( 'the_title', $neighborhoodPost->post_title ) . ' Neighborhood';
       endif;
@@ -62,11 +64,17 @@ get_header(); ?>
        </footer>
       </section><!-- /.page-section -->
      <?php else : ?>
- 
-       <?php get_template_part( 'no-results', 'index' ); ?>
- 
+      <section class="page-section">
+        <header class="section-header">
+          <h1 class="page-title">No Results</h1>
+          <?php //get_template_part( 'partials/module', 'neighborhood-sort' ); ?>
+        </header>
+        <div class="archive-wrapper">
+         <?php get_template_part( 'no-results', 'index' ); ?>
+        </div>
+         <?php get_template_part( 'partials/sidebar' ); ?>
+      </section><!-- /.page-section -->
      <?php endif; ?>
- 
      </div><!-- #content -->
    </div><!-- #primary -->
  

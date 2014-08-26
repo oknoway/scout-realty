@@ -38,7 +38,7 @@ get_header(); ?>
       </section><!-- /.page-section -->
      <?php else : ?>
  
-       <?php get_template_part( 'no-results', 'index' ); ?>
+       <?php get_template_part( 'partials/no-results', 'neighborhoods' ); ?>
  
      <?php endif; ?>
  

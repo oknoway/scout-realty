@@ -1,4 +1,4 @@
-/*! Scout Realty - v0.1.0 - 2014-08-19
+/*! Scout Realty - v0.1.0 - 2014-08-26
  * http://scoutrealty.com
  * Copyright (c) 2014; */
 /*! responsive-nav.js 1.0.32
@@ -2395,19 +2395,19 @@
 *
 *  This function will render a Google Map onto the selected jQuery element
 *
-*  @type	function
-*  @date	8/11/2013
-*  @since	4.3.0
+*  @type  function
+*  @date  8/11/2013
+*  @since 4.3.0
 *
-*  @param	$el (jQuery element)
-*  @return	n/a
+*  @param $el (jQuery element)
+*  @return  n/a
 */
  
 function render_map( $el ) {
   
-	// vars
-	var mapStyles = [
-	{
+  // vars
+  var mapStyles = [
+  {
     "featureType": "administrative.locality",
     "stylers": [
       { "visibility": "on" }
@@ -2467,63 +2467,91 @@ function render_map( $el ) {
       { "visibility": "on" }
     ]
   }];
-	
-	var args = {
-		zoom		: $el.data( 'map-zoom_level' ),
-		center		: new google.maps.LatLng( $el.data( 'map-lat' ), $el.data( 'map-lng' ) ),
-		mapTypeId	: google.maps.MapTypeId.ROADMAP,
-		disableDefaultUI: true
-	};
+  
+  var args = {
+    zoom    : ( $el.data( 'map-zoom_level' ) - 2 ),
+    center    : new google.maps.LatLng( $el.data( 'map-lat' ), $el.data( 'map-lng' ) ),
+    mapTypeId : google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: false
+  };
  
-	// create map
-	var map = new google.maps.Map( $el[0], args);
-	map.setOptions( { styles: mapStyles });
+  // create map
+  var map = new google.maps.Map( $el[0], args);
+  
+  map.data.loadGeoJson('/wp-content/themes/scout-realty/assets/js/vendor/neighborhoods/neighborhoods.' + $el.data( 'map-neighborhood' ) + '.geojson');
+  
+  map.setOptions( { styles: mapStyles });
+  
+  var featureStyle = {
+    fillColor: '#FF4338',
+    strokeWeight: 0
+  }
+  map.data.setStyle(featureStyle);
+  
  
- 
-	// center map
-	//center_map( map );
+  // center map
+  //zoom( map );
  
 }
+
+
+/**
+ * Update a map's viewport to fit each geometry in a dataset
+ * @param {google.maps.Map} map The map to adjust
+ */
+function zoom(map) {
+  var bounds = new google.maps.LatLngBounds();
+  map.data.forEach(function(feature) {
+    
+    processPoints(feature.getGeometry(), bounds.extend, bounds);
+    
+  });
+  
+  //console.log( feature);
+
+  //map.fitBounds(bounds);
+}
+
 
 /*
 *  center_map
 *
 *  This function will center the map, showing all markers attached to this map
 *
-*  @type	function
-*  @date	8/11/2013
-*  @since	4.3.0
+*  @type  function
+*  @date  8/11/2013
+*  @since 4.3.0
 *
-*  @param	map (Google Map object)
-*  @return	n/a
+*  @param map (Google Map object)
+*  @return  n/a
 */
  
 function center_map( map ) {
  
-	// vars
-	var bounds = new google.maps.LatLngBounds();
+  // vars
+  var bounds = new google.maps.LatLngBounds();
  
-	// loop through all markers and create bounds
-	$.each( map.markers, function( i, marker ){
+  // loop through all markers and create bounds
+  $.each( map.markers, function( i, marker ){
  
-		var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+    var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
  
-		bounds.extend( latlng );
+    bounds.extend( latlng );
  
-	});
+  });
  
-	// only 1 marker?
-	if( map.markers.length == 1 )
-	{
-		// set center of map
-	    map.setCenter( bounds.getCenter() );
-	    map.setZoom( 16 );
-	}
-	else
-	{
-		// fit to bounds
-		map.fitBounds( bounds );
-	}
+  // only 1 marker?
+  if( map.markers.length == 1 )
+  {
+    // set center of map
+      map.setCenter( bounds.getCenter() );
+      map.setZoom( 16 );
+  }
+  else
+  {
+    // fit to bounds
+    map.fitBounds( bounds );
+  }
  
 }
  
@@ -2604,5 +2632,9 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
     // FitVids
     $('.article-content').fitVids();
   
+    // Select onChange
+    $('select.post-filter').change( function() {
+      $(this).parents('form').submit();
+    });
 
  } )( this );

@@ -30,7 +30,7 @@
     <?php endif; ?>
     
     <?php if ( get_field( 'average_home_price' ) ) : ?>
-      <span class="neighborhood-meta-key">Average Home Price:</span> <span class="avg-home-price">$<?php the_field( 'average_home_price' ); ?></span>
+      <span class="neighborhood-meta-key">Average Home Price:</span> <span class="avg-home-price">$<?php  echo number_format( get_field( 'average_home_price' ) ); ?></span>
     <?php endif; ?>
     
     <?php if ( has_term( '', 'scout_quality' ) ) : ?>

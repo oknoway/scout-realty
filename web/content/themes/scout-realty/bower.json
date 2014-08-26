@@ -11,12 +11,7 @@
     "background-size-polyfill": "~0.2.0",
     "responsive-nav": "viljamis/responsive-nav.js#~1.0.20",
     "fitvids": "~1.0.3",
-    "slick-carousel": "~1.3.6",
-    "shp": "~1.3.1",
-    "leaflet": "~0.7.3",
-    "maps.stamen.com": "Citytracking/maps.stamen.com#~1.3.0",
-    "leaflet.shapefile": "calvinmetcalf/leaflet.shapefile#gh-pages",
-    "catiline": "~2.9.3"
+    "slick-carousel": "~1.3.6"
   },
   "ignore": [
     "node_modules",

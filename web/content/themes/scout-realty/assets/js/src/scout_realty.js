@@ -82,5 +82,9 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
     // FitVids
     $('.article-content').fitVids();
   
+    // Select onChange
+    $('select.post-filter').change( function() {
+      $(this).parents('form').submit();
+    });
 
  } )( this );

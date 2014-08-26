@@ -62,7 +62,7 @@ $postClasses = array( 'post-detail' );
     
       <div class="listing-meta-wrapper">
       <?php if ( $postMeta[ 'price' ] ) : ?>
-        <span class="listing-meta price">$<?php echo $postMeta[ 'price' ]; ?></span>
+        <span class="listing-meta price">$<?php echo number_format( $postMeta[ 'price' ] ); ?></span>
       <?php endif; ?>
         
       <?php if ( $postMeta[ 'street_address' ] || $postMeta[ 'city' ] || !$postMeta[ 'state' ] || $postMeta[ 'zip' ] ) : ?>

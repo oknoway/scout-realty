@@ -29,8 +29,9 @@
   .archive-wrapper {
     
     @include media( $firstBreak ) {
-      @include flex( 0 1 75% );
+      @include flex( 0 1 67% );
       
+      max-width: 773px;
       margin-right: flex-gutter();
     }
   }
@@ -44,18 +45,18 @@
     @include flex-wrap( wrap );
 
     @include media( $firstBreak ) {
-      @include flex( 1 0 15% );
-
-      @include flex-wrap( nowrap );
+      @include flex( 1 0 217px );
+      
+      max-width: 217px;
     }
     
     > * {
       @include flex( 1 0 100% );
       
+      max-width: 100%;
       @include pad( flex-gutter() flex-gutter() * 2 );
       
       @include media( $firstBreak ) {
-        @include flex( 1 0 33% );
       }
     }
   }

@@ -206,7 +206,7 @@ if ( ! function_exists( 'scout_scripts_styles' ) ) :
     if ( !is_admin() ) {
       $postfix = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
       
-      wp_register_script( 'google-maps', 'https://www.google.com/maps/api/js?key=AIzaSyD7CaOXb1xCmve_O4_FVNUcX9fpxbDkiyg', array(), SCOUT_VERSION, false );
+      wp_register_script( 'google-maps', 'https://www.google.com/maps/api/js?v=3.exp&amp;key=AIzaSyD7CaOXb1xCmve_O4_FVNUcX9fpxbDkiyg', array(), SCOUT_VERSION, false );
       
       if ( is_neighborhood_archive() || get_post_type() == 'scout_neighborhoods' ) {
         
@@ -507,6 +507,7 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
           'key' => 'neighborhood',
           'value' => '"' . $neighborhoodPost->ID . '"',
           'compare' => 'LIKE',
+          'type' => 'NUMERIC',
         );
         
         $query->set('meta_query', $meta_query);
@@ -523,6 +524,7 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
           'key' => 'average_home_price',
           'value' => get_query_var( 'average_home_price' ),
           'compare' => '<=',
+          'type' => 'NUMERIC',
         );
         
         $query->set('meta_query', $meta_query);
@@ -549,30 +551,31 @@ if ( ! function_exists( 'scout_query_filter' ) ) :
       endif;
       
       if ( get_query_var( 'in_neighborhood' ) ) :
-        
-        
-        // NOT DONE
-        
-        $query->set( 'meta_key', 'neighborhood' );
-        $query->set( 'meta_value', 'neighborhood' );
-        $query->set( 'orderby', 'meta_value' );
-          
           
         $meta_query = $query->get('meta_query');
         
         $meta_query[] = array(
-          'key' => 'average_home_price',
-          'value' => get_query_var( 'average_home_price' ),
-          'compare' => '<=',
+          'key' => 'neighborhood',
+          'value' => get_query_var( 'in_neighborhood' ),
+          'compare' => '=',
         );
         
         $query->set('meta_query', $meta_query);
+
+      endif;
       
+      if ( get_query_var( 'by_agent' ) ) :
           
-          
-        //var_dump( $query );
-        //die();
+        $meta_query = $query->get('meta_query');
         
+        $meta_query[] = array(
+          'key' => 'agent',
+          'value' => get_query_var( 'by_agent' ),
+          'compare' => '=',
+        );
+        
+        $query->set('meta_query', $meta_query);
+
       endif;
       
     endif;

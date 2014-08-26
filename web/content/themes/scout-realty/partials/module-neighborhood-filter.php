@@ -26,7 +26,7 @@
     <fieldsection class="neighborhood-filter-criterion-wrapper">
       <label>Portland Region</label>
       <select name="region" class="neighborhood-filter-criterion">
-        <option value="0">View all Regions&hellip;</option>
+        <option value="">View all Regions&hellip;</option>
       <?php foreach( $regionTerms as $region ) : ?>
       
         <option value="<?php echo ( !empty( $region->slug ) ) ? $region->slug : NULL; ?>" <?php if ( get_query_var( 'region' ) == $region->slug ) echo 'selected'; ?>><?php echo $region->name; ?></option>
@@ -77,6 +77,6 @@
     
   </form>
   <div class="neighborhood-filter-content post-excerpt">
-    <p>Average home prices are released yearly by XYZ. While prices shown are an average, actual home prices can vary greatly across a neighborhood.</p>
+    <p>Average home prices are released yearly by Portland Monthly. While prices shown are an average, actual home prices can vary greatly across a neighborhood.</p>
   </div>
 </section>

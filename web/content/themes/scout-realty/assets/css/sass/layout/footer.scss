@@ -29,6 +29,7 @@
     @include media( $firstBreak ) {
       @include flex( 1 1 33% );
       
+      max-width: 33%;
       @include pad( );
       padding-top: 40px;
     }
@@ -227,6 +228,11 @@
   @include justify-content( space-between );
   @include flex-wrap( wrap );
   
+  min-height: 100px; 
+  
+  .gform_ajax_spinner { position: absolute; }
+
+  
   .gform_heading {
     @include flex( 1 1 100% );
     @include order( 3 );
@@ -252,6 +258,11 @@
       width: 100%;
       @include pad( 0 12px );
     }
+  }
+  
+  .gform_confirmation_message {
+    @include flex( 1 1 100% );
+    @include align-self( flex-start );
   }
   
 }

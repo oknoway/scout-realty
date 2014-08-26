@@ -38,8 +38,12 @@
       
       $relatedPostsArgs[ 'cat' ] = $relatedTerm->term_id;
       
-      $relatedPostsHeadline = 'Recent ' . $relatedTerm->name . ' Posts';
+      $relatedPostsHeadline = 'Recent ' . $relatedTerm->name;
       
+      $postsTerms = array( 'Buyer Stories', 'Seller Stories', 'Sell-to-Buy Case Studies' );
+      if ( !in_array( $relatedTerm->name, $postsTerms  ) )
+        $relatedPostsHeadline .= ' Posts';
+        
     endif;
 
   // If this is an Agent bio page, show posts associated with that agent.

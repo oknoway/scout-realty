@@ -406,6 +406,13 @@ a.post-location,
       line-height: 1.571428571
     }
   }
+  
+  &.not-found {
+    .neighborhood-content-wrapper {
+      font-size: 1.122222222em;
+      line-height: 1.692307692;
+    }
+  }
 }
 
 .neighborhood-detail {
@@ -459,10 +466,9 @@ a.post-location,
 
 select.post-filter,
 .category-archive-item {
-  font-size: 0.77em;
+  font-size: 0.68em;
   line-height: 1.6;
 }
-
 
 
 // Forms

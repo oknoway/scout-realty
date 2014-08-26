@@ -5,6 +5,10 @@
 .archive-sidebar {
   @include content-box( inset );
 
+  @include media( $firstBreak ) {
+    padding-bottom: 20px;
+  }
+
 }
 
 .category-navigation,
@@ -14,7 +18,9 @@
   }
   
   select {
+    width: 100%;
     max-width: 100%;
+    
     
     background-color: $white;
     color: $grey;

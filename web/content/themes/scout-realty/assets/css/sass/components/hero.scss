@@ -36,11 +36,11 @@
   
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: 26px 20px;
   
   border: 0;
   
-  @include transition();
+  @include transition( background-image 0.15s ease-out 0s );
   
   .lt-ie9 & {}
   
@@ -48,6 +48,8 @@
     height: 53px;
     width: 41px;
     margin-top: -26.5px;
+    
+    background-size: 41px 53px;
   }
 }
 
@@ -56,12 +58,16 @@
   
   background-image: url( '../../img/arrow_left.svg' );
   
+  &:hover { background-image: url( '../../img/arrow_left-18181D.svg' ); }
+  
   @include media( $firstBreak ) {
     left: 25px;
   }
   
   @at-root .no-svg & {
     background-image: url( '../../img/arrow_left.png' );
+    
+    &:hover { background-image: url( '../../img/arrow_left-18181D.png' ); }
   }
 }
 
@@ -69,6 +75,8 @@
   right: 0px;
   
   background-image: url( '../../img/arrow_right.svg' );
+  
+  &:hover { background-image: url( '../../img/arrow_right-18181D.svg' ); }
 
   @include media( $firstBreak ) {
     right: 25px;
@@ -76,5 +84,7 @@
   
   @at-root .no-svg & {
     background-image: url( '../../img/arrow_right.png' );
+    
+    &:hover { background-image: url( '../../img/arrow_right-18181D.png' ); }
   }
 }

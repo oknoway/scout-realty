@@ -38,8 +38,8 @@ endif;
         <noscript><img src="<?php echo esc_url( $featuredImg[0] ); ?>" height="<?php echo $featuredImg[1]; ?>" width="<?php echo $featuredImg[2]; ?>" class="no-js visuallyhidden"></noscript>
       </span>
       
-    <?php if ( !empty( $postMeta[ 'price' ] ) ) : ?>
-      <figcaption class="home-price">$<?php echo $postMeta[ 'price' ]; ?></figcaption>
+    <?php if ( !empty( $postMeta['price'] ) ) : ?>
+      <figcaption class="home-price">$<?php echo number_format( $postMeta['price'] ); ?></figcaption>
     <?php endif; ?>
     </a>
   </figure>

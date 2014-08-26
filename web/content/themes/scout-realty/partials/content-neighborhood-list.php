@@ -17,25 +17,26 @@
     <?php if ( get_field('map') ) : ?>
       <?php get_template_part( 'partials/module', 'neighborhood-map' ); ?>
     <?php endif; ?>
-
-    <div class="neighborhood-meta">
-    
-    <?php if ( has_term( '', 'scout_region' ) ) : ?>
-      <div class="neighborhood-regions"><?php the_terms( $post->ID, 'scout_region', '', ' / ' ); ?></div>
-    <?php endif; ?>
-    
-    <?php if ( has_term( '', 'scout_quality' ) ) : ?>
-      <div class="neighborhood-meta-key">Neighborhood Features: <span class="neighborhood-qualities"><?php the_terms( $post->ID, 'scout_quality', '', ', ' ); ?></span></div>
-    <?php endif; ?>
-    
-    <?php if ( get_field( 'average_home_price' ) ) : ?>
-      <div class="neighborhood-meta-key">Average Home: <span class="avg-home-price">$<?php the_field( 'average_home_price' ); ?></span></div>
-    <?php endif; ?>
-    
-    </div><!-- /.neighborhood-meta -->
-    
-    <div class="neighborhood-content">
-      <?php the_content(); ?>
-    </div><!-- /.neighborhood-content -->
+    <div class="neighborhood-content-block">
+      <div class="neighborhood-meta">
+      
+      <?php if ( has_term( '', 'scout_region' ) ) : ?>
+        <div class="neighborhood-regions"><?php the_terms( $post->ID, 'scout_region', '', ' / ' ); ?></div>
+      <?php endif; ?>
+      
+      <?php if ( has_term( '', 'scout_quality' ) ) : ?>
+        <div class="neighborhood-meta-key">Neighborhood Features: <span class="neighborhood-qualities"><?php the_terms( $post->ID, 'scout_quality', '', ', ' ); ?></span></div>
+      <?php endif; ?>
+      
+      <?php if ( get_field( 'average_home_price' ) ) : ?>
+        <div class="neighborhood-meta-key">Average Home Price: <span class="avg-home-price">$<?php echo number_format( get_field( 'average_home_price' ) ); ?></span></div>
+      <?php endif; ?>
+      
+      </div><!-- /.neighborhood-meta -->
+      
+      <div class="neighborhood-content">
+        <?php the_content(); ?>
+      </div><!-- /.neighborhood-content -->
+    </div><!-- /.neighborhood-content-block -->
   </div><!-- /.neighborhood-content-wrapper -->
 </article><!-- /#neighborhood-<?php the_ID(); ?> -->

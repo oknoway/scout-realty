@@ -15,7 +15,23 @@ jQuery(document).ready(function($){
     if(typeof form != 'undefined')
         window.gfMergeTags = new gfMergeTagsObj(form);
 
+	$(document).ready(function(){
+		$(".gform_currency").bind("change", function(){
+			FormatCurrency(this);
+		}).each(function(){
+			FormatCurrency(this);
+		});
+	});
+
 });
+
+function FormatCurrency(element){
+	if(gf_vars.gf_currency_config){
+		var currency = new Currency(gf_vars.gf_currency_config);
+		var price = currency.toMoney(jQuery(element).val());
+		jQuery(element).val(price);
+	}
+}
 
 function ToggleConditionalLogic(isInit, objectType){
     var speed = isInit ? "" : "slow";

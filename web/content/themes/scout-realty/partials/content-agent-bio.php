@@ -80,7 +80,7 @@
         <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ); ?>" class="cta">Sell Your House</a>
       </li>
       <li>
-        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling-to-buy' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ); ?>" class="cta">Selling to Buy</a>
+        <a href="<?php echo esc_url( get_permalink( get_page_by_path( 'contact-us/selling-to-buy' ) ) . '?agent_select=' . urlencode( $agentData[ 'email_address' ] ) ); ?>" class="cta">Sell to Buy</a>
       </li>
     </ul>
   </div>

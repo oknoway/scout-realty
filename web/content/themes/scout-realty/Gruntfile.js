@@ -28,13 +28,6 @@ module.exports = function( grunt ) {
         }
       }
     },
-    rename: {
-      leaflet: {
-        files: [
-              {src: ['<%= dirs.vendor %>/scss/leaflet/leaflet.css'], dest: '<%= dirs.vendor %>/scss/leaflet/leaflet.scss'},
-            ]
-      }
-    },
     copy: {
       vendor: {
         files: [{
@@ -104,11 +97,6 @@ module.exports = function( grunt ) {
           '<%= dirs.vendor %>/js/responsive-nav/responsive-nav.js',
           '<%= dirs.vendor %>/js/slick-carousel/slick.js',
           '<%= dirs.vendor %>/js/fitvids/jquery.fitvids.js',
-          //'<%= dirs.vendor %>/js/leaflet/leaflet.js',
-          //'<%= dirs.vendor %>/js/maps.stamen.com/tile.stamen.js',
-          //'<%= dirs.vendor %>/js/catiline/catiline.js',
-          //'<%= dirs.vendor %>/js/shp/shp.js',
-          //'<%= dirs.vendor %>/js/leaflet.shapefile/leaflet.shpfile.js',
           '<%= dirs.js %>/src/maps.js',
           '<%= dirs.js %>/src/scout_realty.js'
         ],
@@ -124,7 +112,7 @@ module.exports = function( grunt ) {
     jshint: {
       browser: {
         all: [
-          '<%= dirs.js %>/src/**/*.js',
+          '<%= dirs.js %>/src/*.js',
           '<%= dirs.js %>/test/**/*.js'
         ],
         options: {
@@ -160,7 +148,6 @@ module.exports = function( grunt ) {
     test:  {
       files: ['<%= dirs.js %>/test/**/*.js']
     },
-    
     sass:  {
       options: {
         compass: false,
@@ -229,10 +216,9 @@ module.exports = function( grunt ) {
     }
    } );
 
+
   // Default task.
-  
-  // Default task.
-  grunt.registerTask( 'default', ['bower', 'rename', 'copy:vendor', 'images', 'styles', 'scripts'] );
+  grunt.registerTask( 'default', ['bower', 'copy:vendor', 'images', 'styles', 'scripts'] );
 
   // Process Styles.
   grunt.registerTask( 'styles', ['sass', 'autoprefixer', 'cssmin'] );

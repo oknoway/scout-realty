@@ -59,4 +59,10 @@
   }
   
   .avg-home-price { color: $dkGrey; }
+  
+  &.not-found {
+    .neighborhood-content-wrapper:before { display: none; }
+    
+    a { text-decoration: underline; }
+  }
 }

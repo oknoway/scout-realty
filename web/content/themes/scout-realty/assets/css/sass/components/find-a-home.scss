@@ -7,11 +7,16 @@
   .widget-title { color: $red; }
 }
 
+#IDX-qsCityListWrap-20615,
 #IDX-qsIdxIDWrap-20615 { display: none; }
 
 .IDX-qsFieldWrap {
   
   @include pad( 0 10px );
+  
+  * { max-width: 100%; }
+  
+  label { display: block; }
   
   input,
   select {
@@ -35,12 +40,16 @@
 
 #IDX-qsMinPriceWrap-20615,
 #IDX-qsMaxPriceWrap-20615 {
-  max-width: 150px
+  max-width: 150px;
 }
 
 #IDX-qsMinSqFtWrap-20615,
 #IDX-qsMinBedWrap-20615,
 #IDX-qsMinBathWrap-20615 {
-  max-width: 120px
+  max-width: 120px;
+}
+
+#IDX-qsSubmitWrap-20615 {
+  max-width: 100%;
 }
 

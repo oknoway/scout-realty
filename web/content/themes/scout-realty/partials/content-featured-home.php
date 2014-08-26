@@ -32,11 +32,11 @@ $postClasses = array( 'featured-home', 'post-detail' );
     <?php endif; ?>
     </header>
     
-    <?php if ( $postMeta[ 'price' ] || $postMeta[ 'region' ] || $postMeta[ 'neighborhood' ] || $postMeta[ 'street_address' ] ) : ?>
+    <?php if ( $postMeta['price'] || $postMeta[ 'region' ] || $postMeta[ 'neighborhood' ] || $postMeta[ 'street_address' ] ) : ?>
     
       <div class="listing-meta-wrapper">
-      <?php if ( $postMeta[ 'price' ] ) : ?>
-        <span class="listing-meta price">$<?php echo $postMeta[ 'price' ]; ?></span>
+      <?php if ( $postMeta['price'] ) : ?>
+        <span class="listing-meta price">$<?php echo number_format( $postMeta['price'] ); ?></span>
       <?php endif; ?>
   
       <?php if( $postMeta[ 'neighborhood' ] ) : ?>

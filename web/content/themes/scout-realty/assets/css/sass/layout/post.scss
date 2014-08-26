@@ -58,7 +58,7 @@
       min-height: 145px;
       max-width: 75px;
       
-      & + .post-content-wrapper { max-width: none; }
+      & + .post-content-wrapper { max-width: 85%; }
     }
     
     .blog-archive-link,
@@ -92,13 +92,17 @@
     margin: 0;
     
     @include media( $firstBreak ) {
-      @include flex( 1 0 395px );
+      @include flex( 1 0 40% );
       
-      //max-width: flex-grid( 5.5, 12 );
+      max-width: 395px;
     }
     
     & + .post-content-wrapper {
       @include flex( 1 1 100% );
+      
+      @include media( $firstBreak ) {
+        @include flex( 1 1 40% );
+      }
     }
     
     a {
@@ -158,6 +162,8 @@
     
     > * {
       @include flex( 0 1 auto );
+      
+      max-width: 100%;
     }
   }
   
@@ -276,7 +282,11 @@
   
   .column-header { color: $dkGrey; }
   
-  .column-content { color: $grey; }
+  .column-content {
+    max-width: 100%;
+    
+    color: $grey;
+  }
   
   .column-title {
     margin-top: 0;

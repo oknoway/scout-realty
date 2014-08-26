@@ -4,7 +4,7 @@
 
 .neighborhood-map {
   width: 100%;
-  height: 300px;
+  min-height: 300px;
 }
 
 .tax-scout_quality .neighborhood-filters,
@@ -16,7 +16,6 @@
   padding-top: 1.25em;
   
   @include media( $firstBreak ) {
-    
     max-width: 990px;
     margin-left: auto;
     margin-right: auto;
@@ -51,6 +50,8 @@
     
     @include media( $firstBreak ) {
       @include flex( 1 1 33% );
+      
+      max-width: 33%;
     }
     
     label,
@@ -91,7 +92,6 @@
 
 // neighborhood list
 .neighborhood-list {
-  
   @include container();
   
   max-width: 1070px;
@@ -99,20 +99,35 @@
   
   a { color: inherit; }
   
-  .neighborhood-header {
-    
-    
-  }
+  .neighborhood-header {}
   
   .neighborhood-content-wrapper {
     @extend %clearfix;
+    
+    @include box( horizontal, center, center );
+    @include display( flex );
+    @include align-content( stretch );
+    @include align-items( stretch );
+    @include justify-content( center );
+    @include flex-wrap( wrap );
     
     @include pad( 25px );
     padding-right: flex-grid( 1, 10 );
     padding-left: 30px;
   
-    .neighborhood-map {
+    @include media( $firstBreak ) {
+      @include flex-wrap( nowrap );
+    }
+  
+    > * {
+      @include flex( 1 1 100% );
       
+      @include media( $firstBreak ) {
+        @include flex( 1 1 50% );
+      }
+    }
+  
+    .neighborhood-map {
       margin-bottom: 2em;
       
       border: 5px solid $white;
@@ -123,11 +138,8 @@
       }
       
       @include media( $firstBreak ) {
-  
-        width: 50%;
         margin-right: flex-gutter();
         margin-bottom: 0;
-        float: left;
       }
     }
     
@@ -144,14 +156,13 @@
 
 .neighborhood-detail {
   
-  .neighborhood-map {
-  }
+  .neighborhood-map { }
   
   .neighborhood-content-wrapper {
     padding: 10px;
     
     background-color: $white;
-    background-image: url( '../../img/pattern_post-cap.png');
+    background-image: url( '../../img/pattern_post-cap.png' );
     background-repeat: repeat-x;
     
     border-top-left-radius: 10px;
@@ -165,7 +176,6 @@
     }
     
     .neighborhood-content {
-      max-width: 650px;
       margin: auto;
     }
   }

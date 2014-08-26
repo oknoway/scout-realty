@@ -80,7 +80,7 @@
   @include display( flex );
   @include align-content( stretch );
   @include align-items( center );
-  @include justify-content( center );
+  @include justify-content( space-around );
   @include flex-wrap( wrap );
   
   @include media( $firstBreak ) {
@@ -89,7 +89,6 @@
   
   > * {
     @include flex( 0 1 auto );
-    
   }
   
   #IDX-qsSubmitWrap-20615 {
