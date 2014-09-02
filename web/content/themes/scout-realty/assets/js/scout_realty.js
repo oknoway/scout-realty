@@ -1,4 +1,4 @@
-/*! Scout Realty - v0.1.0 - 2014-08-26
+/*! Scout Realty - v0.1.0 - 2014-09-01
  * http://scoutrealty.com
  * Copyright (c) 2014; */
 /*! responsive-nav.js 1.0.32
@@ -2635,6 +2635,14 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
     // Select onChange
     $('select.post-filter').change( function() {
       $(this).parents('form').submit();
+    });
+    
+    // target = _blank
+    $( '.social a' ).on( 'click', function(e) {
+      
+      e.preventDefault();
+      
+      window.open( $(this).attr('href') );
     });
 
  } )( this );

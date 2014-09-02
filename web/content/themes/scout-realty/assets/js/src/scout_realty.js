@@ -86,5 +86,13 @@ var m = L.map( $(this).attr('ID') ).setView([ $(this).data( 'leaflet-lat' ), $(t
     $('select.post-filter').change( function() {
       $(this).parents('form').submit();
     });
+    
+    // target = _blank
+    $( '.social a' ).on( 'click', function(e) {
+      
+      e.preventDefault();
+      
+      window.open( $(this).attr('href') );
+    });
 
  } )( this );
